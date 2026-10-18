@@ -36,3 +36,5 @@ This repository contains the contest prototype and fictional examples. No privat
 This entry requests consideration for the Overall prize and Best Use of Render. Render hosts the interactive PactSignal frontend, judge sandbox and exported model assets at https://pactsignal.onrender.com/. Model inference runs locally in the visitor’s browser; Render is not running a server-side model or connecting to private accounts. The ChatGPT-hosted showcase is an additional mirror. One entry can receive at most one prize; category eligibility and awards are decided by the organizers.
 
 [Both narrated videos](https://pactsignal.onrender.com/video.html).
+
+[Published contest entry](https://dev.to/kostya_m_c42bac647e130eb7/pactsignal-the-conversation-moved-the-agreement-should-not-disappear-k29).

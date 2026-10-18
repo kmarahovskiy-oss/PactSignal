@@ -1,6 +1,6 @@
 ---
 title: PactSignal: The conversation moved. The agreement should not disappear.
-published: false
+published: true
 tags: devchallenge, hf26challenge
 ---
 
