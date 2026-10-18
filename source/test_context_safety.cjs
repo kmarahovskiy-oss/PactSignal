@@ -1,0 +1,6 @@
+const assert=require('assert/strict'),c=require('../dist/context-analysis.js');let n=0;
+const cases=[['We approve the quote.', ['agreement']],['I will pay EUR 180.50 tomorrow.', ['payment_promise']],['The final files are attached.', ['delivery']],['We approve the quote. I will pay tomorrow.', ['agreement','payment_promise']],['If we approve the quote, please proceed.', []],['We do not approve the quote.', []],['"We approve the quote."', []],['> We approve the quote.', []],['Have you paid the invoice?', []],['The final files are not ready.', []]];
+for(const [text,expected] of cases)for(const transform of [s=>s,s=>s.toUpperCase(),s=>'  '+s+'  ',s=>s.replaceAll(' ','  '),s=>'ST-24: '+s]){const t=transform(text),a=c.analyze(t);assert.deepEqual([...new Set(a.events.map(e=>e.label))].sort(),[...expected].sort(),t);assert.equal(a.confirmedReceived,0);assert.equal(a.requiresReview,true);for(const e of [...a.events,...a.ignored])assert.equal(t.slice(e.start,e.end),e.quote);n++}
+const amount=c.analyze('I will pay EUR 180.50 tomorrow.');assert.deepEqual(amount.events[0].amounts,[{currency:'EUR',value:180.5,source:'EUR 180.50'}]);n++;
+assert.equal(c.analyze('x'.repeat(10001)).status,'needs_review');n++;
+console.log(n+' contextual safety/metamorphic checks passed.');

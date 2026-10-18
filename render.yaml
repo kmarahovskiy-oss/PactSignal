@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: pactsignal-showcase
+    runtime: static
+    buildCommand: echo "Prebuilt browser-local showcase"
+    staticPublishPath: ./dist
+    routes:
+      - type: rewrite
+        source: /scenario
+        destination: /scenario.html
+      - type: rewrite
+        source: /lab
+        destination: /lab.html
+      - type: rewrite
+        source: /article
+        destination: /article.html
+      - type: rewrite
+        source: /final
+        destination: /final.html
+      - type: rewrite
+        source: /video
+        destination: /video.html

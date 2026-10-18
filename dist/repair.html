@@ -1,0 +1,263 @@
+<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>PactSignal · owner control room</title><style>
+:root{--ink:#152437;--muted:#627186;--line:#d9e4e8;--panel:#fff;--canvas:#f3f7f6;--nav:#10283a;--aqua:#087f74;--aqua2:#14a394;--accent:#f36b3b;--shadow:0 18px 55px #18394a12}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 92% 4%,#c9eee8 0,transparent 24rem),var(--canvas);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}nav{background:linear-gradient(125deg,#071b29 0%,#0b3544 58%,#0a5b59 100%);color:white;padding:16px max(20px,5vw);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:4;box-shadow:0 12px 30px #071b2925}.brand{display:flex;gap:12px;align-items:center}.mark{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#25cfb6,#f9c76a);color:#082330;font-weight:950;font-size:21px;box-shadow:inset 0 1px #ffffff77}nav h1{margin:0;font-size:23px;letter-spacing:-.02em}nav p{margin:0;color:#cbe1e5;font-size:13px}.mode{padding:8px 11px;border:1px solid #ffffff35;border-radius:999px;background:#ffffff12;font-size:11px;letter-spacing:.08em}main{max-width:1180px;margin:0 auto;padding:38px 20px 24px}.hero{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(280px,.8fr);gap:24px;align-items:end;margin-bottom:24px}.eyebrow{color:var(--aqua);font-weight:900;letter-spacing:.1em;font-size:12px}.ownerhead h1{font-size:clamp(38px,5.5vw,66px);line-height:.98;letter-spacing:-.055em;margin:8px 0 16px;max-width:780px}.ownerhead p{font-size:18px;color:var(--muted);margin:0;max-width:730px}.judgecard{background:#0d2f3b;color:white;border-radius:22px;padding:21px;box-shadow:var(--shadow);border:1px solid #ffffff22}.judgecard small{color:#9fd9d2}.judgecard h2{font-size:20px;margin:5px 0 13px}.judgecard ol{margin:0;padding-left:19px;color:#d5e7ea}.judgecard li+li{margin-top:7px}.judgecard button{margin-top:16px;width:100%;border:0;border-radius:11px;padding:11px;background:#f5c970;color:#17313c;font-weight:850;cursor:pointer}.stats,.moneygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}button.metric,.moneygrid>div{background:#ffffffdd;backdrop-filter:blur(10px);border:1px solid var(--line);padding:17px;border-radius:16px;text-align:left;color:inherit}button.metric{cursor:pointer;box-shadow:0 8px 28px #253b4d0a;transition:transform .18s,border-color .18s,box-shadow .18s}button.metric:hover{transform:translateY(-2px)}button.metric.active{border-color:var(--aqua);box-shadow:0 0 0 3px #087f741b,0 12px 32px #087f7414}small{display:block;color:var(--muted);letter-spacing:.075em;font-weight:800;font-size:11px}.metric b,.stats b{display:block;font-size:27px;margin-top:4px;letter-spacing:-.035em}.metric em{display:block;font-style:normal;color:var(--aqua);font-weight:750;font-size:12px;margin-top:4px}.portfolio{padding:13px 16px;background:#ffffff88;border:1px solid var(--line);border-radius:12px}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-top:29px}.sectionhead h3{margin:0;font-size:21px}.sectionhead p{margin:0;color:var(--muted)}.queue{list-style:none;padding:0;margin:13px 0 30px}.queue li{display:grid;grid-template-columns:175px 1fr auto auto;align-items:center;gap:15px;background:white;border:1px solid var(--line);padding:16px;border-radius:15px;margin:9px 0;box-shadow:0 6px 22px #253b4d09;transition:transform .18s,box-shadow .18s}.queue li:hover{transform:translateX(3px);box-shadow:0 10px 30px #253b4d12}.queue p{margin:3px 0;color:var(--muted)}.openlink{color:var(--aqua);font-weight:850;text-decoration:none;padding:7px 9px;border-radius:8px}.openlink:hover{background:#e8f7f4}.warning{background:linear-gradient(90deg,#fff8dd,#fffdf3);border:1px solid #ecd177;padding:16px 18px;border-radius:14px;box-shadow:0 8px 22px #9c76220a}.privacy{margin-top:12px;padding:0 4px}.privacy summary{font-weight:800;color:#285b69}.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:28px 0 12px;padding:10px;background:#e8efef;border:1px solid #d7e2e4;border-radius:17px;position:sticky;top:82px;z-index:3}.toolbar button{border:1px solid transparent;background:transparent;border-radius:999px;padding:8px 12px;font-weight:780;cursor:pointer;color:#45596b}.toolbar button:hover{background:#fff}.toolbar button.active{background:#173f49;color:white;border-color:#173f49;box-shadow:0 5px 14px #173f4925}.toolbar input{margin-left:auto;min-width:260px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:white}.resultcount{color:var(--muted);margin:0 0 10px}.thread{display:block;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:21px;margin:16px 0;box-shadow:var(--shadow);scroll-margin-top:155px}.thread[hidden]{display:none}.thread>summary{list-style:none}.thread>summary::-webkit-details-marker{display:none}.threadtop,.event header{display:flex;justify-content:space-between;gap:15px;align-items:center}.threadtop h2{font-size:24px;letter-spacing:-.025em}h2{margin:0}h3{margin-top:26px}.stage,.pill{padding:7px 11px;border-radius:999px;font-weight:800;white-space:nowrap;font-size:12px}.green{background:#dff5eb;color:#08764d}.red{background:#fee2e2;color:#a42121}.amber{background:#fff0c7;color:#875d00}.blue{background:#dcecff;color:#155da0}.gray{background:#e8edf1;color:#586773}.action{padding:16px;border-radius:13px;background:linear-gradient(100deg,#eaf8f6,#f7fffd);border:1px solid #bfe4de}.conversation,.technical{margin-top:22px}.conversation>summary,.technical>summary{color:#136f84;font-weight:850;font-size:16px}.timeline{border-left:3px solid #b9ceda;margin:20px 0 0 8px;padding-left:23px}.event{border:1px solid var(--line);border-radius:13px;padding:16px;margin:0 0 15px;background:#fbfdfe}.event header strong{color:#0b786b}.mailmeta{display:grid;gap:2px}.mailmeta span{color:var(--muted)}.messagebody{white-space:pre-wrap;background:white;border-radius:9px;padding:12px;border:1px solid #e7edf1}blockquote{margin:10px 0;padding:10px 14px;background:#edf7f5;border-left:4px solid var(--aqua)}pre{white-space:pre-wrap;background:#122331;color:#dbe9ef;padding:12px;border-radius:8px;overflow:auto}.amount{font-size:18px;font-weight:850}details summary{cursor:pointer}button.confirm{margin:8px 0;padding:9px 12px;border:0;border-radius:8px;background:#0b786b;color:white;font-weight:800;cursor:pointer}footer{margin-top:35px;padding:25px 0;color:var(--muted);border-top:1px solid var(--line)}.demo-note{font-weight:750;color:#2f6570}@media(max-width:900px){.hero{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.queue li{grid-template-columns:150px 1fr auto}.queue .openlink{grid-column:2}}@media(max-width:650px){main{padding-top:25px}.stats,.moneygrid{grid-template-columns:1fr 1fr}.queue li{grid-template-columns:1fr}.queue .openlink{grid-column:auto}nav{position:static;align-items:flex-start;gap:10px;flex-direction:column}.toolbar{position:static}.toolbar input{margin-left:0;width:100%;min-width:0}.ownerhead h1{font-size:39px}.mode{font-size:10px}}
+.scenario{margin:24px 0;padding:22px;border:1px solid #bbd9d5;border-radius:18px;background:#fff}.scenario-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px}.scenario-tabs a{color:#16424b;text-decoration:none;border:1px solid #accac5;border-radius:10px;padding:10px 16px;font-weight:800}.scenario-tabs a[aria-current="page"]{background:#173f49;color:white}.scenario-tabs a:hover{box-shadow:0 0 0 3px #087f7422}.scenario-hint{color:#627186;font-size:13px}.workflow-signal{margin-top:16px;padding:14px;border:1px solid #b9d5e7;border-radius:12px;background:#f6fbff}.threadtop h2{overflow-wrap:anywhere}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #e49d28;outline-offset:3px}.queue li>*{min-width:0}.queue .stage,.threadtop>.stage{white-space:normal;overflow-wrap:anywhere;line-height:1.4;max-width:100%;display:inline-block}.queue .openlink{white-space:normal;max-width:180px}.queue b,.threadtop h2{overflow-wrap:anywhere}.queue-channels{display:block;font-size:12px;color:#087f74;font-weight:750;margin:4px 0}
+ /* Stable money/action columns: long cross-channel links must not shift amounts. */
+ @media(min-width:901px){.queue li{grid-template-columns:175px minmax(0,1fr) 7.5rem 10.5rem}.queue li>strong{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.queue .openlink{width:100%;max-width:none}}
+ @media(min-width:651px) and (max-width:900px){.queue li{grid-template-columns:150px minmax(0,1fr) 7.5rem}.queue li>strong{text-align:right;white-space:nowrap}.queue .openlink{grid-column:2 / 4;justify-self:end}}
+ @media(max-width:650px){.queue li>strong{text-align:left;font-variant-numeric:tabular-nums}}
+</style><nav><div class='brand'><div class='mark'>P</div><div><h1>PactSignal</h1><p>Promises become decisions. Receipts become truth.</p></div></div><b class='mode'>PUBLIC SHOWCASE · FICTIONAL DATA</b></nav><main><section style="background:#e4f4ed;border:1px solid #8dbdaf;border-radius:14px;padding:18px;margin-bottom:20px"><strong>Interactive judge challenge</strong><p>Two clients, separate orders, three message channels. Change events and inspect the result. This is a separate sandbox with its own starting conditions; its changes do not update the overview below.</p><a href="scenario.html">Open challenge →</a></section><p><a class="openlink" href="lab.html">Try the real model — edit a message →</a> · <a href="article.html">Project story</a></p><button id="back-view" hidden type="button" title="Restore the previous filter, search and scroll position" style="position:fixed;bottom:18px;right:24px;z-index:8;background:#173f49;color:white;border:2px solid #9bd6ca;border-radius:12px;padding:12px 18px;box-shadow:0 4px 18px #173f4933;cursor:pointer">← Back to previous view</button><p><a class="scenario-tab" href="handoff.html">Email + messaging · manager handover →</a> <details class="privacy"><summary>Language · Русский</summary><p><a href="scenario.html#ru" lang="ru">Интерактивный пример</a> · <a href="article.html#ru" lang="ru">Статья</a> · <a href="handoff-ru.html" lang="ru">Передача дел</a></p></details></p><section class='hero'><div class='ownerhead'><div class='eyebrow'>OWNER CONTROL ROOM · What needs your attention</div><h1>Know what is owed.<br>Know what is real.</h1><p>One decision queue for client commitments across email and messaging—without sending messages or moving money.</p></div><aside class='judgecard'><small>60-SECOND PRODUCT TOUR</small><h2>Follow the work, not just the money</h2><ol><li>Open a repair decision</li><li>Inspect the exact client message</li><li>Compare a promise with verified settlement evidence</li></ol><button id='tour'>Start with a repair decision →</button></aside></section><p class='demo-note'>Fictional scenarios · Precomputed by the real local analyzer. Explore messages and decision evidence; no live mailbox or bank connection.</p><p><a class='openlink' href='about.html'>About PactSignal &amp; product vision →</a></p><section class='scenario'><small>EXPLORE TWO FICTIONAL BUSINESSES</small><div class='scenario-tabs'><a href='index.html' >Photography studio</a><a href='repair.html' aria-current="page">Repair workshop</a></div><h2>Juniper Repair</h2><p>Repair workshop · estimates, parts and collection</p><div class='scenario-tabs'><a class='openlink' href='#case-3'>Estimate is not approval →</a><a class='openlink' href='#case-1'>Waiting on a supplier →</a><a class='openlink' href='#case-2'>Ready for collection →</a></div><p class='scenario-hint'>Same analyzer, different work. Open a case to see the original messages. All people, amounts and payment imports are invented examples.</p></section><div class='stats'><button class='metric active' data-filter='actionable'><small>NEEDS ACTION</small><b>3</b><em>Open the decision queue</em></button><button class='metric' data-filter='risk'><small>PAYMENT AT RISK</small><b>0</b><em>Accepted without receipt or failed route</em></button><button class='metric' data-filter='reply'><small>WAITING ON CLIENT</small><b>0</b><em>Delivered, no decision yet</em></button><button class='metric' data-filter='receipts'><small>CONFIRMED RECEIVED</small><b>60.00 EUR</b><em>Includes unallocated receipts · inspect proof</em></button></div><p class='portfolio'><b>Open agreed value:</b> — · currencies and lifecycle states never get blended into a misleading total</p><div class='sectionhead'><div><div class='eyebrow'>NEXT BEST ACTION</div><h3>Priority decisions</h3></div><p>Exceptions first. Evidence one click away.</p></div><ul class='queue'><li><span class='stage blue'>Work agreed</span><div><b>Omar Diaz &lt;omar@maplecafe.example&gt;</b><p>Check the supplier date and update the customer; completion is not yet confirmed. Financial status: agreed.</p></div><strong>180.00 EUR</strong><a class='openlink' href='#case-1'>Open case</a></li><li><span class='stage blue'>Work agreed</span><div><b>Bea Morgan &lt;bea@birchhome.example&gt;</b><p>Arrange collection and check any remaining payment separately. Financial status: agreed.</p></div><strong>75.00 EUR</strong><a class='openlink' href='#case-2'>Open case</a></li><li><span class='stage gray'>Terms unclear</span><div><b>Nora Wells &lt;nora@elmhouse.example&gt;</b><p>Send an estimate for approval; do not treat the repair as authorized. Financial status: open.</p></div><strong>—</strong><a class='openlink' href='#case-3'>Open case</a></li></ul><div class='warning'><b>Trust boundary:</b> an email that says “paid” is still not money. PactSignal changes the received total only after independent confirmation, and every result opens back to the exact correspondence.</div><details class='privacy'><summary>Privacy and control</summary><p>In the downloadable local application, mailbox analysis, SQLite storage and the bundled model run locally. This public overview is a precomputed fictional export; it does not import your mailbox. The core works with outbound network disabled. PactSignal never sends mail or moves money. Choose the mailbox folder or Gmail query you connect; remove the selected local database to delete the imported workspace. No telemetry is included in this build.</p></details><div id='results-start' aria-hidden='true' style='height:1px;overflow-anchor:none'></div><div class='toolbar' aria-label='Case filters'><button class='active' data-filter='actionable'>Needs action</button><button data-filter='all'>All cases</button><button data-filter='risk'>Payment risk</button><button data-filter='reply'>Waiting on client</button><button data-filter='payment'>Waiting for payment</button><button data-filter='active'>Active work</button><button data-filter='closed'>Closed</button><button data-filter='receipts'>Receipt evidence</button><input id='search' type='search' autocomplete='off' placeholder='Search client, subject or message…' aria-label='Search cases'></div><p class='resultcount' id='resultcount'></p><section id='cases'><details id='case-1' class='thread' data-received='false' data-group='active' data-stage='agreed' data-risk='false' data-actionable='true' data-search='omar diaz &lt;omar@maplecafe.example&gt; provider-183a9171b5caf4be10a9 agreed omar diaz &lt;omar@maplecafe.example&gt; grinder motor · rw-12 we approve your quote for 180 eur for the grinder repair. please proceed. juniper repair &lt;desk@juniperrepair.example&gt; re: grinder motor · rw-12 we are waiting for the replacement part. the supplier expects it on 23 october 2026. the grinder is still in our workshop.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Omar Diaz &lt;omar@maplecafe.example&gt;</h2><p>Grinder motor · RW-12</p><small>Last message · 2026-10-13T09:00:00Z · 2 messages</small></div><span class='stage blue'>Work agreed</span></summary><div class='moneygrid'><div><small>AGREED</small><b>180.00 EUR</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Check the supplier date and update the customer; completion is not yet confirmed. Financial status: agreed.</b></div><div class='workflow-signal'><b>Waiting for a part</b><blockquote>waiting for the replacement part</blockquote><small>Explicit phrase · 2026-10-13T09:00:00Z · owner review required</small></div><details class='conversation' open><summary>Open correspondence (2)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T09:00:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Omar Diaz &lt;omar@maplecafe.example&gt;</b><span>Grinder motor · RW-12</span></p><p class='messagebody'>We approve your quote for 180 EUR for the grinder repair. Please proceed.</p><p class='amount'>180.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve your quote for 180 EUR for the grinder repair.</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.3655,
+  &quot;margin_not_calibrated&quot;: 0.2213,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.16221
+    },
+    {
+      &quot;feature&quot;: &quot;word: your quote&quot;,
+      &quot;contribution&quot;: 0.11902
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.11902
+    },
+    {
+      &quot;feature&quot;: &quot;word: your&quot;,
+      &quot;contribution&quot;: 0.08032
+    },
+    {
+      &quot;feature&quot;: &quot;word: please&quot;,
+      &quot;contribution&quot;: 0.07729
+    }
+  ]
+}</pre><small>Body SHA-256 6f9f264a9921a6f42ba9ca82f88a23615a1cc22f4d8149ee89b1980d5f548003</small><br><small>Event-chain SHA-256 9e91aaa3570888a253bd766c8da6184f331bbcd48f98ee5c9d9fe6156343fe02</small></details></article><article class='event'><header><span>2026-10-13T09:00:00Z</span><strong>Admin</strong></header><p class='mailmeta'><b>Juniper Repair &lt;desk@juniperrepair.example&gt;</b><span>Re: Grinder motor · RW-12</span></p><p class='messagebody'>We are waiting for the replacement part. The supplier expects it on 23 October 2026. The grinder is still in our workshop.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>No financial evidence phrase extracted.</blockquote><p><b>Decision basis:</b> workflow_rule</p><pre>{
+  &quot;label&quot;: &quot;admin&quot;,
+  &quot;score_not_calibrated&quot;: 0.1565,
+  &quot;margin_not_calibrated&quot;: 0.0049,
+  &quot;runner_up&quot;: &quot;payment_failure&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: are&quot;,
+      &quot;contribution&quot;: 0.12102
+    },
+    {
+      &quot;feature&quot;: &quot;word: on&quot;,
+      &quot;contribution&quot;: 0.10607
+    },
+    {
+      &quot;feature&quot;: &quot;char: upp&quot;,
+      &quot;contribution&quot;: 0.01737
+    },
+    {
+      &quot;feature&quot;: &quot;char: supp&quot;,
+      &quot;contribution&quot;: 0.01737
+    },
+    {
+      &quot;feature&quot;: &quot;char: sup&quot;,
+      &quot;contribution&quot;: 0.01737
+    }
+  ]
+}</pre><small>Body SHA-256 77006cae9118de0aa98d3a035dca5967044f94737cba3353c27ec2c415cb6113</small><br><small>Event-chain SHA-256 23b405f0c3de3f1024eb4a62f881df1afc72138a99af18403b7c3414d92d99d9</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>No configured risk triggered; review still required.</li></ul><small>CHAIN HEAD 23b405f0c3de3f1024eb4a62f881df1afc72138a99af18403b7c3414d92d99d9</small></details></details><details id='case-2' class='thread' data-received='false' data-group='active' data-stage='agreed' data-risk='false' data-actionable='true' data-search='bea morgan &lt;bea@birchhome.example&gt; provider-43c7f35670b555f6fccd agreed bea morgan &lt;bea@birchhome.example&gt; vacuum repair · rw-13 we approve your quote for 75 eur for the vacuum repair. juniper repair &lt;desk@juniperrepair.example&gt; re: vacuum repair · rw-13 the vacuum is ready for collection. the repair passed our bench check. please arrange a pickup time; payment evidence is still outstanding.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Bea Morgan &lt;bea@birchhome.example&gt;</h2><p>Vacuum repair · RW-13</p><small>Last message · 2026-10-13T09:00:00Z · 2 messages</small></div><span class='stage blue'>Work agreed</span></summary><div class='moneygrid'><div><small>AGREED</small><b>75.00 EUR</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Arrange collection and check any remaining payment separately. Financial status: agreed.</b></div><div class='workflow-signal'><b>Ready for collection</b><blockquote>ready for collection</blockquote><small>Explicit phrase · 2026-10-13T09:00:00Z · owner review required</small></div><details class='conversation' open><summary>Open correspondence (2)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T09:00:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Bea Morgan &lt;bea@birchhome.example&gt;</b><span>Vacuum repair · RW-13</span></p><p class='messagebody'>We approve your quote for 75 EUR for the vacuum repair.</p><p class='amount'>75.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve your quote for 75 EUR for the vacuum repair</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.3979,
+  &quot;margin_not_calibrated&quot;: 0.2502,
+  &quot;runner_up&quot;: &quot;offer&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.16387
+    },
+    {
+      &quot;feature&quot;: &quot;word: your quote&quot;,
+      &quot;contribution&quot;: 0.12024
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.12024
+    },
+    {
+      &quot;feature&quot;: &quot;word: for 75&quot;,
+      &quot;contribution&quot;: 0.11188
+    },
+    {
+      &quot;feature&quot;: &quot;word: your&quot;,
+      &quot;contribution&quot;: 0.08114
+    }
+  ]
+}</pre><small>Body SHA-256 a9e8e16f4c25b27ed51942576adecdd5ee41478c3c4bedca413b0d3b8e6409a6</small><br><small>Event-chain SHA-256 176d2936ff4001f637fb1b9d37b665f41edf77b5e5e67553b14168dd9d7e8e03</small></details></article><article class='event'><header><span>2026-10-13T09:00:00Z</span><strong>Admin</strong></header><p class='mailmeta'><b>Juniper Repair &lt;desk@juniperrepair.example&gt;</b><span>Re: Vacuum repair · RW-13</span></p><p class='messagebody'>The vacuum is ready for collection. The repair passed our bench check. Please arrange a pickup time; payment evidence is still outstanding.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>Please arrange a pickup time; payment evidence is still outstanding</blockquote><p><b>Decision basis:</b> workflow_rule</p><pre>{
+  &quot;label&quot;: &quot;payment_failure&quot;,
+  &quot;score_not_calibrated&quot;: 0.2276,
+  &quot;margin_not_calibrated&quot;: 0.1026,
+  &quot;runner_up&quot;: &quot;delivery&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: still&quot;,
+      &quot;contribution&quot;: 0.15137
+    },
+    {
+      &quot;feature&quot;: &quot;word: is still&quot;,
+      &quot;contribution&quot;: 0.15137
+    },
+    {
+      &quot;feature&quot;: &quot;word: payment&quot;,
+      &quot;contribution&quot;: 0.12336
+    },
+    {
+      &quot;feature&quot;: &quot;word: the&quot;,
+      &quot;contribution&quot;: 0.04541
+    },
+    {
+      &quot;feature&quot;: &quot;char: sed&quot;,
+      &quot;contribution&quot;: 0.03015
+    }
+  ]
+}</pre><small>Body SHA-256 e637a2a929708d83102afd35419d4a244d3e0e9715b83c929a0bc951f8648857</small><br><small>Event-chain SHA-256 11a8f8001cf7ce74dc43be9dd84c0c9b46ecf70e8de57f361e70956684f2bcf5</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>No configured risk triggered; review still required.</li></ul><small>CHAIN HEAD 11a8f8001cf7ce74dc43be9dd84c0c9b46ecf70e8de57f361e70956684f2bcf5</small></details></details><details id='case-3' class='thread' data-received='false' data-group='active' data-stage='open' data-risk='false' data-actionable='true' data-search='nora wells &lt;nora@elmhouse.example&gt; provider-6e519ef4cf5cc9ff9345 open nora wells &lt;nora@elmhouse.example&gt; coffee machine · rw-11 the coffee machine loses pressure. please send a repair estimate before replacing anything. juniper repair &lt;desk@juniperrepair.example&gt; re: coffee machine · rw-11 diagnostics indicate a worn seal. we can offer a repair for 95 eur. no repair has been authorized yet.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Nora Wells &lt;nora@elmhouse.example&gt;</h2><p>Coffee machine · RW-11</p><small>Last message · 2026-10-13T09:00:00Z · 2 messages</small></div><span class='stage gray'>Terms unclear</span></summary><div class='moneygrid'><div><small>AGREED</small><b>—</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Send an estimate for approval; do not treat the repair as authorized. Financial status: open.</b></div><div class='workflow-signal'><b>Estimate needed</b><blockquote>Please send a repair estimate</blockquote><small>Explicit phrase · 2026-10-12T09:00:00Z · owner review required</small></div><details class='conversation' open><summary>Open correspondence (2)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T09:00:00Z</span><strong>Admin</strong></header><p class='mailmeta'><b>Nora Wells &lt;nora@elmhouse.example&gt;</b><span>Coffee machine · RW-11</span></p><p class='messagebody'>The coffee machine loses pressure. Please send a repair estimate before replacing anything.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>No financial evidence phrase extracted.</blockquote><p><b>Decision basis:</b> workflow_rule</p><pre>{
+  &quot;label&quot;: &quot;admin&quot;,
+  &quot;score_not_calibrated&quot;: 0.1688,
+  &quot;margin_not_calibrated&quot;: 0.0096,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: please&quot;,
+      &quot;contribution&quot;: 0.13072
+    },
+    {
+      &quot;feature&quot;: &quot;char: ate&quot;,
+      &quot;contribution&quot;: 0.01457
+    },
+    {
+      &quot;feature&quot;: &quot;char: mat&quot;,
+      &quot;contribution&quot;: 0.01454
+    },
+    {
+      &quot;feature&quot;: &quot;char: re &quot;,
+      &quot;contribution&quot;: 0.01306
+    },
+    {
+      &quot;feature&quot;: &quot;char: ate &quot;,
+      &quot;contribution&quot;: 0.01283
+    }
+  ]
+}</pre><small>Body SHA-256 5531b381499ad1f04314204c2a583f38f3e2f8314e57631c29671f4ba7a0105d</small><br><small>Event-chain SHA-256 59e53314953e305083ca7a75b3218b05c403a342ecbd25ad4c78b713dba6b9ba</small></details></article><article class='event'><header><span>2026-10-13T09:00:00Z</span><strong>Offer</strong></header><p class='mailmeta'><b>Juniper Repair &lt;desk@juniperrepair.example&gt;</b><span>Re: Coffee machine · RW-11</span></p><p class='messagebody'>Diagnostics indicate a worn seal. We can offer a repair for 95 EUR. No repair has been authorized yet.</p><p class='amount'>95.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We can offer a repair for 95 EUR.</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;offer&quot;,
+  &quot;score_not_calibrated&quot;: 0.2473,
+  &quot;margin_not_calibrated&quot;: 0.0855,
+  &quot;runner_up&quot;: &quot;payment_notice&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: can&quot;,
+      &quot;contribution&quot;: 0.17467
+    },
+    {
+      &quot;feature&quot;: &quot;word: offer&quot;,
+      &quot;contribution&quot;: 0.12884
+    },
+    {
+      &quot;feature&quot;: &quot;word: can offer&quot;,
+      &quot;contribution&quot;: 0.12884
+    },
+    {
+      &quot;feature&quot;: &quot;word: we can&quot;,
+      &quot;contribution&quot;: 0.1003
+    },
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.05115
+    }
+  ]
+}</pre><small>Body SHA-256 1e27598180d123ee60a2ba20e717306d587c005d4756579b26f74d4773667166</small><br><small>Event-chain SHA-256 198d807d14953d8c6d4062c9d40ac219a94bbc3ee7e1ef815f638a5d4e10eda0</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>No configured risk triggered; review still required.</li></ul><small>CHAIN HEAD 198d807d14953d8c6d4062c9d40ac219a94bbc3ee7e1ef815f638a5d4e10eda0</small></details></details><details id='case-4' class='thread' data-received='true' data-group='closed' data-stage='confirmed_received' data-risk='false' data-actionable='false' data-search='leo hart &lt;leo@ashhome.example&gt; provider-6e6ad5c3dafaad4a112c confirmed_received leo hart &lt;leo@ashhome.example&gt; lamp repair · rw-14 we approve your quote for 60 eur for the lamp repair. juniper repair &lt;desk@juniperrepair.example&gt; re: lamp repair · rw-14 the repaired lamp was handed over to you today. leo hart &lt;leo@ashhome.example&gt; re: lamp repair · rw-14 we accepted the final work. the lamp is back at home and working.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Leo Hart &lt;leo@ashhome.example&gt;</h2><p>Lamp repair · RW-14</p><small>Last message · 2026-10-14T09:00:00Z · 3 messages</small></div><span class='stage green'>Settlement confirmed</span></summary><div class='moneygrid'><div><small>AGREED</small><b>60.00 EUR</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>60.00 EUR</b></div></div><div class='action'><small>OWNER DECISION</small><b>Receipt linked by payer evidence. Review the match, then close or archive.</b></div><h3>Verified payment evidence</h3><details class='receiptproof'><summary>60.00 EUR settled · 2026-10-16T12:00:00Z · open payment proof</summary><p><b>Source:</b> Bank statement import &lt;read-only@bank-statement.local&gt; · Settled 60.00 EUR from Leo Hart</p><p class='messagebody'>Settlement completed: 60.00 EUR credited from Leo Hart. Reference: RW-14 lamp repair.</p><p><b>Independent confirmation:</b> provider_notice_authenticated</p><p><b>Reconciliation:</b> exact amount/currency + payer tokens hart, leo, repair + chronology · internal score 13</p><small>Evidence ID settlement:repair-bank-001 · Body SHA-256 6b1a9e8d2f9b4d640e3bb40a1ca008df6142d79529c6f5368a562a89319c4f6f</small></details><details class='conversation' open><summary>Open correspondence (3)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T09:00:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Leo Hart &lt;leo@ashhome.example&gt;</b><span>Lamp repair · RW-14</span></p><p class='messagebody'>We approve your quote for 60 EUR for the lamp repair.</p><p class='amount'>60.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve your quote for 60 EUR for the lamp repair</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.3706,
+  &quot;margin_not_calibrated&quot;: 0.2192,
+  &quot;runner_up&quot;: &quot;offer&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.18457
+    },
+    {
+      &quot;feature&quot;: &quot;word: your quote&quot;,
+      &quot;contribution&quot;: 0.13543
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.13543
+    },
+    {
+      &quot;feature&quot;: &quot;word: your&quot;,
+      &quot;contribution&quot;: 0.09139
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote&quot;,
+      &quot;contribution&quot;: 0.05363
+    }
+  ]
+}</pre><small>Body SHA-256 05df319bd4e5d1c6055a8e2388cb89c3e5f08b01ba688bec4b983fc83e8f1fac</small><br><small>Event-chain SHA-256 e909907e028b9ef5b99ed439f1157c2d1ff8ed6be0f2cb410a56dced960947e9</small></details></article><article class='event'><header><span>2026-10-13T09:00:00Z</span><strong>Delivery</strong></header><p class='mailmeta'><b>Juniper Repair &lt;desk@juniperrepair.example&gt;</b><span>Re: Lamp repair · RW-14</span></p><p class='messagebody'>The repaired lamp was handed over to you today.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>No financial evidence phrase extracted.</blockquote><p><b>Decision basis:</b> deterministic_guard · model/guard disagreement retained</p><pre>{
+  &quot;label&quot;: &quot;payment_failure&quot;,
+  &quot;score_not_calibrated&quot;: 0.203,
+  &quot;margin_not_calibrated&quot;: 0.0457,
+  &quot;runner_up&quot;: &quot;payment_notice&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: was&quot;,
+      &quot;contribution&quot;: 0.28473
+    },
+    {
+      &quot;feature&quot;: &quot;word: you&quot;,
+      &quot;contribution&quot;: 0.05744
+    },
+    {
+      &quot;feature&quot;: &quot;word: the&quot;,
+      &quot;contribution&quot;: 0.0498
+    },
+    {
+      &quot;feature&quot;: &quot;char: was &quot;,
+      &quot;contribution&quot;: 0.03242
+    },
+    {
+      &quot;feature&quot;: &quot;char: was&quot;,
+      &quot;contribution&quot;: 0.03242
+    }
+  ]
+}</pre><small>Body SHA-256 e8a1719667324a2e88a5fdb9b6f392df098c511d8c718a67fc243928a7be1452</small><br><small>Event-chain SHA-256 8b57e5307d9a4342a0018d41333e535121c8f9453fdb0b31f6f7321f9213d0fc</small></details></article><article class='event'><header><span>2026-10-14T09:00:00Z</span><strong>Acceptance</strong></header><p class='mailmeta'><b>Leo Hart &lt;leo@ashhome.example&gt;</b><span>Re: Lamp repair · RW-14</span></p><p class='messagebody'>We accepted the final work. The lamp is back at home and working.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We accepted the final work.</blockquote><p><b>Decision basis:</b> deterministic_guard · model/guard disagreement retained</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.2841,
+  &quot;margin_not_calibrated&quot;: 0.1044,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.20302
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.20302
+    },
+    {
+      &quot;feature&quot;: &quot;word: and&quot;,
+      &quot;contribution&quot;: 0.10163
+    },
+    {
+      &quot;feature&quot;: &quot;word: is&quot;,
+      &quot;contribution&quot;: 0.07395
+    },
+    {
+      &quot;feature&quot;: &quot;word: the&quot;,
+      &quot;contribution&quot;: 0.06956
+    }
+  ]
+}</pre><small>Body SHA-256 c1d8b05849892837ee62b4081ff671b4074742e24cb5581beb7bd23a50087ce3</small><br><small>Event-chain SHA-256 b14801230c7bd641560d80ffd987807bbfa6b2a2dffa43e53555741fd7da54e4</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>No configured risk triggered; review still required.</li></ul><small>CHAIN HEAD b14801230c7bd641560d80ffd987807bbfa6b2a2dffa43e53555741fd7da54e4</small></details></details></section><p><b>Integrity chain:</b> verified locally. It detects later edits inside this export; it does not authenticate a sender.</p><footer>Local-first · read-only mailbox analysis · no automatic replies or financial actions · public showcase contains fictional data only</footer></main><script>
+const cases=[...document.querySelectorAll('.thread')], buttons=[...document.querySelectorAll('[data-filter]')], search=document.querySelector('#search'), count=document.querySelector('#resultcount'), toolbar=document.querySelector('.toolbar'), back=document.querySelector('#back-view');let current='actionable';const views=[];
+function remember(){views.push({filter:current,query:search.value,open:cases.filter(c=>c.open).map(c=>c.id),y:window.scrollY});back.hidden=false}
+function matches(card,filter){if(filter==='all')return true;if(filter==='actionable')return card.dataset.actionable==='true';if(filter==='risk')return card.dataset.risk==='true';if(filter==='receipts')return card.dataset.received==='true';return card.dataset.group===filter}
+const motion=window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function revealResults(){const header=document.querySelector('nav');toolbar.style.scrollMarginTop=((header?header.getBoundingClientRect().height:88)+12)+'px';const marker=document.querySelector('#results-start');window.scrollTo({top:Math.max(0,window.scrollY+marker.getBoundingClientRect().top-(header?header.getBoundingClientRect().height:88)-12),behavior:'instant'})}
+function apply(filter=current){const area=document.querySelector('#cases');area.style.overflowAnchor='none';area.style.minHeight=window.innerHeight+'px';current=filter;const q=(search.value||'').trim().toLowerCase();let shown=0;cases.forEach(card=>{const visible=matches(card,filter)&&(!q||card.dataset.search.includes(q));card.hidden=!visible;if(visible)shown++});buttons.forEach(b=>{const selected=b.dataset.filter===filter;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected))});const label=buttons.find(b=>b.dataset.filter===filter&&!b.classList.contains('metric'));count.textContent=shown?`${label?label.textContent.trim():filter}: ${shown} case${shown===1?'':'s'} shown below`:'No cases match. Clear the search or choose All cases.'}
+function openCase(card){remember();search.value='';apply('all');card.open=true;const summary=card.querySelector('summary');summary.focus({preventScroll:true});card.scrollIntoView({behavior:motion,block:'start'})}
+back.addEventListener('click',()=>{const saved=views.pop();if(!saved)return;search.value=saved.query;cases.forEach(c=>c.open=saved.open.includes(c.id));apply(saved.filter);back.hidden=views.length===0;window.scrollTo({top:saved.y,behavior:'instant'})});
+cases.forEach(card=>card.querySelector('summary').addEventListener('click',()=>{if(!card.open)remember()}));
+document.querySelectorAll('.openlink').forEach(link=>link.addEventListener('click',event=>{const card=document.getElementById(link.getAttribute('href').slice(1));if(card){event.preventDefault();openCase(card)}}));
+buttons.forEach(button=>button.addEventListener('click',()=>{if(current!==button.dataset.filter)remember();cases.forEach(c=>c.open=false);apply(button.dataset.filter);revealResults()}));search.addEventListener('input',()=>apply());document.querySelector('#tour').addEventListener('click',()=>{remember();search.value='';apply('risk');if(!cases.some(c=>!c.hidden))apply('actionable');const first=cases.find(c=>!c.hidden);if(first){first.open=true;first.scrollIntoView({behavior:motion,block:'start'})}});count.setAttribute('role','status');count.setAttribute('aria-live','polite');apply();
+</script></html>

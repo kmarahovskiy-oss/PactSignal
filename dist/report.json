@@ -1,0 +1,2687 @@
+{
+  "schema": "pactsignal-analysis-v1",
+  "generated_at": "2026-10-17T07:51:22Z",
+  "model": {
+    "type": "local scikit-learn TF-IDF word+character LogisticRegression",
+    "fit_examples": 120,
+    "scores_calibrated": false
+  },
+  "summary": {
+    "messages": 34,
+    "threads": 13,
+    "evidence_sources": 1,
+    "needs_review": 0,
+    "actionable_threads": 12,
+    "at_risk_threads": 7,
+    "awaiting_reply_threads": 2,
+    "awaiting_payment_threads": 7,
+    "active_work_threads": 3,
+    "closed_threads": 1,
+    "unresolved_value_by_currency": {
+      "EUR": 1510.0,
+      "GBP": 180.0,
+      "USD": 560.0
+    },
+    "promised_by_currency": {
+      "EUR": 450.0
+    },
+    "confirmed_received_by_currency": {
+      "EUR": 660.0
+    }
+  },
+  "threads": [
+    {
+      "thread_id": "provider-063030838dab3e108ebe",
+      "stage": "delivered",
+      "agreed_by_currency": {
+        "USD": 240.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [],
+      "next_action": "Agree the additional scope and price before doing more work. Financial status: delivered.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "b9b8367bb761def5844a88bbf7dd1fcb70385cf80e451ce8a11ae66f53213903"
+      },
+      "timeline": [
+        {
+          "id": "fictional-studio-demo-mailbox-extra-0@example.test",
+          "thread_id": "provider-063030838dab3e108ebe",
+          "timestamp": "2026-10-12T09:00:00Z",
+          "sender": "Jonah Bell <jonah@mossdesign.example>",
+          "body": "We approve your quote for 240 USD for ten edited product photographs.",
+          "subject": "Product retouching \u00b7 MD-09",
+          "confirmation": null,
+          "text_sha256": "8bd22405da44056999dab9188efe1772b45586cfeee93b091159dbdbf1063f85",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.3534,
+            "margin_not_calibrated": 0.2256,
+            "runner_up": "offer",
+            "top_supporting_features": [
+              {
+                "feature": "word: for",
+                "contribution": 0.19423
+              },
+              {
+                "feature": "word: your quote",
+                "contribution": 0.14252
+              },
+              {
+                "feature": "word: quote for",
+                "contribution": 0.14252
+              },
+              {
+                "feature": "word: your",
+                "contribution": 0.09617
+              },
+              {
+                "feature": "word: quote",
+                "contribution": 0.05644
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve your quote"
+          },
+          "amounts": [
+            {
+              "currency": "USD",
+              "value": 240.0,
+              "raw": "240 USD",
+              "span": [
+                54,
+                61
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve your quote for 240 USD for ten edited product photographs",
+              "start": 28,
+              "end": 96
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "498ef42a7723ec41fe622b38d13f4eba2327e24e62bd80150cf0530d36ef0be3"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-extra-1@example.test",
+          "thread_id": "provider-063030838dab3e108ebe",
+          "timestamp": "2026-10-13T09:00:00Z",
+          "sender": "Northlight Studio <studio@northlight.example>",
+          "body": "The final ten photographs have been delivered for review.",
+          "subject": "Re: Product retouching \u00b7 MD-09",
+          "confirmation": null,
+          "text_sha256": "cd6c5ea914ca0bed935c86794200a136d3bcd821338d409cce724aaaf143e5df",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.5916,
+            "margin_not_calibrated": 0.512,
+            "runner_up": "agreement",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.16113
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.16113
+              },
+              {
+                "feature": "word: have been",
+                "contribution": 0.09877
+              },
+              {
+                "feature": "word: for review",
+                "contribution": 0.09877
+              },
+              {
+                "feature": "word: delivered for",
+                "contribution": 0.09877
+              }
+            ]
+          },
+          "status": "delivery",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "delivery",
+            "matched": "delivered"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "The final ten photographs have been delivered for review",
+              "start": 32,
+              "end": 88
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "498ef42a7723ec41fe622b38d13f4eba2327e24e62bd80150cf0530d36ef0be3",
+            "event_chain_sha256": "4e2217c8a9e47ed52dd4d1c9e26eb22772f899e3b95dcf063481a79ad5a2b7a1"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-extra-2@example.test",
+          "thread_id": "provider-063030838dab3e108ebe",
+          "timestamp": "2026-10-14T09:00:00Z",
+          "sender": "Jonah Bell <jonah@mossdesign.example>",
+          "body": "Could you also retouch twenty older images? Additional retouching is not yet approved. Please send a separate quote; keep the existing ten-image job unchanged.",
+          "subject": "Re: Product retouching \u00b7 MD-09",
+          "confirmation": null,
+          "text_sha256": "b10574f89e52f377ef2acde9b28230d91000f508957c1db8185e7477782d0ba6",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.1596,
+            "margin_not_calibrated": 0.0132,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: approved",
+                "contribution": 0.14802
+              },
+              {
+                "feature": "word: please",
+                "contribution": 0.08866
+              },
+              {
+                "feature": "word: quote",
+                "contribution": 0.05406
+              },
+              {
+                "feature": "char: age",
+                "contribution": 0.01666
+              },
+              {
+                "feature": "char:  a ",
+                "contribution": 0.01495
+              }
+            ]
+          },
+          "status": "admin",
+          "decision_basis": "workflow_rule",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": false,
+            "label": null,
+            "matched": null
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "Additional retouching is not yet approved.",
+              "start": 76,
+              "end": 118
+            },
+            {
+              "quote": "Please send a separate quote; keep the existing ten-image job unchanged",
+              "start": 119,
+              "end": 190
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "4e2217c8a9e47ed52dd4d1c9e26eb22772f899e3b95dcf063481a79ad5a2b7a1",
+            "event_chain_sha256": "b9b8367bb761def5844a88bbf7dd1fcb70385cf80e451ce8a11ae66f53213903"
+          }
+        }
+      ],
+      "workflow_signals": [
+        {
+          "kind": "scope_change",
+          "label": "Extra scope not approved",
+          "action": "Agree the additional scope and price before doing more work.",
+          "quote": "Additional retouching is not yet approved",
+          "event_id": "fictional-studio-demo-mailbox-extra-2@example.test",
+          "timestamp": "2026-10-14T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "thread_id": "provider-0633663b837c7aa3cb7f",
+      "stage": "accepted",
+      "agreed_by_currency": {
+        "EUR": 640.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [
+        "accepted_work_not_paid"
+      ],
+      "next_action": "Follow up with the named payment contact; approval is not a receipt. Financial status: accepted.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "43dca41090bd6b73cbde66989a9088f7bd73273edb481b540145d0918f902996"
+      },
+      "timeline": [
+        {
+          "id": "fictional-studio-demo-mailbox-corporate-0@example.test",
+          "thread_id": "provider-0633663b837c7aa3cb7f",
+          "timestamp": "2026-10-12T09:00:00Z",
+          "sender": "Iris Chen <iris@cedarconference.example>",
+          "body": "We approve your quote for 640 EUR for forty staff portraits. Please proceed.",
+          "subject": "Conference portraits \u00b7 CP-41",
+          "confirmation": null,
+          "text_sha256": "62de1e6e924977779b737694a12d0ab15ba298121b23fe7c7d06a108c6563174",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.3653,
+            "margin_not_calibrated": 0.2352,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: for",
+                "contribution": 0.16866
+              },
+              {
+                "feature": "word: your quote",
+                "contribution": 0.12375
+              },
+              {
+                "feature": "word: quote for",
+                "contribution": 0.12375
+              },
+              {
+                "feature": "word: your",
+                "contribution": 0.08351
+              },
+              {
+                "feature": "word: please",
+                "contribution": 0.08036
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve your quote"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 640.0,
+              "raw": "640 EUR",
+              "span": [
+                56,
+                63
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve your quote for 640 EUR for forty staff portraits.",
+              "start": 30,
+              "end": 90
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "c61ea82f5b4caa3382ec76c1365ba248230331e0eeb7eca6b482fd1b79258e68"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-corporate-1@example.test",
+          "thread_id": "provider-0633663b837c7aa3cb7f",
+          "timestamp": "2026-10-13T09:00:00Z",
+          "sender": "Northlight Studio <studio@northlight.example>",
+          "body": "The final forty portraits have been delivered for review.",
+          "subject": "Re: Conference portraits \u00b7 CP-41",
+          "confirmation": null,
+          "text_sha256": "eb3ce052a7bf24450e9758186d3b88e06f631fd9577433ca352e950b45858de5",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.5353,
+            "margin_not_calibrated": 0.4485,
+            "runner_up": "agreement",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.16113
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.16113
+              },
+              {
+                "feature": "word: have been",
+                "contribution": 0.09877
+              },
+              {
+                "feature": "word: for review",
+                "contribution": 0.09877
+              },
+              {
+                "feature": "word: delivered for",
+                "contribution": 0.09877
+              }
+            ]
+          },
+          "status": "delivery",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "delivery",
+            "matched": "delivered"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "The final forty portraits have been delivered for review",
+              "start": 34,
+              "end": 90
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "c61ea82f5b4caa3382ec76c1365ba248230331e0eeb7eca6b482fd1b79258e68",
+            "event_chain_sha256": "d61b5cee6485f32cf5e40cf63ac2688ad156840fa4967e0a78bbd1b8980f885f"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-corporate-2@example.test",
+          "thread_id": "provider-0633663b837c7aa3cb7f",
+          "timestamp": "2026-10-14T09:00:00Z",
+          "sender": "Iris Chen <iris@cedarconference.example>",
+          "body": "We accepted the final work. Our accounts payable handles the invoice; contact Alex at accounts@cedarconference.example. I approve the images, but I do not process transfers.",
+          "subject": "Re: Conference portraits \u00b7 CP-41",
+          "confirmation": null,
+          "text_sha256": "7a5039d655c4007c43c13caf5e9828b2bfc338411797345afc10fea1a726e55a",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.1712,
+            "margin_not_calibrated": 0.0117,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.17423
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.17423
+              },
+              {
+                "feature": "word: the",
+                "contribution": 0.07399
+              },
+              {
+                "feature": "char:  fi",
+                "contribution": 0.0177
+              },
+              {
+                "feature": "char: ts ",
+                "contribution": 0.01627
+              }
+            ]
+          },
+          "status": "acceptance",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": true,
+          "guard": {
+            "applied": true,
+            "label": "acceptance",
+            "matched": "accepted the final work"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We accepted the final work.",
+              "start": 34,
+              "end": 61
+            },
+            {
+              "quote": "Our accounts payable handles the invoice; contact Alex at accounts@cedarconference.example.",
+              "start": 62,
+              "end": 153
+            },
+            {
+              "quote": "I approve the images, but I do not process transfers",
+              "start": 154,
+              "end": 206
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "d61b5cee6485f32cf5e40cf63ac2688ad156840fa4967e0a78bbd1b8980f885f",
+            "event_chain_sha256": "43dca41090bd6b73cbde66989a9088f7bd73273edb481b540145d0918f902996"
+          }
+        }
+      ],
+      "workflow_signals": [
+        {
+          "kind": "payer_handoff",
+          "label": "Different payment contact",
+          "action": "Follow up with the named payment contact; approval is not a receipt.",
+          "quote": "accounts payable handles the invoice; contact Alex at accounts@cedarconference",
+          "event_id": "fictional-studio-demo-mailbox-corporate-2@example.test",
+          "timestamp": "2026-10-14T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "thread_id": "provider-31820ff13a0fe3d16383",
+      "stage": "confirmed_received",
+      "agreed_by_currency": {
+        "EUR": 450.0
+      },
+      "promised_by_currency": {
+        "EUR": 450.0
+      },
+      "promised_due_at": "2026-10-14",
+      "promise_overdue": true,
+      "confirmed_received_by_currency": {
+        "EUR": 450.0
+      },
+      "risks": [],
+      "next_action": "Receipt linked by payer evidence. Review the match, then close or archive.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "099a6edee958e8420184890e1ed05d68c521c4d493d629407703962995f8fa7e"
+      },
+      "timeline": [
+        {
+          "id": "atlas-agreement@example.test",
+          "thread_id": "provider-31820ff13a0fe3d16383",
+          "timestamp": "2026-10-12T09:15:00Z",
+          "sender": "Maya Ortiz <maya@atlascoffee.example>",
+          "body": "We approve your quote for 450 EUR for twelve edited menu photographs. Please proceed with the shoot on Tuesday.",
+          "subject": "Autumn menu product photography",
+          "confirmation": null,
+          "text_sha256": "8930ec6324d18df96ffaa0e88a0161b03ef2238ccc44fe7282ffd4b1602946eb",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.2912,
+            "margin_not_calibrated": 0.1175,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: for",
+                "contribution": 0.14823
+              },
+              {
+                "feature": "word: your quote",
+                "contribution": 0.10876
+              },
+              {
+                "feature": "word: quote for",
+                "contribution": 0.10876
+              },
+              {
+                "feature": "word: your",
+                "contribution": 0.07339
+              },
+              {
+                "feature": "word: please",
+                "contribution": 0.07063
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve your quote"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 450.0,
+              "raw": "450 EUR",
+              "span": [
+                59,
+                66
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve your quote for 450 EUR for twelve edited menu photographs.",
+              "start": 33,
+              "end": 102
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "1fb97b4552cde4553aea233550cfe801daf3809a1b7aa16816df38e6aa9963bd"
+          }
+        },
+        {
+          "id": "atlas-delivery@example.test",
+          "thread_id": "provider-31820ff13a0fe3d16383",
+          "timestamp": "2026-10-13T15:20:00Z",
+          "sender": "Northlight Studio <studio@northlight.example>",
+          "body": "The final twelve edited photographs have been delivered in the client gallery for review.",
+          "subject": "Re: Autumn menu product photography",
+          "confirmation": null,
+          "text_sha256": "5953555c607ef8ca5735ddced10df21b35082850a62ba120ac627328dfbcf907",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.4541,
+            "margin_not_calibrated": 0.333,
+            "runner_up": "payment_notice",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.155
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.155
+              },
+              {
+                "feature": "word: have been",
+                "contribution": 0.09501
+              },
+              {
+                "feature": "word: for review",
+                "contribution": 0.09501
+              },
+              {
+                "feature": "word: delivered",
+                "contribution": 0.09501
+              }
+            ]
+          },
+          "status": "delivery",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "delivery",
+            "matched": "delivered"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "The final twelve edited photographs have been delivered in the client gallery for review",
+              "start": 37,
+              "end": 125
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "1fb97b4552cde4553aea233550cfe801daf3809a1b7aa16816df38e6aa9963bd",
+            "event_chain_sha256": "e5e2749e86c7c2972de0b8ac193050041a3f86d2521375fe187c3ff0cc034bfc"
+          }
+        },
+        {
+          "id": "atlas-promise@example.test",
+          "thread_id": "provider-31820ff13a0fe3d16383",
+          "timestamp": "2026-10-13T17:05:00Z",
+          "sender": "Maya Ortiz <maya@atlascoffee.example>",
+          "body": "The photographs are accepted. We will pay 450 EUR tomorrow.",
+          "subject": "Re: Autumn menu product photography",
+          "confirmation": null,
+          "text_sha256": "96fcb1edcb5d8f85a0b9be857d2c0e908c39392f88709526ea7fbc613a405187",
+          "ml": {
+            "label": "payment_promise",
+            "score_not_calibrated": 0.4337,
+            "margin_not_calibrated": 0.3363,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: will",
+                "contribution": 0.13729
+              },
+              {
+                "feature": "word: will pay",
+                "contribution": 0.12611
+              },
+              {
+                "feature": "word: we will",
+                "contribution": 0.12611
+              },
+              {
+                "feature": "word: tomorrow",
+                "contribution": 0.12611
+              },
+              {
+                "feature": "word: pay",
+                "contribution": 0.12611
+              }
+            ]
+          },
+          "status": "payment_promise",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "payment_promise",
+            "matched": "will pay"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 450.0,
+              "raw": "450 EUR",
+              "span": [
+                79,
+                86
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "The photographs are accepted.",
+              "start": 37,
+              "end": 66
+            },
+            {
+              "quote": "We will pay 450 EUR tomorrow",
+              "start": 67,
+              "end": 95
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "e5e2749e86c7c2972de0b8ac193050041a3f86d2521375fe187c3ff0cc034bfc",
+            "event_chain_sha256": "099a6edee958e8420184890e1ed05d68c521c4d493d629407703962995f8fa7e"
+          }
+        }
+      ],
+      "linked_receipts": [
+        {
+          "event_id": "settlement:bank-001",
+          "source_thread_id": "settlement-source:bank-001",
+          "source_sender": "Bank statement import <read-only@bank-statement.local>",
+          "source_subject": "Settled 450.00 EUR from Maya Ortiz",
+          "source_body": "Settlement completed: 450.00 EUR credited from Maya Ortiz. Reference: Autumn menu photography.",
+          "source_text_sha256": "8901f9e9ebd6cd34b2466c90ee7abc6409fd3af6f79a34160f88415bd1103ff2",
+          "confirmation_source": "provider_notice_authenticated",
+          "match_score": 10,
+          "matching_name_tokens": [
+            "maya",
+            "ortiz"
+          ],
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 450.0,
+              "raw": "450.00 EUR",
+              "span": [
+                8,
+                18
+              ]
+            }
+          ],
+          "timestamp": "2026-10-14T09:02:00Z"
+        }
+      ],
+      "workflow_signals": []
+    },
+    {
+      "thread_id": "provider-3f07532b5e6ed73ded8a",
+      "stage": "payment_notice",
+      "agreed_by_currency": {
+        "EUR": 190.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [
+        "payment_notice_requires_independent_confirmation"
+      ],
+      "next_action": "Verify the money independently; a notice alone is not confirmed income.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "2c849e6f6f9f128158a3c13b708812aee455f4cdfe916964433cf47c15b2b7c8"
+      },
+      "timeline": [
+        {
+          "id": "fictional-studio-demo-mailbox-claim-0@example.test",
+          "thread_id": "provider-3f07532b5e6ed73ded8a",
+          "timestamp": "2026-10-12T09:00:00Z",
+          "sender": "Ava Brooks <ava@fernflorist.example>",
+          "body": "We approve your quote for 190 EUR for the catalogue photographs.",
+          "subject": "Spring catalogue \u00b7 FF-18",
+          "confirmation": null,
+          "text_sha256": "8a2db4189966faa1b364dfc8e736546cc4a5d1407187e18b6ba8e39af8210bda",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.376,
+            "margin_not_calibrated": 0.2206,
+            "runner_up": "offer",
+            "top_supporting_features": [
+              {
+                "feature": "word: for",
+                "contribution": 0.18457
+              },
+              {
+                "feature": "word: your quote",
+                "contribution": 0.13543
+              },
+              {
+                "feature": "word: quote for",
+                "contribution": 0.13543
+              },
+              {
+                "feature": "word: your",
+                "contribution": 0.09139
+              },
+              {
+                "feature": "word: quote",
+                "contribution": 0.05363
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve your quote"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 190.0,
+              "raw": "190 EUR",
+              "span": [
+                52,
+                59
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve your quote for 190 EUR for the catalogue photographs",
+              "start": 26,
+              "end": 89
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "4962162dffaf25ae5274e65e48b8683b1db35f55916e21aad4c62db8c49503ad"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-claim-1@example.test",
+          "thread_id": "provider-3f07532b5e6ed73ded8a",
+          "timestamp": "2026-10-13T09:00:00Z",
+          "sender": "Northlight Studio <studio@northlight.example>",
+          "body": "The final catalogue photographs have been delivered for review.",
+          "subject": "Re: Spring catalogue \u00b7 FF-18",
+          "confirmation": null,
+          "text_sha256": "8694f11384b32d5d198cc6968d38c88401cfa64ea18142d3aadc091d8208689e",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.57,
+            "margin_not_calibrated": 0.4861,
+            "runner_up": "agreement",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.16113
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.16113
+              },
+              {
+                "feature": "word: have been",
+                "contribution": 0.09877
+              },
+              {
+                "feature": "word: for review",
+                "contribution": 0.09877
+              },
+              {
+                "feature": "word: delivered for",
+                "contribution": 0.09877
+              }
+            ]
+          },
+          "status": "delivery",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "delivery",
+            "matched": "delivered"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "The final catalogue photographs have been delivered for review",
+              "start": 30,
+              "end": 92
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "4962162dffaf25ae5274e65e48b8683b1db35f55916e21aad4c62db8c49503ad",
+            "event_chain_sha256": "25a5c433344c19f17a9a48d901a41e1f1be4f924e593a6af89f9a5b6e75e9630"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-claim-2@example.test",
+          "thread_id": "provider-3f07532b5e6ed73ded8a",
+          "timestamp": "2026-10-14T09:00:00Z",
+          "sender": "Ava Brooks <ava@fernflorist.example>",
+          "body": "Payment completed: I marked the invoice paid in our system this morning. Please check your account before closing the job.",
+          "subject": "Re: Spring catalogue \u00b7 FF-18",
+          "confirmation": null,
+          "text_sha256": "c9334526ac9230ca17af29f1819af311fd072689c525ea3e3c9cb9a1ea49d0ee",
+          "ml": {
+            "label": "payment_notice",
+            "score_not_calibrated": 0.3067,
+            "margin_not_calibrated": 0.1884,
+            "runner_up": "admin",
+            "top_supporting_features": [
+              {
+                "feature": "word: completed",
+                "contribution": 0.15509
+              },
+              {
+                "feature": "word: payment completed",
+                "contribution": 0.14443
+              },
+              {
+                "feature": "word: paid",
+                "contribution": 0.12592
+              },
+              {
+                "feature": "word: your account",
+                "contribution": 0.11459
+              },
+              {
+                "feature": "word: account",
+                "contribution": 0.11459
+              }
+            ]
+          },
+          "status": "payment_notice",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "payment_notice",
+            "matched": "Payment completed"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "Payment completed: I marked the invoice paid in our system this morning.",
+              "start": 30,
+              "end": 102
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "25a5c433344c19f17a9a48d901a41e1f1be4f924e593a6af89f9a5b6e75e9630",
+            "event_chain_sha256": "2c849e6f6f9f128158a3c13b708812aee455f4cdfe916964433cf47c15b2b7c8"
+          }
+        }
+      ],
+      "workflow_signals": []
+    },
+    {
+      "thread_id": "provider-64e69b3155528ffe4347",
+      "stage": "agreed",
+      "agreed_by_currency": {
+        "EUR": 300.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [],
+      "next_action": "Use the latest stated date; check calendar availability before confirming. Financial status: agreed.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "f9298183e3444624d5afa7767c191bb7168618a7f606d3bcef2d0ecaff78a52b"
+      },
+      "timeline": [
+        {
+          "id": "fictional-studio-demo-mailbox-reschedule-0@example.test",
+          "thread_id": "provider-64e69b3155528ffe4347",
+          "timestamp": "2026-10-12T09:00:00Z",
+          "sender": "Olivia Reed <olivia@willowevents.example>",
+          "body": "We approve your quote for 300 EUR for the team shoot on 20 October 2026.",
+          "subject": "Team shoot \u00b7 WS-22",
+          "confirmation": null,
+          "text_sha256": "d556efd80a1ad57a5f03d609681704ea9acd2bee71d0a8ebda5e4808b4304025",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.333,
+            "margin_not_calibrated": 0.1869,
+            "runner_up": "offer",
+            "top_supporting_features": [
+              {
+                "feature": "word: for",
+                "contribution": 0.17084
+              },
+              {
+                "feature": "word: your quote",
+                "contribution": 0.12535
+              },
+              {
+                "feature": "word: quote for",
+                "contribution": 0.12535
+              },
+              {
+                "feature": "word: your",
+                "contribution": 0.08459
+              },
+              {
+                "feature": "word: quote",
+                "contribution": 0.04964
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve your quote"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 300.0,
+              "raw": "300 EUR",
+              "span": [
+                46,
+                53
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve your quote for 300 EUR for the team shoot on 20 October 2026",
+              "start": 20,
+              "end": 91
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "7537ba2adac158b41b7379a42434e4be56f63cd6f09dc0ddabc6ce522848deb3"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-reschedule-1@example.test",
+          "thread_id": "provider-64e69b3155528ffe4347",
+          "timestamp": "2026-10-13T09:00:00Z",
+          "sender": "Olivia Reed <olivia@willowevents.example>",
+          "body": "Please reschedule the shoot to 24 October 2026 at 10:00. Our earlier date no longer works.",
+          "subject": "Re: Team shoot \u00b7 WS-22",
+          "confirmation": null,
+          "text_sha256": "fb96cc6581b12deb52a3eba83d824b0b5f0178c5e3c17b914d7fc7ea160304e9",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.1713,
+            "margin_not_calibrated": 0.0022,
+            "runner_up": "admin",
+            "top_supporting_features": [
+              {
+                "feature": "word: at",
+                "contribution": 0.15282
+              },
+              {
+                "feature": "word: please",
+                "contribution": 0.1053
+              },
+              {
+                "feature": "word: to",
+                "contribution": 0.05411
+              },
+              {
+                "feature": "char: at ",
+                "contribution": 0.02117
+              },
+              {
+                "feature": "char:  at ",
+                "contribution": 0.02117
+              }
+            ]
+          },
+          "status": "admin",
+          "decision_basis": "workflow_rule",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": false,
+            "label": null,
+            "matched": null
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "7537ba2adac158b41b7379a42434e4be56f63cd6f09dc0ddabc6ce522848deb3",
+            "event_chain_sha256": "552b0d2f1a235ddf7646e42b54c4ffae2ccbb0dbaa541a55c7ef70b952c76fa1"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-reschedule-2@example.test",
+          "thread_id": "provider-64e69b3155528ffe4347",
+          "timestamp": "2026-10-14T09:00:00Z",
+          "sender": "Northlight Studio <studio@northlight.example>",
+          "body": "The deposit remains allocated to this booking. This message records our scheduling discussion; the payment evidence still needs checking.",
+          "subject": "Re: Team shoot \u00b7 WS-22",
+          "confirmation": null,
+          "text_sha256": "0c7b9afe4099992b9671834e81797c0df2dc8a44001978bb58db72e52e787876",
+          "ml": {
+            "label": "payment_failure",
+            "score_not_calibrated": 0.192,
+            "margin_not_calibrated": 0.0171,
+            "runner_up": "admin",
+            "top_supporting_features": [
+              {
+                "feature": "word: still",
+                "contribution": 0.14846
+              },
+              {
+                "feature": "word: payment",
+                "contribution": 0.12098
+              },
+              {
+                "feature": "word: the",
+                "contribution": 0.04453
+              },
+              {
+                "feature": "char: ds ",
+                "contribution": 0.02553
+              },
+              {
+                "feature": "char: vide",
+                "contribution": 0.01502
+              }
+            ]
+          },
+          "status": "admin",
+          "decision_basis": "workflow_rule",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": false,
+            "label": null,
+            "matched": null
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "This message records our scheduling discussion; the payment evidence still needs checking",
+              "start": 71,
+              "end": 160
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "552b0d2f1a235ddf7646e42b54c4ffae2ccbb0dbaa541a55c7ef70b952c76fa1",
+            "event_chain_sha256": "f9298183e3444624d5afa7767c191bb7168618a7f606d3bcef2d0ecaff78a52b"
+          }
+        }
+      ],
+      "workflow_signals": [
+        {
+          "kind": "rescheduled",
+          "label": "Date changed",
+          "action": "Use the latest stated date; check calendar availability before confirming.",
+          "quote": "reschedule the shoot to 24 October 2026 at 10:00",
+          "event_id": "fictional-studio-demo-mailbox-reschedule-1@example.test",
+          "timestamp": "2026-10-13T09:00:00Z"
+        },
+        {
+          "kind": "deposit_carried",
+          "label": "Deposit carried forward \u2014 stated",
+          "action": "Preserve the stated deposit allocation; verify it against payment evidence.",
+          "quote": "deposit remains allocated to this booking",
+          "event_id": "fictional-studio-demo-mailbox-reschedule-2@example.test",
+          "timestamp": "2026-10-14T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "thread_id": "provider-697dcfdcaa2e0cf0057c",
+      "stage": "accepted",
+      "agreed_by_currency": {
+        "USD": 320.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [
+        "accepted_work_not_paid"
+      ],
+      "next_action": "Accepted, but no payment is confirmed. Request payment status and a viable route before unpaid extensions.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "71ce899dfeefeacf59d5afa3960ece038a572e28449dd8a89f032c85ecd5cffe"
+      },
+      "timeline": [
+        {
+          "id": "ember-agreement@example.test",
+          "thread_id": "provider-697dcfdcaa2e0cf0057c",
+          "timestamp": "2026-10-12T11:30:00Z",
+          "sender": "Lena Park <lena@emberceramics.example>",
+          "body": "We accept your proposal for 320 USD for six edited launch photographs.",
+          "subject": "Six launch photographs",
+          "confirmation": null,
+          "text_sha256": "db13587eeb5f0bdb631283037890275dc7e265efa05ddc8be9a9e37479e315d4",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.5214,
+            "margin_not_calibrated": 0.4141,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: for",
+                "contribution": 0.1567
+              },
+              {
+                "feature": "word: your proposal",
+                "contribution": 0.14269
+              },
+              {
+                "feature": "word: we accept",
+                "contribution": 0.14269
+              },
+              {
+                "feature": "word: proposal for",
+                "contribution": 0.14269
+              },
+              {
+                "feature": "word: accept your",
+                "contribution": 0.14269
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "We accept"
+          },
+          "amounts": [
+            {
+              "currency": "USD",
+              "value": 320.0,
+              "raw": "320 USD",
+              "span": [
+                52,
+                59
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We accept your proposal for 320 USD for six edited launch photographs",
+              "start": 24,
+              "end": 93
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "0522d285f0fc1b57b53250a31905da56503388a913b86cf97388949034f30394"
+          }
+        },
+        {
+          "id": "ember-delivery@example.test",
+          "thread_id": "provider-697dcfdcaa2e0cf0057c",
+          "timestamp": "2026-10-14T13:10:00Z",
+          "sender": "Northlight Studio <studio@northlight.example>",
+          "body": "The final six photographs and web crops have been delivered for review.",
+          "subject": "Re: Six launch photographs",
+          "confirmation": null,
+          "text_sha256": "4b908bb47034dfdeaf5b42831f1036e55a2cc7a83928f2b1415061e5909ef254",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.6094,
+            "margin_not_calibrated": 0.5229,
+            "runner_up": "agreement",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.1571
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.1571
+              },
+              {
+                "feature": "word: have been",
+                "contribution": 0.0963
+              },
+              {
+                "feature": "word: for review",
+                "contribution": 0.0963
+              },
+              {
+                "feature": "word: delivered for",
+                "contribution": 0.0963
+              }
+            ]
+          },
+          "status": "delivery",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "delivery",
+            "matched": "delivered"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "The final six photographs and web crops have been delivered for review",
+              "start": 28,
+              "end": 98
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0522d285f0fc1b57b53250a31905da56503388a913b86cf97388949034f30394",
+            "event_chain_sha256": "c853e73a678354bc2136cdb67f6bc94385b598443494a91e5a855d4793db948e"
+          }
+        },
+        {
+          "id": "ember-accepted@example.test",
+          "thread_id": "provider-697dcfdcaa2e0cf0057c",
+          "timestamp": "2026-10-15T08:40:00Z",
+          "sender": "Lena Park <lena@emberceramics.example>",
+          "body": "We accepted the final work. Everything is ready for the launch.",
+          "subject": "Re: Six launch photographs",
+          "confirmation": null,
+          "text_sha256": "2fe3a9459caff82430ab221ef87dabdd87eff20ee1efe14017681d28009b5d99",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.272,
+            "margin_not_calibrated": 0.1043,
+            "runner_up": "offer",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.21753
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.21753
+              },
+              {
+                "feature": "word: is",
+                "contribution": 0.07923
+              },
+              {
+                "feature": "word: the",
+                "contribution": 0.07453
+              },
+              {
+                "feature": "char:  fi",
+                "contribution": 0.04004
+              }
+            ]
+          },
+          "status": "acceptance",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": true,
+          "guard": {
+            "applied": true,
+            "label": "acceptance",
+            "matched": "accepted the final work"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We accepted the final work.",
+              "start": 28,
+              "end": 55
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "c853e73a678354bc2136cdb67f6bc94385b598443494a91e5a855d4793db948e",
+            "event_chain_sha256": "71ce899dfeefeacf59d5afa3960ece038a572e28449dd8a89f032c85ecd5cffe"
+          }
+        }
+      ],
+      "workflow_signals": []
+    },
+    {
+      "thread_id": "provider-69b48a610117d519d3c3",
+      "stage": "accepted",
+      "agreed_by_currency": {
+        "EUR": 210.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [
+        "accepted_work_not_paid"
+      ],
+      "next_action": "Accepted, but no payment is confirmed. Request payment status and a viable route before unpaid extensions.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "63a4a7d19b6a183c046afe9615327e6e3ab750f90b3e6ded788a2efaed4e2af2"
+      },
+      "timeline": [
+        {
+          "id": "fictional-studio-demo-mailbox-repeat-a-0@example.test",
+          "thread_id": "provider-69b48a610117d519d3c3",
+          "timestamp": "2026-10-12T09:00:00Z",
+          "sender": "Tessa Green <tessa@marigold.example>",
+          "body": "We approve your quote for 210 EUR for order MG-101, the menu photographs.",
+          "subject": "Marigold \u00b7 MG-101 \u00b7 menu photographs",
+          "confirmation": null,
+          "text_sha256": "98ba3ecc8ec50b99deffa47e97d1cbaa7f8f7530a56532eeb3bf65eadf1bf64f",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.3867,
+            "margin_not_calibrated": 0.257,
+            "runner_up": "offer",
+            "top_supporting_features": [
+              {
+                "feature": "word: for",
+                "contribution": 0.19228
+              },
+              {
+                "feature": "word: your quote",
+                "contribution": 0.14108
+              },
+              {
+                "feature": "word: quote for",
+                "contribution": 0.14108
+              },
+              {
+                "feature": "word: your",
+                "contribution": 0.09521
+              },
+              {
+                "feature": "word: quote",
+                "contribution": 0.05587
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve your quote"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 210.0,
+              "raw": "210 EUR",
+              "span": [
+                64,
+                71
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve your quote for 210 EUR for order MG-101, the menu photographs",
+              "start": 38,
+              "end": 110
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "4425437b38af7a300c288f3b218d587fa2a70de604b74a45dc62313d07ae1430"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-repeat-a-1@example.test",
+          "thread_id": "provider-69b48a610117d519d3c3",
+          "timestamp": "2026-10-13T09:00:00Z",
+          "sender": "Northlight Studio <studio@northlight.example>",
+          "body": "The final menu photographs have been delivered for review.",
+          "subject": "Re: Marigold \u00b7 MG-101 \u00b7 menu photographs",
+          "confirmation": null,
+          "text_sha256": "e111832da4630336391d9a33979d4550af19ff4ea86e1ac8096e05fca8bc590a",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.583,
+            "margin_not_calibrated": 0.5011,
+            "runner_up": "agreement",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.16113
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.16113
+              },
+              {
+                "feature": "word: have been",
+                "contribution": 0.09877
+              },
+              {
+                "feature": "word: for review",
+                "contribution": 0.09877
+              },
+              {
+                "feature": "word: delivered for",
+                "contribution": 0.09877
+              }
+            ]
+          },
+          "status": "delivery",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "delivery",
+            "matched": "delivered"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "The final menu photographs have been delivered for review",
+              "start": 42,
+              "end": 99
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "4425437b38af7a300c288f3b218d587fa2a70de604b74a45dc62313d07ae1430",
+            "event_chain_sha256": "b5afb7fe3e60e1d0c9581c4e8b83a9e395408a3ba794843bd17d3d4e940e9f73"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-repeat-a-2@example.test",
+          "thread_id": "provider-69b48a610117d519d3c3",
+          "timestamp": "2026-10-14T09:00:00Z",
+          "sender": "Tessa Green <tessa@marigold.example>",
+          "body": "We accepted the final work for MG-101.",
+          "subject": "Re: Marigold \u00b7 MG-101 \u00b7 menu photographs",
+          "confirmation": null,
+          "text_sha256": "2e8ef6551cbe285ecdafce1c3ed34b1216543bb2f0a5aa44c71c93815731134c",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.2525,
+            "margin_not_calibrated": 0.0678,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.24229
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.24229
+              },
+              {
+                "feature": "word: the",
+                "contribution": 0.04903
+              },
+              {
+                "feature": "char:  fi",
+                "contribution": 0.04356
+              },
+              {
+                "feature": "char: nal ",
+                "contribution": 0.03695
+              }
+            ]
+          },
+          "status": "acceptance",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": true,
+          "guard": {
+            "applied": true,
+            "label": "acceptance",
+            "matched": "accepted the final work"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We accepted the final work for MG-101",
+              "start": 42,
+              "end": 79
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "b5afb7fe3e60e1d0c9581c4e8b83a9e395408a3ba794843bd17d3d4e940e9f73",
+            "event_chain_sha256": "63a4a7d19b6a183c046afe9615327e6e3ab750f90b3e6ded788a2efaed4e2af2"
+          }
+        }
+      ],
+      "workflow_signals": []
+    },
+    {
+      "thread_id": "provider-75d105da164f12fa662c",
+      "stage": "delivered",
+      "agreed_by_currency": {
+        "EUR": 260.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [],
+      "next_action": "Request explicit acceptance and payment status for the agreed work.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "f5f8fb02677809ffc642624f8d26a26e12756c4e61d82b9234b450b22a6f85b5"
+      },
+      "timeline": [
+        {
+          "id": "harbor-agreement@example.test",
+          "thread_id": "provider-75d105da164f12fa662c",
+          "timestamp": "2026-10-13T10:00:00Z",
+          "sender": "Theo Grant <theo@harborhomes.example>",
+          "body": "We approve your 260 EUR quote for the apartment listing package. Please proceed.",
+          "subject": "Apartment listing package",
+          "confirmation": null,
+          "text_sha256": "21abf93dd9fd2a278c37a0fd5a9a4fd32e142bb2567217860989f96450d683ed",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.3665,
+            "margin_not_calibrated": 0.2285,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: package",
+                "contribution": 0.21213
+              },
+              {
+                "feature": "word: quote for",
+                "contribution": 0.11556
+              },
+              {
+                "feature": "word: for",
+                "contribution": 0.09302
+              },
+              {
+                "feature": "word: your",
+                "contribution": 0.07798
+              },
+              {
+                "feature": "word: please",
+                "contribution": 0.07505
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve your 260 EUR quote"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 260.0,
+              "raw": "260 EUR",
+              "span": [
+                43,
+                50
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve your 260 EUR quote for the apartment listing package.",
+              "start": 27,
+              "end": 91
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "1a6dd7de46da53698930fcebdeca04d25db4175ecb0b4a68d28fb0f4f06a3a1f"
+          }
+        },
+        {
+          "id": "harbor-delivery@example.test",
+          "thread_id": "provider-75d105da164f12fa662c",
+          "timestamp": "2026-10-15T16:25:00Z",
+          "sender": "Northlight Studio <studio@northlight.example>",
+          "body": "The final listing gallery and print-resolution files have been delivered for review.",
+          "subject": "Re: Apartment listing package",
+          "confirmation": null,
+          "text_sha256": "9ecb5ab226297fd61570fe39f38b1b55bda408134fc85ecba4a3898533d1a778",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.5497,
+            "margin_not_calibrated": 0.4447,
+            "runner_up": "agreement",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.137
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.137
+              },
+              {
+                "feature": "word: have been",
+                "contribution": 0.08398
+              },
+              {
+                "feature": "word: for review",
+                "contribution": 0.08398
+              },
+              {
+                "feature": "word: files have",
+                "contribution": 0.08398
+              }
+            ]
+          },
+          "status": "delivery",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "delivery",
+            "matched": "delivered"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "The final listing gallery and print-resolution files have been delivered for review",
+              "start": 31,
+              "end": 114
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "1a6dd7de46da53698930fcebdeca04d25db4175ecb0b4a68d28fb0f4f06a3a1f",
+            "event_chain_sha256": "f5f8fb02677809ffc642624f8d26a26e12756c4e61d82b9234b450b22a6f85b5"
+          }
+        }
+      ],
+      "workflow_signals": []
+    },
+    {
+      "thread_id": "provider-94031aa4159efa3f5de1",
+      "stage": "accepted",
+      "agreed_by_currency": {
+        "EUR": 210.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [
+        "accepted_work_not_paid"
+      ],
+      "next_action": "Accepted, but no payment is confirmed. Request payment status and a viable route before unpaid extensions.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "9e0191ff088e01a6d197012bf4a3edb593fccf4bfbd4ba41ec5621c2fd46bc23"
+      },
+      "timeline": [
+        {
+          "id": "fictional-studio-demo-mailbox-repeat-b-0@example.test",
+          "thread_id": "provider-94031aa4159efa3f5de1",
+          "timestamp": "2026-10-12T09:00:00Z",
+          "sender": "Tessa Green <tessa@marigold.example>",
+          "body": "We approve your quote for 210 EUR for order MG-102, the staff portraits.",
+          "subject": "Marigold \u00b7 MG-102 \u00b7 staff portraits",
+          "confirmation": null,
+          "text_sha256": "ef8b09591df2f653d97a8f7ae1d284d79b6bf8723e4ce84a3fa2e9a724a3164f",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.378,
+            "margin_not_calibrated": 0.2535,
+            "runner_up": "offer",
+            "top_supporting_features": [
+              {
+                "feature": "word: for",
+                "contribution": 0.19228
+              },
+              {
+                "feature": "word: your quote",
+                "contribution": 0.14108
+              },
+              {
+                "feature": "word: quote for",
+                "contribution": 0.14108
+              },
+              {
+                "feature": "word: your",
+                "contribution": 0.09521
+              },
+              {
+                "feature": "word: quote",
+                "contribution": 0.05587
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve your quote"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 210.0,
+              "raw": "210 EUR",
+              "span": [
+                63,
+                70
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve your quote for 210 EUR for order MG-102, the staff portraits",
+              "start": 37,
+              "end": 108
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "d224e35b7abb6bdf4f3e6aabe983d8b76fbf2eae0c560e08bfe8e6a0e62e2f72"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-repeat-b-1@example.test",
+          "thread_id": "provider-94031aa4159efa3f5de1",
+          "timestamp": "2026-10-13T09:00:00Z",
+          "sender": "Northlight Studio <studio@northlight.example>",
+          "body": "The final staff portraits have been delivered for review.",
+          "subject": "Re: Marigold \u00b7 MG-102 \u00b7 staff portraits",
+          "confirmation": null,
+          "text_sha256": "433aee61d730a26b6ba1bcb1c11569818be559965a7be9fb5da8ba42a189e44a",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.5631,
+            "margin_not_calibrated": 0.476,
+            "runner_up": "agreement",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.16113
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.16113
+              },
+              {
+                "feature": "word: have been",
+                "contribution": 0.09877
+              },
+              {
+                "feature": "word: for review",
+                "contribution": 0.09877
+              },
+              {
+                "feature": "word: delivered for",
+                "contribution": 0.09877
+              }
+            ]
+          },
+          "status": "delivery",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "delivery",
+            "matched": "delivered"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "The final staff portraits have been delivered for review",
+              "start": 41,
+              "end": 97
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "d224e35b7abb6bdf4f3e6aabe983d8b76fbf2eae0c560e08bfe8e6a0e62e2f72",
+            "event_chain_sha256": "5720bf58c9ccb619c62f291aeb1daa45e0645471bfa493a76bc04538807cbcbd"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-repeat-b-2@example.test",
+          "thread_id": "provider-94031aa4159efa3f5de1",
+          "timestamp": "2026-10-14T09:00:00Z",
+          "sender": "Tessa Green <tessa@marigold.example>",
+          "body": "We accepted the final work for MG-102.",
+          "subject": "Re: Marigold \u00b7 MG-102 \u00b7 staff portraits",
+          "confirmation": null,
+          "text_sha256": "40b9dba18c765d3d48ffdf7179ba7b35422c4e0294d61dd12b1e8040d7e1c690",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.2505,
+            "margin_not_calibrated": 0.0651,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.24229
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.24229
+              },
+              {
+                "feature": "word: the",
+                "contribution": 0.04903
+              },
+              {
+                "feature": "char:  fi",
+                "contribution": 0.04119
+              },
+              {
+                "feature": "char: nal ",
+                "contribution": 0.03494
+              }
+            ]
+          },
+          "status": "acceptance",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": true,
+          "guard": {
+            "applied": true,
+            "label": "acceptance",
+            "matched": "accepted the final work"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We accepted the final work for MG-102",
+              "start": 41,
+              "end": 78
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "5720bf58c9ccb619c62f291aeb1daa45e0645471bfa493a76bc04538807cbcbd",
+            "event_chain_sha256": "9e0191ff088e01a6d197012bf4a3edb593fccf4bfbd4ba41ec5621c2fd46bc23"
+          }
+        }
+      ],
+      "workflow_signals": []
+    },
+    {
+      "thread_id": "provider-aa2d580100b4ca8f0148",
+      "stage": "payment_issue",
+      "agreed_by_currency": {
+        "GBP": 180.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [
+        "payment_failure_or_reversal_detected"
+      ],
+      "next_action": "Review the partial, mismatched, failed or reversed payment before closing this case.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "f37e11d90020259341334f97e42777efbd4a938fc81b52e2afd92227039c79d0"
+      },
+      "timeline": [
+        {
+          "id": "bluebird-agreement@example.test",
+          "thread_id": "provider-aa2d580100b4ca8f0148",
+          "timestamp": "2026-10-12T14:00:00Z",
+          "sender": "Sara Mills <sara@bluebirdbakery.example>",
+          "body": "We approve the 180 GBP quote for five holiday pastry photographs. Please proceed.",
+          "subject": "Holiday pastry photographs",
+          "confirmation": null,
+          "text_sha256": "d50a2edba10b6352928c90694bd9ffb585ae688e0ae4753e5eb843028213f9b4",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.2726,
+            "margin_not_calibrated": 0.091,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: quote for",
+                "contribution": 0.16343
+              },
+              {
+                "feature": "word: for",
+                "contribution": 0.13155
+              },
+              {
+                "feature": "word: please",
+                "contribution": 0.10614
+              },
+              {
+                "feature": "word: quote",
+                "contribution": 0.06472
+              },
+              {
+                "feature": "word: we",
+                "contribution": 0.06332
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve the 180 GBP quote"
+          },
+          "amounts": [
+            {
+              "currency": "GBP",
+              "value": 180.0,
+              "raw": "180 GBP",
+              "span": [
+                43,
+                50
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve the 180 GBP quote for five holiday pastry photographs.",
+              "start": 28,
+              "end": 93
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "bef88a4d909772ceb117d4eef186f097d4dfb65a0da3c126e2105be86aef4c47"
+          }
+        },
+        {
+          "id": "bluebird-delivery@example.test",
+          "thread_id": "provider-aa2d580100b4ca8f0148",
+          "timestamp": "2026-10-14T10:30:00Z",
+          "sender": "Northlight Studio <studio@northlight.example>",
+          "body": "The final five photographs have been delivered in the gallery.",
+          "subject": "Re: Holiday pastry photographs",
+          "confirmation": null,
+          "text_sha256": "86af5477f7dad76bccea9578e54b81b8d4a328d4e38bd8f514f574ce488e1303",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.5408,
+            "margin_not_calibrated": 0.4605,
+            "runner_up": "agreement",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.19421
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.19421
+              },
+              {
+                "feature": "word: have been",
+                "contribution": 0.11905
+              },
+              {
+                "feature": "word: delivered",
+                "contribution": 0.11905
+              },
+              {
+                "feature": "word: been delivered",
+                "contribution": 0.11905
+              }
+            ]
+          },
+          "status": "delivery",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "delivery",
+            "matched": "delivered"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "The final five photographs have been delivered in the gallery",
+              "start": 32,
+              "end": 93
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "bef88a4d909772ceb117d4eef186f097d4dfb65a0da3c126e2105be86aef4c47",
+            "event_chain_sha256": "74b5e556d4575eb5140ac4368c529d4d3e5e8f45502941e8f1a29330f59b6678"
+          }
+        },
+        {
+          "id": "bluebird-failure@example.test",
+          "thread_id": "provider-aa2d580100b4ca8f0148",
+          "timestamp": "2026-10-15T12:00:00Z",
+          "sender": "Sara Mills <sara@bluebirdbakery.example>",
+          "body": "The work is accepted, but the 180 GBP payout failed and was returned unpaid. I am checking another route.",
+          "subject": "Re: Holiday pastry photographs",
+          "confirmation": null,
+          "text_sha256": "d3217350e6192ecb2cdc1b91be2e682e5ceefdfae683e4b3ede9b5a03462a86f",
+          "ml": {
+            "label": "payment_failure",
+            "score_not_calibrated": 0.2888,
+            "margin_not_calibrated": 0.1208,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: was",
+                "contribution": 0.14785
+              },
+              {
+                "feature": "word: failed and",
+                "contribution": 0.13169
+              },
+              {
+                "feature": "word: failed",
+                "contribution": 0.13169
+              },
+              {
+                "feature": "word: payout",
+                "contribution": 0.08143
+              },
+              {
+                "feature": "word: the",
+                "contribution": 0.04378
+              }
+            ]
+          },
+          "status": "payment_failure",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "payment_failure",
+            "matched": "failed"
+          },
+          "amounts": [
+            {
+              "currency": "GBP",
+              "value": 180.0,
+              "raw": "180 GBP",
+              "span": [
+                62,
+                69
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "The work is accepted, but the 180 GBP payout failed and was returned unpaid.",
+              "start": 32,
+              "end": 108
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "74b5e556d4575eb5140ac4368c529d4d3e5e8f45502941e8f1a29330f59b6678",
+            "event_chain_sha256": "f37e11d90020259341334f97e42777efbd4a938fc81b52e2afd92227039c79d0"
+          }
+        }
+      ],
+      "workflow_signals": []
+    },
+    {
+      "thread_id": "provider-c4d24641061fe8411025",
+      "stage": "agreed",
+      "agreed_by_currency": {
+        "EUR": 280.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [],
+      "next_action": "Track delivery scope and preserve the agreed amount before starting extra work.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "543b2d2993428dce26885d12c7e337167d8a81e69a22a14f498ac77ede9a0e06"
+      },
+      "timeline": [
+        {
+          "id": "fictional-studio-demo-mailbox-restart-0@example.test",
+          "thread_id": "provider-c4d24641061fe8411025",
+          "timestamp": "2026-10-12T09:00:00Z",
+          "sender": "Eli Ward <eli@orchardbooks.example>",
+          "body": "We will not proceed with this booking. The launch has been postponed.",
+          "subject": "Book launch portraits \u00b7 OB-07",
+          "confirmation": null,
+          "text_sha256": "019a8494a1c668300c753f5196af994014adb6ff6ce6e651c73aafdf210e7dba",
+          "ml": {
+            "label": "rejection",
+            "score_not_calibrated": 0.3727,
+            "margin_not_calibrated": 0.2612,
+            "runner_up": "payment_notice",
+            "top_supporting_features": [
+              {
+                "feature": "word: not",
+                "contribution": 0.12195
+              },
+              {
+                "feature": "word: will not",
+                "contribution": 0.10293
+              },
+              {
+                "feature": "word: proceed",
+                "contribution": 0.10293
+              },
+              {
+                "feature": "word: not proceed",
+                "contribution": 0.10293
+              },
+              {
+                "feature": "word: with",
+                "contribution": 0.09213
+              }
+            ]
+          },
+          "status": "rejection",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "rejection",
+            "matched": "will not proceed"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "3acec436c7bbc89f98b75fb277ae1e178c798ed4fdb62095eeae10ed470a37eb"
+          }
+        },
+        {
+          "id": "fictional-studio-demo-mailbox-restart-1@example.test",
+          "thread_id": "provider-c4d24641061fe8411025",
+          "timestamp": "2026-10-13T09:00:00Z",
+          "sender": "Eli Ward <eli@orchardbooks.example>",
+          "body": "Our launch is back on. We approve your quote for 280 EUR. Please proceed with the portraits for 26 October 2026.",
+          "subject": "Re: Book launch portraits \u00b7 OB-07",
+          "confirmation": null,
+          "text_sha256": "9cf53a5c9ad10161846ba9a2a18b1ab11d4f56c92c146deb70594b9563ebf61b",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.3133,
+            "margin_not_calibrated": 0.1499,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: for",
+                "contribution": 0.14524
+              },
+              {
+                "feature": "word: your quote",
+                "contribution": 0.10657
+              },
+              {
+                "feature": "word: quote for",
+                "contribution": 0.10657
+              },
+              {
+                "feature": "word: your",
+                "contribution": 0.07191
+              },
+              {
+                "feature": "word: please",
+                "contribution": 0.06921
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve your quote"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 280.0,
+              "raw": "280 EUR",
+              "span": [
+                84,
+                91
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve your quote for 280 EUR.",
+              "start": 58,
+              "end": 92
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "3acec436c7bbc89f98b75fb277ae1e178c798ed4fdb62095eeae10ed470a37eb",
+            "event_chain_sha256": "543b2d2993428dce26885d12c7e337167d8a81e69a22a14f498ac77ede9a0e06"
+          }
+        }
+      ],
+      "workflow_signals": []
+    },
+    {
+      "thread_id": "provider-da779e811fd91c30e0a2",
+      "stage": "open",
+      "agreed_by_currency": {},
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [],
+      "next_action": "Prepare or decline the requested quote; do not count the budget ceiling as agreed revenue.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "fc875e7cbef3735f0af3408c7086bce4c7d07622ebf907be16135c08462d9682"
+      },
+      "timeline": [
+        {
+          "id": "lumen-inquiry@example.test",
+          "thread_id": "provider-da779e811fd91c30e0a2",
+          "timestamp": "2026-10-16T07:45:00Z",
+          "sender": "Noor Haddad <noor@lumenskincare.example>",
+          "body": "Our budget ceiling is 700 USD. Could you quote for ten product photographs and three vertical social crops?",
+          "subject": "Quote for skincare campaign",
+          "confirmation": null,
+          "text_sha256": "315d06ae256f0337bf172f615c47b12b95a689f433534d49bf8d1888d32c4600",
+          "ml": {
+            "label": "offer",
+            "score_not_calibrated": 0.3309,
+            "margin_not_calibrated": 0.1476,
+            "runner_up": "agreement",
+            "top_supporting_features": [
+              {
+                "feature": "word: our budget",
+                "contribution": 0.09359
+              },
+              {
+                "feature": "word: our",
+                "contribution": 0.09359
+              },
+              {
+                "feature": "word: budget",
+                "contribution": 0.09359
+              },
+              {
+                "feature": "word: you quote",
+                "contribution": 0.07871
+              },
+              {
+                "feature": "word: could you",
+                "contribution": 0.07871
+              }
+            ]
+          },
+          "status": "offer",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "offer",
+            "matched": "budget"
+          },
+          "amounts": [
+            {
+              "currency": "USD",
+              "value": 700.0,
+              "raw": "700 USD",
+              "span": [
+                51,
+                58
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "Quote for skincare campaign.",
+              "start": 0,
+              "end": 28
+            },
+            {
+              "quote": "Our budget ceiling is 700 USD.",
+              "start": 29,
+              "end": 59
+            },
+            {
+              "quote": "Could you quote for ten product photographs and three vertical social crops?",
+              "start": 60,
+              "end": 136
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "fc875e7cbef3735f0af3408c7086bce4c7d07622ebf907be16135c08462d9682"
+          }
+        }
+      ],
+      "workflow_signals": []
+    },
+    {
+      "thread_id": "settlement-source:bank-001",
+      "stage": "reconciled_receipt",
+      "agreed_by_currency": {},
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {
+        "EUR": 450.0
+      },
+      "risks": [],
+      "next_action": "Receipt linked to provider-31820ff13a0fe3d16383; review the payer match.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "71c9a09ccc10a3dbda81747fca0bb9e31e716a23f6b9ad0f085c7566f20a646d"
+      },
+      "timeline": [
+        {
+          "id": "settlement:bank-001",
+          "thread_id": "settlement-source:bank-001",
+          "timestamp": "2026-10-14T09:02:00Z",
+          "sender": "Bank statement import <read-only@bank-statement.local>",
+          "body": "Settlement completed: 450.00 EUR credited from Maya Ortiz. Reference: Autumn menu photography.",
+          "subject": "Settled 450.00 EUR from Maya Ortiz",
+          "confirmation": "provider_notice_authenticated",
+          "text_sha256": "8901f9e9ebd6cd34b2466c90ee7abc6409fd3af6f79a34160f88415bd1103ff2",
+          "ml": {
+            "label": "payment_notice",
+            "score_not_calibrated": 0.5412,
+            "margin_not_calibrated": 0.4585,
+            "runner_up": "delivery",
+            "top_supporting_features": [
+              {
+                "feature": "word: from",
+                "contribution": 0.24901
+              },
+              {
+                "feature": "word: completed",
+                "contribution": 0.16794
+              },
+              {
+                "feature": "word: reference",
+                "contribution": 0.13636
+              },
+              {
+                "feature": "word: credited",
+                "contribution": 0.12409
+              },
+              {
+                "feature": "word: eur from",
+                "contribution": 0.06561
+              }
+            ]
+          },
+          "status": "payment_notice",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "payment_notice",
+            "matched": "credited"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 450.0,
+              "raw": "450.00 EUR",
+              "span": [
+                8,
+                18
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "Settled 450.00 EUR from Maya Ortiz.",
+              "start": 0,
+              "end": 35
+            },
+            {
+              "quote": "Settlement completed: 450.00 EUR credited from Maya Ortiz.",
+              "start": 36,
+              "end": 94
+            }
+          ],
+          "confirmed_received_from_input": true,
+          "confirmation_source": "provider_notice_authenticated",
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "71c9a09ccc10a3dbda81747fca0bb9e31e716a23f6b9ad0f085c7566f20a646d"
+          }
+        }
+      ],
+      "workflow_signals": []
+    },
+    {
+      "thread_id": "settlement-source:bank-003",
+      "stage": "receipt_unallocated",
+      "agreed_by_currency": {},
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {
+        "EUR": 210.0
+      },
+      "risks": [
+        "authenticated_receipt_not_uniquely_linked"
+      ],
+      "next_action": "Receipt imported, but its order is ambiguous. Check the payment reference before allocating it; no client order is marked paid.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "3c9c1788ee593974b2bc3ffb2a248c4e660da36d8904a8e0977b73047207863a"
+      },
+      "timeline": [
+        {
+          "id": "settlement:bank-003",
+          "thread_id": "settlement-source:bank-003",
+          "timestamp": "2026-10-16T12:00:00Z",
+          "sender": "Bank statement import <read-only@bank-statement.local>",
+          "body": "Settlement completed: 210.00 EUR credited from Tessa Green. Reference: Transfer without order reference.",
+          "subject": "Settled 210.00 EUR from Tessa Green",
+          "confirmation": "provider_notice_authenticated",
+          "text_sha256": "e0307cedb3c0f528fcfad2019511398e4625bb683bcec66f7116309a569c2c4f",
+          "ml": {
+            "label": "payment_notice",
+            "score_not_calibrated": 0.552,
+            "margin_not_calibrated": 0.4769,
+            "runner_up": "payment_promise",
+            "top_supporting_features": [
+              {
+                "feature": "word: from",
+                "contribution": 0.2169
+              },
+              {
+                "feature": "word: reference",
+                "contribution": 0.2011
+              },
+              {
+                "feature": "word: completed",
+                "contribution": 0.14629
+              },
+              {
+                "feature": "word: credited",
+                "contribution": 0.10809
+              },
+              {
+                "feature": "word: eur from",
+                "contribution": 0.05715
+              }
+            ]
+          },
+          "status": "payment_notice",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "payment_notice",
+            "matched": "credited"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 210.0,
+              "raw": "210.00 EUR",
+              "span": [
+                8,
+                18
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "Settled 210.00 EUR from Tessa Green.",
+              "start": 0,
+              "end": 36
+            },
+            {
+              "quote": "Settlement completed: 210.00 EUR credited from Tessa Green.",
+              "start": 37,
+              "end": 96
+            },
+            {
+              "quote": "Reference: Transfer without order reference",
+              "start": 97,
+              "end": 140
+            }
+          ],
+          "confirmed_received_from_input": true,
+          "confirmation_source": "provider_notice_authenticated",
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "3c9c1788ee593974b2bc3ffb2a248c4e660da36d8904a8e0977b73047207863a"
+          }
+        }
+      ],
+      "workflow_signals": []
+    }
+  ],
+  "limits": [
+    "Synthetic training data; no real-world accuracy claim.",
+    "Classification does not authenticate messages, agreements or payments.",
+    "A payment enters confirmed totals only when the input explicitly carries an allowed confirmation assertion.",
+    "Review exact quoted evidence and the original source before acting."
+  ],
+  "integrity_check": {
+    "verified": true,
+    "failures": [],
+    "threads_checked": 14
+  },
+  "mailbox_sync": {
+    "source": "/workspace/sites/pactsignal-showcase/source/studio-demo-mailbox",
+    "scanned": 32,
+    "imported": 32,
+    "unchanged": 0,
+    "errors": []
+  },
+  "settlement_import": {
+    "source": "studio-demo-settlements.csv",
+    "sha256": "0c0cadf3a6f8de345ad4adb1f13778c1cc083a65b5ee32236326b29fd1d9d6a7",
+    "rows_imported": 2,
+    "rows_ignored_not_settled": 1,
+    "schema": "pactsignal-normalized-settlement-csv-v1",
+    "read_only": true
+  },
+  "fictional_scenario": "studio"
+}

@@ -1,0 +1,25 @@
+{
+ "description":"AI-authored challenge set, fixed after training; not independent human or real-world validation. No model/guard tuning on these results.",
+ "rows":[
+ ["offer","For a ten-image catalogue, our budget is EUR 300. Can you quote the job?"],
+ ["agreement","We approve your quote for ten images at EUR 300. Please proceed."],
+ ["delivery","The final images are attached. Please check the gallery."],
+ ["payment_promise","I will pay EUR 300 tomorrow morning."],
+ ["payment_notice","Payment completed: EUR 300. Please check your statement."],
+ ["payment_failure","The EUR 300 transfer failed and the money was returned unpaid."],
+ ["rejection","We chose another photographer and will not proceed."],
+ ["admin","Could you confirm which timezone the delivery deadline uses?"],
+ ["payment_promise","I have not sent anything yet. Payment is scheduled for Monday."],
+ ["payment_notice","I've sent the money from my banking app just now."],
+ ["agreement","Your proposal works for us. Let's go ahead with the ten-image package."],
+ ["offer","What would it cost to add twenty images? Do not start until I approve."],
+ ["delivery","Everything is ready in the shared folder; the download link is below."],
+ ["payment_failure","My bank rejected the transfer. You won't receive it today."],
+ ["rejection","We are cancelling the project, so please stop working."],
+ ["admin","Nina replaces Alex as the contact for this order."],
+ ["payment_promise","The invoice says paid, but this is a draft. I will pay next week."],
+ ["payment_failure","The work is approved, but the bank reversed the settlement."],
+ ["offer","If we pick your proposal, EUR 600 is the maximum available fee."],
+ ["admin","Keep the original scope. Ignore my earlier request for extra images."]
+ ]
+}

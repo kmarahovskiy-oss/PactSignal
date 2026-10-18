@@ -1,0 +1,920 @@
+<!doctype html><html lang='en'><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>PactSignal · owner control room</title><style>
+:root{--ink:#152437;--muted:#627186;--line:#d9e4e8;--panel:#fff;--canvas:#f3f7f6;--nav:#10283a;--aqua:#087f74;--aqua2:#14a394;--accent:#f36b3b;--shadow:0 18px 55px #18394a12}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 92% 4%,#c9eee8 0,transparent 24rem),var(--canvas);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}nav{background:linear-gradient(125deg,#071b29 0%,#0b3544 58%,#0a5b59 100%);color:white;padding:16px max(20px,5vw);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:4;box-shadow:0 12px 30px #071b2925}.brand{display:flex;gap:12px;align-items:center}.mark{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#25cfb6,#f9c76a);color:#082330;font-weight:950;font-size:21px;box-shadow:inset 0 1px #ffffff77}nav h1{margin:0;font-size:23px;letter-spacing:-.02em}nav p{margin:0;color:#cbe1e5;font-size:13px}.mode{padding:8px 11px;border:1px solid #ffffff35;border-radius:999px;background:#ffffff12;font-size:11px;letter-spacing:.08em}main{max-width:1180px;margin:0 auto;padding:38px 20px 24px}.hero{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(280px,.8fr);gap:24px;align-items:end;margin-bottom:24px}.eyebrow{color:var(--aqua);font-weight:900;letter-spacing:.1em;font-size:12px}.ownerhead h1{font-size:clamp(38px,5.5vw,66px);line-height:.98;letter-spacing:-.055em;margin:8px 0 16px;max-width:780px}.ownerhead p{font-size:18px;color:var(--muted);margin:0;max-width:730px}.judgecard{background:#0d2f3b;color:white;border-radius:22px;padding:21px;box-shadow:var(--shadow);border:1px solid #ffffff22}.judgecard small{color:#9fd9d2}.judgecard h2{font-size:20px;margin:5px 0 13px}.judgecard ol{margin:0;padding-left:19px;color:#d5e7ea}.judgecard li+li{margin-top:7px}.judgecard button{margin-top:16px;width:100%;border:0;border-radius:11px;padding:11px;background:#f5c970;color:#17313c;font-weight:850;cursor:pointer}.stats,.moneygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}button.metric,.moneygrid>div{background:#ffffffdd;backdrop-filter:blur(10px);border:1px solid var(--line);padding:17px;border-radius:16px;text-align:left;color:inherit}button.metric{cursor:pointer;box-shadow:0 8px 28px #253b4d0a;transition:transform .18s,border-color .18s,box-shadow .18s}button.metric:hover{transform:translateY(-2px)}button.metric.active{border-color:var(--aqua);box-shadow:0 0 0 3px #087f741b,0 12px 32px #087f7414}small{display:block;color:var(--muted);letter-spacing:.075em;font-weight:800;font-size:11px}.metric b,.stats b{display:block;font-size:27px;margin-top:4px;letter-spacing:-.035em}.metric em{display:block;font-style:normal;color:var(--aqua);font-weight:750;font-size:12px;margin-top:4px}.portfolio{padding:13px 16px;background:#ffffff88;border:1px solid var(--line);border-radius:12px}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-top:29px}.sectionhead h3{margin:0;font-size:21px}.sectionhead p{margin:0;color:var(--muted)}.queue{list-style:none;padding:0;margin:13px 0 30px}.queue li{display:grid;grid-template-columns:175px 1fr auto auto;align-items:center;gap:15px;background:white;border:1px solid var(--line);padding:16px;border-radius:15px;margin:9px 0;box-shadow:0 6px 22px #253b4d09;transition:transform .18s,box-shadow .18s}.queue li:hover{transform:translateX(3px);box-shadow:0 10px 30px #253b4d12}.queue p{margin:3px 0;color:var(--muted)}.openlink{color:var(--aqua);font-weight:850;text-decoration:none;padding:7px 9px;border-radius:8px}.openlink:hover{background:#e8f7f4}.warning{background:linear-gradient(90deg,#fff8dd,#fffdf3);border:1px solid #ecd177;padding:16px 18px;border-radius:14px;box-shadow:0 8px 22px #9c76220a}.privacy{margin-top:12px;padding:0 4px}.privacy summary{font-weight:800;color:#285b69}.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:28px 0 12px;padding:10px;background:#e8efef;border:1px solid #d7e2e4;border-radius:17px;position:sticky;top:82px;z-index:3}.toolbar button{border:1px solid transparent;background:transparent;border-radius:999px;padding:8px 12px;font-weight:780;cursor:pointer;color:#45596b}.toolbar button:hover{background:#fff}.toolbar button.active{background:#173f49;color:white;border-color:#173f49;box-shadow:0 5px 14px #173f4925}.toolbar input{margin-left:auto;min-width:260px;border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:white}.resultcount{color:var(--muted);margin:0 0 10px}.thread{display:block;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:21px;margin:16px 0;box-shadow:var(--shadow);scroll-margin-top:155px}.thread[hidden]{display:none}.thread>summary{list-style:none}.thread>summary::-webkit-details-marker{display:none}.threadtop,.event header{display:flex;justify-content:space-between;gap:15px;align-items:center}.threadtop h2{font-size:24px;letter-spacing:-.025em}h2{margin:0}h3{margin-top:26px}.stage,.pill{padding:7px 11px;border-radius:999px;font-weight:800;white-space:nowrap;font-size:12px}.green{background:#dff5eb;color:#08764d}.red{background:#fee2e2;color:#a42121}.amber{background:#fff0c7;color:#875d00}.blue{background:#dcecff;color:#155da0}.gray{background:#e8edf1;color:#586773}.action{padding:16px;border-radius:13px;background:linear-gradient(100deg,#eaf8f6,#f7fffd);border:1px solid #bfe4de}.conversation,.technical{margin-top:22px}.conversation>summary,.technical>summary{color:#136f84;font-weight:850;font-size:16px}.timeline{border-left:3px solid #b9ceda;margin:20px 0 0 8px;padding-left:23px}.event{border:1px solid var(--line);border-radius:13px;padding:16px;margin:0 0 15px;background:#fbfdfe}.event header strong{color:#0b786b}.mailmeta{display:grid;gap:2px}.mailmeta span{color:var(--muted)}.messagebody{white-space:pre-wrap;background:white;border-radius:9px;padding:12px;border:1px solid #e7edf1}blockquote{margin:10px 0;padding:10px 14px;background:#edf7f5;border-left:4px solid var(--aqua)}pre{white-space:pre-wrap;background:#122331;color:#dbe9ef;padding:12px;border-radius:8px;overflow:auto}.amount{font-size:18px;font-weight:850}details summary{cursor:pointer}button.confirm{margin:8px 0;padding:9px 12px;border:0;border-radius:8px;background:#0b786b;color:white;font-weight:800;cursor:pointer}footer{margin-top:35px;padding:25px 0;color:var(--muted);border-top:1px solid var(--line)}.demo-note{font-weight:750;color:#2f6570}@media(max-width:900px){.hero{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.queue li{grid-template-columns:150px 1fr auto}.queue .openlink{grid-column:2}}@media(max-width:650px){main{padding-top:25px}.stats,.moneygrid{grid-template-columns:1fr 1fr}.queue li{grid-template-columns:1fr}.queue .openlink{grid-column:auto}nav{position:static;align-items:flex-start;gap:10px;flex-direction:column}.toolbar{position:static}.toolbar input{margin-left:0;width:100%;min-width:0}.ownerhead h1{font-size:39px}.mode{font-size:10px}}
+.scenario{margin:24px 0;padding:22px;border:1px solid #bbd9d5;border-radius:18px;background:#fff}.scenario-tabs{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 18px}.scenario-tabs a{color:#16424b;text-decoration:none;border:1px solid #accac5;border-radius:10px;padding:10px 16px;font-weight:800}.scenario-tabs a[aria-current="page"]{background:#173f49;color:white}.scenario-tabs a:hover{box-shadow:0 0 0 3px #087f7422}.scenario-hint{color:#627186;font-size:13px}.workflow-signal{margin-top:16px;padding:14px;border:1px solid #b9d5e7;border-radius:12px;background:#f6fbff}.threadtop h2{overflow-wrap:anywhere}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #e49d28;outline-offset:3px}
+/* cross-channel card */
+.cc-agreement{padding:16px 20px;margin:16px 0;background:#edf8f5;border:1px solid #b9ded5;border-radius:14px}.cc-agreement h3{margin:0}.cc-agreement a{color:#087f74;font-weight:750}.cc-history{list-style:none;padding:0 0 0 18px;margin:20px 0;border-left:3px solid #b9ded5}.cc-event{position:relative;margin:0 0 18px;padding:16px;border:1px solid var(--line);border-radius:13px;background:#fcfefe;scroll-margin-top:210px}.cc-event:before{content:"";position:absolute;left:-26px;top:23px;width:11px;height:11px;border-radius:50%;background:#087f74;border:2px solid white}.cc-event-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.cc-channel{background:#e4f1f4;color:#164d5b;border-radius:7px;padding:3px 8px;font-size:12px;font-weight:800}.cc-event h4{margin:12px 0 5px;font-size:16px}.cc-event p{margin:0 0 12px}.cc-source summary{cursor:pointer;color:#087f74;font-weight:750}.cc-source blockquote{margin:12px 0 0;padding:12px 16px;background:#f0f4f6;border-left:3px solid #8caeb7;overflow-wrap:anywhere}.cc-note{font-size:13px;color:#627186}.cc-event:target{outline:3px solid #f3bd60}
+.queue li>*{min-width:0}.queue .stage,.threadtop>.stage{white-space:normal;overflow-wrap:anywhere;line-height:1.4;max-width:100%;display:inline-block}.queue .openlink{white-space:normal;max-width:180px}.queue b,.threadtop h2{overflow-wrap:anywhere}.queue-channels{display:block;font-size:12px;color:#087f74;font-weight:750;margin:4px 0}
+ /* Stable money/action columns: long cross-channel links must not shift amounts. */
+ @media(min-width:901px){.queue li{grid-template-columns:175px minmax(0,1fr) 7.5rem 10.5rem}.queue li>strong{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.queue .openlink{width:100%;max-width:none}}
+ @media(min-width:651px) and (max-width:900px){.queue li{grid-template-columns:150px minmax(0,1fr) 7.5rem}.queue li>strong{text-align:right;white-space:nowrap}.queue .openlink{grid-column:2 / 4;justify-self:end}}
+ @media(max-width:650px){.queue li>strong{text-align:left;font-variant-numeric:tabular-nums}}
+</style><nav><div class='brand'><div class='mark'>P</div><div><h1>PactSignal</h1><p>Promises become decisions. Receipts become truth.</p></div></div><b class='mode'>PUBLIC SHOWCASE · FICTIONAL DATA</b></nav><main><section style="background:#e4f4ed;border:1px solid #8dbdaf;border-radius:14px;padding:18px;margin-bottom:20px"><strong>Interactive judge challenge</strong><p>Two clients, separate orders, three message channels. Change events and inspect the result. This is a separate sandbox with its own starting conditions; its changes do not update the overview below.</p><a href="scenario.html">Open challenge →</a></section><p><a class="openlink" href="lab.html">Try the real model — edit a message →</a> · <a href="article.html">Project story</a></p><button id="back-view" hidden type="button" title="Restore the previous filter, search and scroll position" style="position:fixed;bottom:18px;right:24px;z-index:8;background:#173f49;color:white;border:2px solid #9bd6ca;border-radius:12px;padding:12px 18px;box-shadow:0 4px 18px #173f4933;cursor:pointer">← Back to previous view</button><p><a class="scenario-tab" href="handoff.html">Email + messaging · manager handover →</a> <details class="privacy"><summary>Language · Русский</summary><p><a href="scenario.html#ru" lang="ru">Интерактивный пример</a> · <a href="article.html#ru" lang="ru">Статья</a> · <a href="handoff-ru.html" lang="ru">Передача дел</a></p></details></p><section class='hero'><div class='ownerhead'><div class='eyebrow'>OWNER CONTROL ROOM · What needs your attention</div><h1>Know what is owed.<br>Know what is real.</h1><p>One decision queue for client commitments across email and messaging—without sending messages or moving money.</p></div><aside class='judgecard'><small>60-SECOND PRODUCT TOUR</small><h2>See the trust boundary working</h2><ol><li>Open payment risk</li><li>Inspect the exact client message</li><li>Compare a promise with verified settlement evidence</li></ol><button id='tour'>Start with payment risk →</button></aside></section><p class='demo-note'>Fictional scenarios · Precomputed by the real local analyzer. Explore messages and decision evidence; no live mailbox or bank connection.</p><p><a class='openlink' href='about.html'>About PactSignal &amp; product vision →</a></p><section class='scenario'><small>EXPLORE TWO FICTIONAL BUSINESSES</small><div class='scenario-tabs'><a href='index.html' aria-current="page">Photography studio</a><a href='repair.html' >Repair workshop</a></div><h2>Northlight Studio</h2><p>Photography · changes, approvals and payment evidence</p><div class='scenario-tabs'><a class='openlink' href='#case-5'>A date changes →</a><a class='openlink' href='#case-1'>Extra work is not approved →</a><a class='openlink' href='#case-14'>One payment, two possible orders →</a></div><p class='scenario-hint'>Same analyzer, different work. Open a case to see the original messages. All people, amounts and payment imports are invented examples.</p></section><div class='stats'><button class='metric active' data-filter='actionable'><small>NEEDS ACTION</small><b>13</b><em>Open the decision queue</em></button><button class='metric' data-filter='risk'><small>PAYMENT AT RISK</small><b>8</b><em>Accepted without receipt or failed route</em></button><button class='metric' data-filter='reply'><small>WAITING ON CLIENT</small><b>2</b><em>Delivered, no decision yet</em></button><button class='metric' data-filter='receipts'><small>CONFIRMED RECEIVED</small><b>660.00 EUR</b><em>Includes unallocated receipts · inspect proof</em></button></div><p class='portfolio'><b>Open agreed value:</b> 1,810.00 EUR · 180.00 GBP · 560.00 USD · currencies and lifecycle states never get blended into a misleading total</p><div class='sectionhead'><div><div class='eyebrow'>NEXT BEST ACTION</div><h3>Priority decisions</h3></div><p>Exceptions first. Evidence one click away.</p></div><ul class='queue'><li><span class='stage amber'>Cross-channel handover</span><div><b>Rowan · Catalogue photography</b><span class="queue-channels">Email · Telegram · WhatsApp · 5 events</span><p>Nina: verify the claimed payment. The extra work was withdrawn.</p></div><strong>300.00 EUR</strong><a class='openlink' href='#case-st24'>Open unified history →</a></li><li><span class='stage red'>Payment problem</span><div><b>Sara Mills &lt;sara@bluebirdbakery.example&gt;</b><p>Review the partial, mismatched, failed or reversed payment before closing this case.</p></div><strong>180.00 GBP</strong><a class='openlink' href='#case-10'>Open case</a></li><li><span class='stage amber'>Verify payment</span><div><b>Ava Brooks &lt;ava@fernflorist.example&gt;</b><p>Verify the money independently; a notice alone is not confirmed income.</p></div><strong>190.00 EUR</strong><a class='openlink' href='#case-4'>Open case</a></li><li><span class='stage blue'>Accepted · no receipt</span><div><b>Iris Chen &lt;iris@cedarconference.example&gt;</b><p>Follow up with the named payment contact; approval is not a receipt. Financial status: accepted.</p></div><strong>640.00 EUR</strong><a class='openlink' href='#case-2'>Open case</a></li><li><span class='stage blue'>Accepted · no receipt</span><div><b>Lena Park &lt;lena@emberceramics.example&gt;</b><p>Accepted, but no payment is confirmed. Request payment status and a viable route before unpaid extensions.</p></div><strong>320.00 USD</strong><a class='openlink' href='#case-6'>Open case</a></li><li><span class='stage blue'>Accepted · no receipt</span><div><b>Tessa Green &lt;tessa@marigold.example&gt;</b><p>Accepted, but no payment is confirmed. Request payment status and a viable route before unpaid extensions.</p></div><strong>210.00 EUR</strong><a class='openlink' href='#case-7'>Open case</a></li><li><span class='stage blue'>Accepted · no receipt</span><div><b>Tessa Green &lt;tessa@marigold.example&gt;</b><p>Accepted, but no payment is confirmed. Request payment status and a viable route before unpaid extensions.</p></div><strong>210.00 EUR</strong><a class='openlink' href='#case-9'>Open case</a></li><li><span class='stage blue'>Awaiting acceptance</span><div><b>Jonah Bell &lt;jonah@mossdesign.example&gt;</b><p>Agree the additional scope and price before doing more work. Financial status: delivered.</p></div><strong>240.00 USD</strong><a class='openlink' href='#case-1'>Open case</a></li><li><span class='stage blue'>Awaiting acceptance</span><div><b>Theo Grant &lt;theo@harborhomes.example&gt;</b><p>Request explicit acceptance and payment status for the agreed work.</p></div><strong>260.00 EUR</strong><a class='openlink' href='#case-8'>Open case</a></li><li><span class='stage blue'>Work agreed</span><div><b>Olivia Reed &lt;olivia@willowevents.example&gt;</b><p>Use the latest stated date; check calendar availability before confirming. Financial status: agreed.</p></div><strong>300.00 EUR</strong><a class='openlink' href='#case-5'>Open case</a></li><li><span class='stage blue'>Work agreed</span><div><b>Eli Ward &lt;eli@orchardbooks.example&gt;</b><p>Track delivery scope and preserve the agreed amount before starting extra work.</p></div><strong>280.00 EUR</strong><a class='openlink' href='#case-11'>Open case</a></li><li><span class='stage gray'>Terms unclear</span><div><b>Noor Haddad &lt;noor@lumenskincare.example&gt;</b><p>Prepare or decline the requested quote; do not count the budget ceiling as agreed revenue.</p></div><strong>—</strong><a class='openlink' href='#case-12'>Open case</a></li><li><span class='stage amber'>Receipt needs allocation</span><div><b>settlement-source:bank-003</b><p>Receipt imported, but its order is ambiguous. Check the payment reference before allocating it; no client order is marked paid.</p></div><strong>—</strong><a class='openlink' href='#case-14'>Open case</a></li></ul><div class='warning'><b>Trust boundary:</b> an email that says “paid” is still not money. PactSignal changes the received total only after independent confirmation, and every result opens back to the exact correspondence.</div><details class='privacy'><summary>Privacy and control</summary><p>In the downloadable local application, mailbox analysis, SQLite storage and the bundled model run locally. This public overview is a precomputed fictional export; it does not import your mailbox. The core works with outbound network disabled. PactSignal never sends mail or moves money. Choose the mailbox folder or Gmail query you connect; remove the selected local database to delete the imported workspace. No telemetry is included in this build.</p></details><div id='results-start' aria-hidden='true' style='height:1px;overflow-anchor:none'></div><div class='toolbar' aria-label='Case filters'><button class='active' data-filter='actionable'>Needs action</button><button data-filter='all'>All cases</button><button data-filter='risk'>Payment risk</button><button data-filter='reply'>Waiting on client</button><button data-filter='payment'>Waiting for payment</button><button data-filter='active'>Active work</button><button data-filter='closed'>Closed</button><button data-filter='receipts'>Receipt evidence</button><input id='search' type='search' autocomplete='off' placeholder='Search client, subject or message…' aria-label='Search cases'></div><p class='resultcount' id='resultcount'></p><section id='cases'><!-- cross-channel-case:start --><details id="case-st24" class="thread" data-received="false" data-group="payment" data-stage="payment_notice" data-risk="true" data-actionable="true" data-search="rowan st-24 nina alex catalogue handover email client · rowan for order st-24, i approve the 10-image package for eur 300, delivery friday. telegram client · rowan regarding st-24: could we have 20 more images and delivery thursday instead? please quote first; the extra work is not approved. internal handover team lead alex is unavailable. nina takes responsibility for st-24. please review the email agreement and pending chat request before responding. whatsapp client · rowan st-24: i sent the eur 300 payment. can you check? email client · rowan for st-24, keep the original 10 images and friday delivery. do not add the 20 images.">
+<summary class="threadtop"><div><small>CLIENT CASE · ST-24</small><h2>Rowan · Catalogue photography</h2><p>Email · Telegram · WhatsApp · Internal handover</p><small>Owner: Nina · Latest update 12:00 · 5 linked events</small></div><span class="stage amber">Verify payment</span></summary>
+<div class="moneygrid"><div><small>AGREED</small><b>300.00 EUR</b></div><div><small>CLIENT SAYS SENT</small><b>300.00 EUR</b></div><div><small>CONFIRMED RECEIVED</small><b>0.00 EUR</b></div><div><small>RESPONSIBLE</small><b>Nina</b></div></div>
+<div class="action"><small>NEXT ACTION · NINA</small><b>Check independent receipt evidence before marking the payment received.</b></div>
+<div class="cc-agreement"><h3>Current agreement</h3><p><strong>10 images · EUR 300 · Friday delivery</strong></p><p>The extra 20 images and Thursday delivery were proposed, never approved, then withdrawn. Nina now owns the case.</p><p><a href="#st24-event-1">Original agreement ↓</a> · <a href="#st24-event-5">Latest scope confirmation ↓</a></p></div>
+<details class="conversation" open><summary>Unified history · 5 events · oldest first</summary><ol class="cc-history"><li class="cc-event" id="st24-event-1"><div class="cc-event-head"><time>09:00</time><span class="cc-channel">Email</span><b>Client · Rowan</b></div><h4>Agreement confirmed</h4><p>10 images · EUR 300 · Friday. This is the agreed scope.</p><details class="cc-source"><summary>Read source message</summary><blockquote>For order ST-24, I approve the 10-image package for EUR 300, delivery Friday.</blockquote></details></li><li class="cc-event" id="st24-event-2"><div class="cc-event-head"><time>10:15</time><span class="cc-channel">Telegram</span><b>Client · Rowan</b></div><h4>Change proposed — not approved</h4><p>20 extra images and Thursday delivery are a request only. Original terms remain in force.</p><details class="cc-source"><summary>Read source message</summary><blockquote>Regarding ST-24: could we have 20 more images and delivery Thursday instead? Please quote first; the extra work is not approved.</blockquote></details></li><li class="cc-event" id="st24-event-3"><div class="cc-event-head"><time>11:00</time><span class="cc-channel">Internal handover</span><b>Team lead</b></div><h4>Responsibility transferred</h4><p>Nina replaces Alex. The agreement stays unchanged; the pending request must be reviewed.</p><details class="cc-source"><summary>Read source message</summary><blockquote>Alex is unavailable. Nina takes responsibility for ST-24. Please review the email agreement and pending chat request before responding.</blockquote></details></li><li class="cc-event" id="st24-event-4"><div class="cc-event-head"><time>11:20</time><span class="cc-channel">WhatsApp</span><b>Client · Rowan</b></div><h4>Payment claimed — not confirmed</h4><p>Client says EUR 300 was sent. No independent receipt is present; confirmed received remains EUR 0.</p><details class="cc-source"><summary>Read source message</summary><blockquote>ST-24: I sent the EUR 300 payment. Can you check?</blockquote></details></li><li class="cc-event" id="st24-event-5"><div class="cc-event-head"><time>12:00</time><span class="cc-channel">Email</span><b>Client · Rowan</b></div><h4>Extra work withdrawn</h4><p>The client keeps the original 10 images and Friday delivery. No extra work is authorised.</p><details class="cc-source"><summary>Read source message</summary><blockquote>For ST-24, keep the original 10 images and Friday delivery. Do not add the 20 images.</blockquote></details></li></ol></details>
+<p class="cc-note"><strong>Why these messages belong together:</strong> explicit case reference ST-24 and a predefined demo identity mapping. Names alone are not used to merge conversations. Fictional example; no live messenger connection.</p></details><!-- cross-channel-case:end --><details id='case-1' class='thread' data-received='false' data-group='reply' data-stage='delivered' data-risk='false' data-actionable='true' data-search='jonah bell &lt;jonah@mossdesign.example&gt; provider-063030838dab3e108ebe delivered jonah bell &lt;jonah@mossdesign.example&gt; product retouching · md-09 we approve your quote for 240 usd for ten edited product photographs. northlight studio &lt;studio@northlight.example&gt; re: product retouching · md-09 the final ten photographs have been delivered for review. jonah bell &lt;jonah@mossdesign.example&gt; re: product retouching · md-09 could you also retouch twenty older images? additional retouching is not yet approved. please send a separate quote; keep the existing ten-image job unchanged.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Jonah Bell &lt;jonah@mossdesign.example&gt;</h2><p>Product retouching · MD-09</p><small>Last message · 2026-10-14T09:00:00Z · 3 messages</small></div><span class='stage blue'>Awaiting acceptance</span></summary><div class='moneygrid'><div><small>AGREED</small><b>240.00 USD</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Agree the additional scope and price before doing more work. Financial status: delivered.</b></div><div class='workflow-signal'><b>Extra scope not approved</b><blockquote>Additional retouching is not yet approved</blockquote><small>Explicit phrase · 2026-10-14T09:00:00Z · owner review required</small></div><details class='conversation' open><summary>Open correspondence (3)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T09:00:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Jonah Bell &lt;jonah@mossdesign.example&gt;</b><span>Product retouching · MD-09</span></p><p class='messagebody'>We approve your quote for 240 USD for ten edited product photographs.</p><p class='amount'>240.00 USD</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve your quote for 240 USD for ten edited product photographs</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.3534,
+  &quot;margin_not_calibrated&quot;: 0.2256,
+  &quot;runner_up&quot;: &quot;offer&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.19423
+    },
+    {
+      &quot;feature&quot;: &quot;word: your quote&quot;,
+      &quot;contribution&quot;: 0.14252
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.14252
+    },
+    {
+      &quot;feature&quot;: &quot;word: your&quot;,
+      &quot;contribution&quot;: 0.09617
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote&quot;,
+      &quot;contribution&quot;: 0.05644
+    }
+  ]
+}</pre><small>Body SHA-256 8bd22405da44056999dab9188efe1772b45586cfeee93b091159dbdbf1063f85</small><br><small>Event-chain SHA-256 498ef42a7723ec41fe622b38d13f4eba2327e24e62bd80150cf0530d36ef0be3</small></details></article><article class='event'><header><span>2026-10-13T09:00:00Z</span><strong>Delivery</strong></header><p class='mailmeta'><b>Northlight Studio &lt;studio@northlight.example&gt;</b><span>Re: Product retouching · MD-09</span></p><p class='messagebody'>The final ten photographs have been delivered for review.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>The final ten photographs have been delivered for review</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.5916,
+  &quot;margin_not_calibrated&quot;: 0.512,
+  &quot;runner_up&quot;: &quot;agreement&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.16113
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.16113
+    },
+    {
+      &quot;feature&quot;: &quot;word: have been&quot;,
+      &quot;contribution&quot;: 0.09877
+    },
+    {
+      &quot;feature&quot;: &quot;word: for review&quot;,
+      &quot;contribution&quot;: 0.09877
+    },
+    {
+      &quot;feature&quot;: &quot;word: delivered for&quot;,
+      &quot;contribution&quot;: 0.09877
+    }
+  ]
+}</pre><small>Body SHA-256 cd6c5ea914ca0bed935c86794200a136d3bcd821338d409cce724aaaf143e5df</small><br><small>Event-chain SHA-256 4e2217c8a9e47ed52dd4d1c9e26eb22772f899e3b95dcf063481a79ad5a2b7a1</small></details></article><article class='event'><header><span>2026-10-14T09:00:00Z</span><strong>Admin</strong></header><p class='mailmeta'><b>Jonah Bell &lt;jonah@mossdesign.example&gt;</b><span>Re: Product retouching · MD-09</span></p><p class='messagebody'>Could you also retouch twenty older images? Additional retouching is not yet approved. Please send a separate quote; keep the existing ten-image job unchanged.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>Additional retouching is not yet approved.</blockquote><blockquote>Please send a separate quote; keep the existing ten-image job unchanged</blockquote><p><b>Decision basis:</b> workflow_rule</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.1596,
+  &quot;margin_not_calibrated&quot;: 0.0132,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: approved&quot;,
+      &quot;contribution&quot;: 0.14802
+    },
+    {
+      &quot;feature&quot;: &quot;word: please&quot;,
+      &quot;contribution&quot;: 0.08866
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote&quot;,
+      &quot;contribution&quot;: 0.05406
+    },
+    {
+      &quot;feature&quot;: &quot;char: age&quot;,
+      &quot;contribution&quot;: 0.01666
+    },
+    {
+      &quot;feature&quot;: &quot;char:  a &quot;,
+      &quot;contribution&quot;: 0.01495
+    }
+  ]
+}</pre><small>Body SHA-256 b10574f89e52f377ef2acde9b28230d91000f508957c1db8185e7477782d0ba6</small><br><small>Event-chain SHA-256 b9b8367bb761def5844a88bbf7dd1fcb70385cf80e451ce8a11ae66f53213903</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>No configured risk triggered; review still required.</li></ul><small>CHAIN HEAD b9b8367bb761def5844a88bbf7dd1fcb70385cf80e451ce8a11ae66f53213903</small></details></details><details id='case-2' class='thread' data-received='false' data-group='payment' data-stage='accepted' data-risk='true' data-actionable='true' data-search='iris chen &lt;iris@cedarconference.example&gt; provider-0633663b837c7aa3cb7f accepted iris chen &lt;iris@cedarconference.example&gt; conference portraits · cp-41 we approve your quote for 640 eur for forty staff portraits. please proceed. northlight studio &lt;studio@northlight.example&gt; re: conference portraits · cp-41 the final forty portraits have been delivered for review. iris chen &lt;iris@cedarconference.example&gt; re: conference portraits · cp-41 we accepted the final work. our accounts payable handles the invoice; contact alex at accounts@cedarconference.example. i approve the images, but i do not process transfers.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Iris Chen &lt;iris@cedarconference.example&gt;</h2><p>Conference portraits · CP-41</p><small>Last message · 2026-10-14T09:00:00Z · 3 messages</small></div><span class='stage blue'>Accepted · no receipt</span></summary><div class='moneygrid'><div><small>AGREED</small><b>640.00 EUR</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Follow up with the named payment contact; approval is not a receipt. Financial status: accepted.</b></div><div class='workflow-signal'><b>Different payment contact</b><blockquote>accounts payable handles the invoice; contact Alex at accounts@cedarconference</blockquote><small>Explicit phrase · 2026-10-14T09:00:00Z · owner review required</small></div><details class='conversation' open><summary>Open correspondence (3)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T09:00:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Iris Chen &lt;iris@cedarconference.example&gt;</b><span>Conference portraits · CP-41</span></p><p class='messagebody'>We approve your quote for 640 EUR for forty staff portraits. Please proceed.</p><p class='amount'>640.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve your quote for 640 EUR for forty staff portraits.</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.3653,
+  &quot;margin_not_calibrated&quot;: 0.2352,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.16866
+    },
+    {
+      &quot;feature&quot;: &quot;word: your quote&quot;,
+      &quot;contribution&quot;: 0.12375
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.12375
+    },
+    {
+      &quot;feature&quot;: &quot;word: your&quot;,
+      &quot;contribution&quot;: 0.08351
+    },
+    {
+      &quot;feature&quot;: &quot;word: please&quot;,
+      &quot;contribution&quot;: 0.08036
+    }
+  ]
+}</pre><small>Body SHA-256 62de1e6e924977779b737694a12d0ab15ba298121b23fe7c7d06a108c6563174</small><br><small>Event-chain SHA-256 c61ea82f5b4caa3382ec76c1365ba248230331e0eeb7eca6b482fd1b79258e68</small></details></article><article class='event'><header><span>2026-10-13T09:00:00Z</span><strong>Delivery</strong></header><p class='mailmeta'><b>Northlight Studio &lt;studio@northlight.example&gt;</b><span>Re: Conference portraits · CP-41</span></p><p class='messagebody'>The final forty portraits have been delivered for review.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>The final forty portraits have been delivered for review</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.5353,
+  &quot;margin_not_calibrated&quot;: 0.4485,
+  &quot;runner_up&quot;: &quot;agreement&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.16113
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.16113
+    },
+    {
+      &quot;feature&quot;: &quot;word: have been&quot;,
+      &quot;contribution&quot;: 0.09877
+    },
+    {
+      &quot;feature&quot;: &quot;word: for review&quot;,
+      &quot;contribution&quot;: 0.09877
+    },
+    {
+      &quot;feature&quot;: &quot;word: delivered for&quot;,
+      &quot;contribution&quot;: 0.09877
+    }
+  ]
+}</pre><small>Body SHA-256 eb3ce052a7bf24450e9758186d3b88e06f631fd9577433ca352e950b45858de5</small><br><small>Event-chain SHA-256 d61b5cee6485f32cf5e40cf63ac2688ad156840fa4967e0a78bbd1b8980f885f</small></details></article><article class='event'><header><span>2026-10-14T09:00:00Z</span><strong>Acceptance</strong></header><p class='mailmeta'><b>Iris Chen &lt;iris@cedarconference.example&gt;</b><span>Re: Conference portraits · CP-41</span></p><p class='messagebody'>We accepted the final work. Our accounts payable handles the invoice; contact Alex at accounts@cedarconference.example. I approve the images, but I do not process transfers.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We accepted the final work.</blockquote><blockquote>Our accounts payable handles the invoice; contact Alex at accounts@cedarconference.example.</blockquote><blockquote>I approve the images, but I do not process transfers</blockquote><p><b>Decision basis:</b> deterministic_guard · model/guard disagreement retained</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.1712,
+  &quot;margin_not_calibrated&quot;: 0.0117,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.17423
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.17423
+    },
+    {
+      &quot;feature&quot;: &quot;word: the&quot;,
+      &quot;contribution&quot;: 0.07399
+    },
+    {
+      &quot;feature&quot;: &quot;char:  fi&quot;,
+      &quot;contribution&quot;: 0.0177
+    },
+    {
+      &quot;feature&quot;: &quot;char: ts &quot;,
+      &quot;contribution&quot;: 0.01627
+    }
+  ]
+}</pre><small>Body SHA-256 7a5039d655c4007c43c13caf5e9828b2bfc338411797345afc10fea1a726e55a</small><br><small>Event-chain SHA-256 43dca41090bd6b73cbde66989a9088f7bd73273edb481b540145d0918f902996</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>accepted work not paid</li></ul><small>CHAIN HEAD 43dca41090bd6b73cbde66989a9088f7bd73273edb481b540145d0918f902996</small></details></details><details id='case-3' class='thread' data-received='true' data-group='closed' data-stage='confirmed_received' data-risk='false' data-actionable='false' data-search='maya ortiz &lt;maya@atlascoffee.example&gt; provider-31820ff13a0fe3d16383 confirmed_received maya ortiz &lt;maya@atlascoffee.example&gt; autumn menu product photography we approve your quote for 450 eur for twelve edited menu photographs. please proceed with the shoot on tuesday. northlight studio &lt;studio@northlight.example&gt; re: autumn menu product photography the final twelve edited photographs have been delivered in the client gallery for review. maya ortiz &lt;maya@atlascoffee.example&gt; re: autumn menu product photography the photographs are accepted. we will pay 450 eur tomorrow.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Maya Ortiz &lt;maya@atlascoffee.example&gt;</h2><p>Autumn menu product photography</p><small>Last message · 2026-10-13T17:05:00Z · 3 messages</small></div><span class='stage green'>Settlement confirmed</span></summary><div class='moneygrid'><div><small>AGREED</small><b>450.00 EUR</b></div><div><small>PROMISED</small><b>450.00 EUR</b></div><div><small>CONFIRMED RECEIVED</small><b>450.00 EUR</b></div></div><div class='action'><small>OWNER DECISION</small><b>Receipt linked by payer evidence. Review the match, then close or archive.</b></div><h3>Verified payment evidence</h3><details class='receiptproof'><summary>450.00 EUR settled · 2026-10-14T09:02:00Z · open payment proof</summary><p><b>Source:</b> Bank statement import &lt;read-only@bank-statement.local&gt; · Settled 450.00 EUR from Maya Ortiz</p><p class='messagebody'>Settlement completed: 450.00 EUR credited from Maya Ortiz. Reference: Autumn menu photography.</p><p><b>Independent confirmation:</b> provider_notice_authenticated</p><p><b>Reconciliation:</b> exact amount/currency + payer tokens maya, ortiz + chronology · internal score 10</p><small>Evidence ID settlement:bank-001 · Body SHA-256 8901f9e9ebd6cd34b2466c90ee7abc6409fd3af6f79a34160f88415bd1103ff2</small></details><details class='conversation' open><summary>Open correspondence (3)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T09:15:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Maya Ortiz &lt;maya@atlascoffee.example&gt;</b><span>Autumn menu product photography</span></p><p class='messagebody'>We approve your quote for 450 EUR for twelve edited menu photographs. Please proceed with the shoot on Tuesday.</p><p class='amount'>450.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve your quote for 450 EUR for twelve edited menu photographs.</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.2912,
+  &quot;margin_not_calibrated&quot;: 0.1175,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.14823
+    },
+    {
+      &quot;feature&quot;: &quot;word: your quote&quot;,
+      &quot;contribution&quot;: 0.10876
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.10876
+    },
+    {
+      &quot;feature&quot;: &quot;word: your&quot;,
+      &quot;contribution&quot;: 0.07339
+    },
+    {
+      &quot;feature&quot;: &quot;word: please&quot;,
+      &quot;contribution&quot;: 0.07063
+    }
+  ]
+}</pre><small>Body SHA-256 8930ec6324d18df96ffaa0e88a0161b03ef2238ccc44fe7282ffd4b1602946eb</small><br><small>Event-chain SHA-256 1fb97b4552cde4553aea233550cfe801daf3809a1b7aa16816df38e6aa9963bd</small></details></article><article class='event'><header><span>2026-10-13T15:20:00Z</span><strong>Delivery</strong></header><p class='mailmeta'><b>Northlight Studio &lt;studio@northlight.example&gt;</b><span>Re: Autumn menu product photography</span></p><p class='messagebody'>The final twelve edited photographs have been delivered in the client gallery for review.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>The final twelve edited photographs have been delivered in the client gallery for review</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.4541,
+  &quot;margin_not_calibrated&quot;: 0.333,
+  &quot;runner_up&quot;: &quot;payment_notice&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.155
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.155
+    },
+    {
+      &quot;feature&quot;: &quot;word: have been&quot;,
+      &quot;contribution&quot;: 0.09501
+    },
+    {
+      &quot;feature&quot;: &quot;word: for review&quot;,
+      &quot;contribution&quot;: 0.09501
+    },
+    {
+      &quot;feature&quot;: &quot;word: delivered&quot;,
+      &quot;contribution&quot;: 0.09501
+    }
+  ]
+}</pre><small>Body SHA-256 5953555c607ef8ca5735ddced10df21b35082850a62ba120ac627328dfbcf907</small><br><small>Event-chain SHA-256 e5e2749e86c7c2972de0b8ac193050041a3f86d2521375fe187c3ff0cc034bfc</small></details></article><article class='event'><header><span>2026-10-13T17:05:00Z</span><strong>Payment Promise</strong></header><p class='mailmeta'><b>Maya Ortiz &lt;maya@atlascoffee.example&gt;</b><span>Re: Autumn menu product photography</span></p><p class='messagebody'>The photographs are accepted. We will pay 450 EUR tomorrow.</p><p class='amount'>450.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>The photographs are accepted.</blockquote><blockquote>We will pay 450 EUR tomorrow</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;payment_promise&quot;,
+  &quot;score_not_calibrated&quot;: 0.4337,
+  &quot;margin_not_calibrated&quot;: 0.3363,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: will&quot;,
+      &quot;contribution&quot;: 0.13729
+    },
+    {
+      &quot;feature&quot;: &quot;word: will pay&quot;,
+      &quot;contribution&quot;: 0.12611
+    },
+    {
+      &quot;feature&quot;: &quot;word: we will&quot;,
+      &quot;contribution&quot;: 0.12611
+    },
+    {
+      &quot;feature&quot;: &quot;word: tomorrow&quot;,
+      &quot;contribution&quot;: 0.12611
+    },
+    {
+      &quot;feature&quot;: &quot;word: pay&quot;,
+      &quot;contribution&quot;: 0.12611
+    }
+  ]
+}</pre><small>Body SHA-256 96fcb1edcb5d8f85a0b9be857d2c0e908c39392f88709526ea7fbc613a405187</small><br><small>Event-chain SHA-256 099a6edee958e8420184890e1ed05d68c521c4d493d629407703962995f8fa7e</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>No configured risk triggered; review still required.</li></ul><small>CHAIN HEAD 099a6edee958e8420184890e1ed05d68c521c4d493d629407703962995f8fa7e</small></details></details><details id='case-4' class='thread' data-received='false' data-group='payment' data-stage='payment_notice' data-risk='true' data-actionable='true' data-search='ava brooks &lt;ava@fernflorist.example&gt; provider-3f07532b5e6ed73ded8a payment_notice ava brooks &lt;ava@fernflorist.example&gt; spring catalogue · ff-18 we approve your quote for 190 eur for the catalogue photographs. northlight studio &lt;studio@northlight.example&gt; re: spring catalogue · ff-18 the final catalogue photographs have been delivered for review. ava brooks &lt;ava@fernflorist.example&gt; re: spring catalogue · ff-18 payment completed: i marked the invoice paid in our system this morning. please check your account before closing the job.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Ava Brooks &lt;ava@fernflorist.example&gt;</h2><p>Spring catalogue · FF-18</p><small>Last message · 2026-10-14T09:00:00Z · 3 messages</small></div><span class='stage amber'>Verify payment</span></summary><div class='moneygrid'><div><small>AGREED</small><b>190.00 EUR</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Verify the money independently; a notice alone is not confirmed income.</b></div><details class='conversation' open><summary>Open correspondence (3)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T09:00:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Ava Brooks &lt;ava@fernflorist.example&gt;</b><span>Spring catalogue · FF-18</span></p><p class='messagebody'>We approve your quote for 190 EUR for the catalogue photographs.</p><p class='amount'>190.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve your quote for 190 EUR for the catalogue photographs</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.376,
+  &quot;margin_not_calibrated&quot;: 0.2206,
+  &quot;runner_up&quot;: &quot;offer&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.18457
+    },
+    {
+      &quot;feature&quot;: &quot;word: your quote&quot;,
+      &quot;contribution&quot;: 0.13543
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.13543
+    },
+    {
+      &quot;feature&quot;: &quot;word: your&quot;,
+      &quot;contribution&quot;: 0.09139
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote&quot;,
+      &quot;contribution&quot;: 0.05363
+    }
+  ]
+}</pre><small>Body SHA-256 8a2db4189966faa1b364dfc8e736546cc4a5d1407187e18b6ba8e39af8210bda</small><br><small>Event-chain SHA-256 4962162dffaf25ae5274e65e48b8683b1db35f55916e21aad4c62db8c49503ad</small></details></article><article class='event'><header><span>2026-10-13T09:00:00Z</span><strong>Delivery</strong></header><p class='mailmeta'><b>Northlight Studio &lt;studio@northlight.example&gt;</b><span>Re: Spring catalogue · FF-18</span></p><p class='messagebody'>The final catalogue photographs have been delivered for review.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>The final catalogue photographs have been delivered for review</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.57,
+  &quot;margin_not_calibrated&quot;: 0.4861,
+  &quot;runner_up&quot;: &quot;agreement&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.16113
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.16113
+    },
+    {
+      &quot;feature&quot;: &quot;word: have been&quot;,
+      &quot;contribution&quot;: 0.09877
+    },
+    {
+      &quot;feature&quot;: &quot;word: for review&quot;,
+      &quot;contribution&quot;: 0.09877
+    },
+    {
+      &quot;feature&quot;: &quot;word: delivered for&quot;,
+      &quot;contribution&quot;: 0.09877
+    }
+  ]
+}</pre><small>Body SHA-256 8694f11384b32d5d198cc6968d38c88401cfa64ea18142d3aadc091d8208689e</small><br><small>Event-chain SHA-256 25a5c433344c19f17a9a48d901a41e1f1be4f924e593a6af89f9a5b6e75e9630</small></details></article><article class='event'><header><span>2026-10-14T09:00:00Z</span><strong>Payment Notice</strong></header><p class='mailmeta'><b>Ava Brooks &lt;ava@fernflorist.example&gt;</b><span>Re: Spring catalogue · FF-18</span></p><p class='messagebody'>Payment completed: I marked the invoice paid in our system this morning. Please check your account before closing the job.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>Payment completed: I marked the invoice paid in our system this morning.</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;payment_notice&quot;,
+  &quot;score_not_calibrated&quot;: 0.3067,
+  &quot;margin_not_calibrated&quot;: 0.1884,
+  &quot;runner_up&quot;: &quot;admin&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: completed&quot;,
+      &quot;contribution&quot;: 0.15509
+    },
+    {
+      &quot;feature&quot;: &quot;word: payment completed&quot;,
+      &quot;contribution&quot;: 0.14443
+    },
+    {
+      &quot;feature&quot;: &quot;word: paid&quot;,
+      &quot;contribution&quot;: 0.12592
+    },
+    {
+      &quot;feature&quot;: &quot;word: your account&quot;,
+      &quot;contribution&quot;: 0.11459
+    },
+    {
+      &quot;feature&quot;: &quot;word: account&quot;,
+      &quot;contribution&quot;: 0.11459
+    }
+  ]
+}</pre><small>Body SHA-256 c9334526ac9230ca17af29f1819af311fd072689c525ea3e3c9cb9a1ea49d0ee</small><br><small>Event-chain SHA-256 2c849e6f6f9f128158a3c13b708812aee455f4cdfe916964433cf47c15b2b7c8</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>payment notice requires independent confirmation</li></ul><small>CHAIN HEAD 2c849e6f6f9f128158a3c13b708812aee455f4cdfe916964433cf47c15b2b7c8</small></details></details><details id='case-5' class='thread' data-received='false' data-group='active' data-stage='agreed' data-risk='false' data-actionable='true' data-search='olivia reed &lt;olivia@willowevents.example&gt; provider-64e69b3155528ffe4347 agreed olivia reed &lt;olivia@willowevents.example&gt; team shoot · ws-22 we approve your quote for 300 eur for the team shoot on 20 october 2026. olivia reed &lt;olivia@willowevents.example&gt; re: team shoot · ws-22 please reschedule the shoot to 24 october 2026 at 10:00. our earlier date no longer works. northlight studio &lt;studio@northlight.example&gt; re: team shoot · ws-22 the deposit remains allocated to this booking. this message records our scheduling discussion; the payment evidence still needs checking.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Olivia Reed &lt;olivia@willowevents.example&gt;</h2><p>Team shoot · WS-22</p><small>Last message · 2026-10-14T09:00:00Z · 3 messages</small></div><span class='stage blue'>Work agreed</span></summary><div class='moneygrid'><div><small>AGREED</small><b>300.00 EUR</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Use the latest stated date; check calendar availability before confirming. Financial status: agreed.</b></div><div class='workflow-signal'><b>Date changed</b><blockquote>reschedule the shoot to 24 October 2026 at 10:00</blockquote><small>Explicit phrase · 2026-10-13T09:00:00Z · owner review required</small></div><div class='workflow-signal'><b>Deposit carried forward — stated</b><blockquote>deposit remains allocated to this booking</blockquote><small>Explicit phrase · 2026-10-14T09:00:00Z · owner review required</small></div><details class='conversation' open><summary>Open correspondence (3)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T09:00:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Olivia Reed &lt;olivia@willowevents.example&gt;</b><span>Team shoot · WS-22</span></p><p class='messagebody'>We approve your quote for 300 EUR for the team shoot on 20 October 2026.</p><p class='amount'>300.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve your quote for 300 EUR for the team shoot on 20 October 2026</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.333,
+  &quot;margin_not_calibrated&quot;: 0.1869,
+  &quot;runner_up&quot;: &quot;offer&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.17084
+    },
+    {
+      &quot;feature&quot;: &quot;word: your quote&quot;,
+      &quot;contribution&quot;: 0.12535
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.12535
+    },
+    {
+      &quot;feature&quot;: &quot;word: your&quot;,
+      &quot;contribution&quot;: 0.08459
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote&quot;,
+      &quot;contribution&quot;: 0.04964
+    }
+  ]
+}</pre><small>Body SHA-256 d556efd80a1ad57a5f03d609681704ea9acd2bee71d0a8ebda5e4808b4304025</small><br><small>Event-chain SHA-256 7537ba2adac158b41b7379a42434e4be56f63cd6f09dc0ddabc6ce522848deb3</small></details></article><article class='event'><header><span>2026-10-13T09:00:00Z</span><strong>Admin</strong></header><p class='mailmeta'><b>Olivia Reed &lt;olivia@willowevents.example&gt;</b><span>Re: Team shoot · WS-22</span></p><p class='messagebody'>Please reschedule the shoot to 24 October 2026 at 10:00. Our earlier date no longer works.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>No financial evidence phrase extracted.</blockquote><p><b>Decision basis:</b> workflow_rule</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.1713,
+  &quot;margin_not_calibrated&quot;: 0.0022,
+  &quot;runner_up&quot;: &quot;admin&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: at&quot;,
+      &quot;contribution&quot;: 0.15282
+    },
+    {
+      &quot;feature&quot;: &quot;word: please&quot;,
+      &quot;contribution&quot;: 0.1053
+    },
+    {
+      &quot;feature&quot;: &quot;word: to&quot;,
+      &quot;contribution&quot;: 0.05411
+    },
+    {
+      &quot;feature&quot;: &quot;char: at &quot;,
+      &quot;contribution&quot;: 0.02117
+    },
+    {
+      &quot;feature&quot;: &quot;char:  at &quot;,
+      &quot;contribution&quot;: 0.02117
+    }
+  ]
+}</pre><small>Body SHA-256 fb96cc6581b12deb52a3eba83d824b0b5f0178c5e3c17b914d7fc7ea160304e9</small><br><small>Event-chain SHA-256 552b0d2f1a235ddf7646e42b54c4ffae2ccbb0dbaa541a55c7ef70b952c76fa1</small></details></article><article class='event'><header><span>2026-10-14T09:00:00Z</span><strong>Admin</strong></header><p class='mailmeta'><b>Northlight Studio &lt;studio@northlight.example&gt;</b><span>Re: Team shoot · WS-22</span></p><p class='messagebody'>The deposit remains allocated to this booking. This message records our scheduling discussion; the payment evidence still needs checking.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>This message records our scheduling discussion; the payment evidence still needs checking</blockquote><p><b>Decision basis:</b> workflow_rule</p><pre>{
+  &quot;label&quot;: &quot;payment_failure&quot;,
+  &quot;score_not_calibrated&quot;: 0.192,
+  &quot;margin_not_calibrated&quot;: 0.0171,
+  &quot;runner_up&quot;: &quot;admin&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: still&quot;,
+      &quot;contribution&quot;: 0.14846
+    },
+    {
+      &quot;feature&quot;: &quot;word: payment&quot;,
+      &quot;contribution&quot;: 0.12098
+    },
+    {
+      &quot;feature&quot;: &quot;word: the&quot;,
+      &quot;contribution&quot;: 0.04453
+    },
+    {
+      &quot;feature&quot;: &quot;char: ds &quot;,
+      &quot;contribution&quot;: 0.02553
+    },
+    {
+      &quot;feature&quot;: &quot;char: vide&quot;,
+      &quot;contribution&quot;: 0.01502
+    }
+  ]
+}</pre><small>Body SHA-256 0c7b9afe4099992b9671834e81797c0df2dc8a44001978bb58db72e52e787876</small><br><small>Event-chain SHA-256 f9298183e3444624d5afa7767c191bb7168618a7f606d3bcef2d0ecaff78a52b</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>No configured risk triggered; review still required.</li></ul><small>CHAIN HEAD f9298183e3444624d5afa7767c191bb7168618a7f606d3bcef2d0ecaff78a52b</small></details></details><details id='case-6' class='thread' data-received='false' data-group='payment' data-stage='accepted' data-risk='true' data-actionable='true' data-search='lena park &lt;lena@emberceramics.example&gt; provider-697dcfdcaa2e0cf0057c accepted lena park &lt;lena@emberceramics.example&gt; six launch photographs we accept your proposal for 320 usd for six edited launch photographs. northlight studio &lt;studio@northlight.example&gt; re: six launch photographs the final six photographs and web crops have been delivered for review. lena park &lt;lena@emberceramics.example&gt; re: six launch photographs we accepted the final work. everything is ready for the launch.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Lena Park &lt;lena@emberceramics.example&gt;</h2><p>Six launch photographs</p><small>Last message · 2026-10-15T08:40:00Z · 3 messages</small></div><span class='stage blue'>Accepted · no receipt</span></summary><div class='moneygrid'><div><small>AGREED</small><b>320.00 USD</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Accepted, but no payment is confirmed. Request payment status and a viable route before unpaid extensions.</b></div><details class='conversation' open><summary>Open correspondence (3)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T11:30:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Lena Park &lt;lena@emberceramics.example&gt;</b><span>Six launch photographs</span></p><p class='messagebody'>We accept your proposal for 320 USD for six edited launch photographs.</p><p class='amount'>320.00 USD</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We accept your proposal for 320 USD for six edited launch photographs</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.5214,
+  &quot;margin_not_calibrated&quot;: 0.4141,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.1567
+    },
+    {
+      &quot;feature&quot;: &quot;word: your proposal&quot;,
+      &quot;contribution&quot;: 0.14269
+    },
+    {
+      &quot;feature&quot;: &quot;word: we accept&quot;,
+      &quot;contribution&quot;: 0.14269
+    },
+    {
+      &quot;feature&quot;: &quot;word: proposal for&quot;,
+      &quot;contribution&quot;: 0.14269
+    },
+    {
+      &quot;feature&quot;: &quot;word: accept your&quot;,
+      &quot;contribution&quot;: 0.14269
+    }
+  ]
+}</pre><small>Body SHA-256 db13587eeb5f0bdb631283037890275dc7e265efa05ddc8be9a9e37479e315d4</small><br><small>Event-chain SHA-256 0522d285f0fc1b57b53250a31905da56503388a913b86cf97388949034f30394</small></details></article><article class='event'><header><span>2026-10-14T13:10:00Z</span><strong>Delivery</strong></header><p class='mailmeta'><b>Northlight Studio &lt;studio@northlight.example&gt;</b><span>Re: Six launch photographs</span></p><p class='messagebody'>The final six photographs and web crops have been delivered for review.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>The final six photographs and web crops have been delivered for review</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.6094,
+  &quot;margin_not_calibrated&quot;: 0.5229,
+  &quot;runner_up&quot;: &quot;agreement&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.1571
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.1571
+    },
+    {
+      &quot;feature&quot;: &quot;word: have been&quot;,
+      &quot;contribution&quot;: 0.0963
+    },
+    {
+      &quot;feature&quot;: &quot;word: for review&quot;,
+      &quot;contribution&quot;: 0.0963
+    },
+    {
+      &quot;feature&quot;: &quot;word: delivered for&quot;,
+      &quot;contribution&quot;: 0.0963
+    }
+  ]
+}</pre><small>Body SHA-256 4b908bb47034dfdeaf5b42831f1036e55a2cc7a83928f2b1415061e5909ef254</small><br><small>Event-chain SHA-256 c853e73a678354bc2136cdb67f6bc94385b598443494a91e5a855d4793db948e</small></details></article><article class='event'><header><span>2026-10-15T08:40:00Z</span><strong>Acceptance</strong></header><p class='mailmeta'><b>Lena Park &lt;lena@emberceramics.example&gt;</b><span>Re: Six launch photographs</span></p><p class='messagebody'>We accepted the final work. Everything is ready for the launch.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We accepted the final work.</blockquote><p><b>Decision basis:</b> deterministic_guard · model/guard disagreement retained</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.272,
+  &quot;margin_not_calibrated&quot;: 0.1043,
+  &quot;runner_up&quot;: &quot;offer&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.21753
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.21753
+    },
+    {
+      &quot;feature&quot;: &quot;word: is&quot;,
+      &quot;contribution&quot;: 0.07923
+    },
+    {
+      &quot;feature&quot;: &quot;word: the&quot;,
+      &quot;contribution&quot;: 0.07453
+    },
+    {
+      &quot;feature&quot;: &quot;char:  fi&quot;,
+      &quot;contribution&quot;: 0.04004
+    }
+  ]
+}</pre><small>Body SHA-256 2fe3a9459caff82430ab221ef87dabdd87eff20ee1efe14017681d28009b5d99</small><br><small>Event-chain SHA-256 71ce899dfeefeacf59d5afa3960ece038a572e28449dd8a89f032c85ecd5cffe</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>accepted work not paid</li></ul><small>CHAIN HEAD 71ce899dfeefeacf59d5afa3960ece038a572e28449dd8a89f032c85ecd5cffe</small></details></details><details id='case-7' class='thread' data-received='false' data-group='payment' data-stage='accepted' data-risk='true' data-actionable='true' data-search='tessa green &lt;tessa@marigold.example&gt; provider-69b48a610117d519d3c3 accepted tessa green &lt;tessa@marigold.example&gt; marigold · mg-101 · menu photographs we approve your quote for 210 eur for order mg-101, the menu photographs. northlight studio &lt;studio@northlight.example&gt; re: marigold · mg-101 · menu photographs the final menu photographs have been delivered for review. tessa green &lt;tessa@marigold.example&gt; re: marigold · mg-101 · menu photographs we accepted the final work for mg-101.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Tessa Green &lt;tessa@marigold.example&gt;</h2><p>Marigold · MG-101 · menu photographs</p><small>Last message · 2026-10-14T09:00:00Z · 3 messages</small></div><span class='stage blue'>Accepted · no receipt</span></summary><div class='moneygrid'><div><small>AGREED</small><b>210.00 EUR</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Accepted, but no payment is confirmed. Request payment status and a viable route before unpaid extensions.</b></div><details class='conversation' open><summary>Open correspondence (3)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T09:00:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Tessa Green &lt;tessa@marigold.example&gt;</b><span>Marigold · MG-101 · menu photographs</span></p><p class='messagebody'>We approve your quote for 210 EUR for order MG-101, the menu photographs.</p><p class='amount'>210.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve your quote for 210 EUR for order MG-101, the menu photographs</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.3867,
+  &quot;margin_not_calibrated&quot;: 0.257,
+  &quot;runner_up&quot;: &quot;offer&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.19228
+    },
+    {
+      &quot;feature&quot;: &quot;word: your quote&quot;,
+      &quot;contribution&quot;: 0.14108
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.14108
+    },
+    {
+      &quot;feature&quot;: &quot;word: your&quot;,
+      &quot;contribution&quot;: 0.09521
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote&quot;,
+      &quot;contribution&quot;: 0.05587
+    }
+  ]
+}</pre><small>Body SHA-256 98ba3ecc8ec50b99deffa47e97d1cbaa7f8f7530a56532eeb3bf65eadf1bf64f</small><br><small>Event-chain SHA-256 4425437b38af7a300c288f3b218d587fa2a70de604b74a45dc62313d07ae1430</small></details></article><article class='event'><header><span>2026-10-13T09:00:00Z</span><strong>Delivery</strong></header><p class='mailmeta'><b>Northlight Studio &lt;studio@northlight.example&gt;</b><span>Re: Marigold · MG-101 · menu photographs</span></p><p class='messagebody'>The final menu photographs have been delivered for review.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>The final menu photographs have been delivered for review</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.583,
+  &quot;margin_not_calibrated&quot;: 0.5011,
+  &quot;runner_up&quot;: &quot;agreement&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.16113
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.16113
+    },
+    {
+      &quot;feature&quot;: &quot;word: have been&quot;,
+      &quot;contribution&quot;: 0.09877
+    },
+    {
+      &quot;feature&quot;: &quot;word: for review&quot;,
+      &quot;contribution&quot;: 0.09877
+    },
+    {
+      &quot;feature&quot;: &quot;word: delivered for&quot;,
+      &quot;contribution&quot;: 0.09877
+    }
+  ]
+}</pre><small>Body SHA-256 e111832da4630336391d9a33979d4550af19ff4ea86e1ac8096e05fca8bc590a</small><br><small>Event-chain SHA-256 b5afb7fe3e60e1d0c9581c4e8b83a9e395408a3ba794843bd17d3d4e940e9f73</small></details></article><article class='event'><header><span>2026-10-14T09:00:00Z</span><strong>Acceptance</strong></header><p class='mailmeta'><b>Tessa Green &lt;tessa@marigold.example&gt;</b><span>Re: Marigold · MG-101 · menu photographs</span></p><p class='messagebody'>We accepted the final work for MG-101.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We accepted the final work for MG-101</blockquote><p><b>Decision basis:</b> deterministic_guard · model/guard disagreement retained</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.2525,
+  &quot;margin_not_calibrated&quot;: 0.0678,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.24229
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.24229
+    },
+    {
+      &quot;feature&quot;: &quot;word: the&quot;,
+      &quot;contribution&quot;: 0.04903
+    },
+    {
+      &quot;feature&quot;: &quot;char:  fi&quot;,
+      &quot;contribution&quot;: 0.04356
+    },
+    {
+      &quot;feature&quot;: &quot;char: nal &quot;,
+      &quot;contribution&quot;: 0.03695
+    }
+  ]
+}</pre><small>Body SHA-256 2e8ef6551cbe285ecdafce1c3ed34b1216543bb2f0a5aa44c71c93815731134c</small><br><small>Event-chain SHA-256 63a4a7d19b6a183c046afe9615327e6e3ab750f90b3e6ded788a2efaed4e2af2</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>accepted work not paid</li></ul><small>CHAIN HEAD 63a4a7d19b6a183c046afe9615327e6e3ab750f90b3e6ded788a2efaed4e2af2</small></details></details><details id='case-8' class='thread' data-received='false' data-group='reply' data-stage='delivered' data-risk='false' data-actionable='true' data-search='theo grant &lt;theo@harborhomes.example&gt; provider-75d105da164f12fa662c delivered theo grant &lt;theo@harborhomes.example&gt; apartment listing package we approve your 260 eur quote for the apartment listing package. please proceed. northlight studio &lt;studio@northlight.example&gt; re: apartment listing package the final listing gallery and print-resolution files have been delivered for review.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Theo Grant &lt;theo@harborhomes.example&gt;</h2><p>Apartment listing package</p><small>Last message · 2026-10-15T16:25:00Z · 2 messages</small></div><span class='stage blue'>Awaiting acceptance</span></summary><div class='moneygrid'><div><small>AGREED</small><b>260.00 EUR</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Request explicit acceptance and payment status for the agreed work.</b></div><details class='conversation' open><summary>Open correspondence (2)</summary><div class='timeline'><article class='event'><header><span>2026-10-13T10:00:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Theo Grant &lt;theo@harborhomes.example&gt;</b><span>Apartment listing package</span></p><p class='messagebody'>We approve your 260 EUR quote for the apartment listing package. Please proceed.</p><p class='amount'>260.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve your 260 EUR quote for the apartment listing package.</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.3665,
+  &quot;margin_not_calibrated&quot;: 0.2285,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: package&quot;,
+      &quot;contribution&quot;: 0.21213
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.11556
+    },
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.09302
+    },
+    {
+      &quot;feature&quot;: &quot;word: your&quot;,
+      &quot;contribution&quot;: 0.07798
+    },
+    {
+      &quot;feature&quot;: &quot;word: please&quot;,
+      &quot;contribution&quot;: 0.07505
+    }
+  ]
+}</pre><small>Body SHA-256 21abf93dd9fd2a278c37a0fd5a9a4fd32e142bb2567217860989f96450d683ed</small><br><small>Event-chain SHA-256 1a6dd7de46da53698930fcebdeca04d25db4175ecb0b4a68d28fb0f4f06a3a1f</small></details></article><article class='event'><header><span>2026-10-15T16:25:00Z</span><strong>Delivery</strong></header><p class='mailmeta'><b>Northlight Studio &lt;studio@northlight.example&gt;</b><span>Re: Apartment listing package</span></p><p class='messagebody'>The final listing gallery and print-resolution files have been delivered for review.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>The final listing gallery and print-resolution files have been delivered for review</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.5497,
+  &quot;margin_not_calibrated&quot;: 0.4447,
+  &quot;runner_up&quot;: &quot;agreement&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.137
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.137
+    },
+    {
+      &quot;feature&quot;: &quot;word: have been&quot;,
+      &quot;contribution&quot;: 0.08398
+    },
+    {
+      &quot;feature&quot;: &quot;word: for review&quot;,
+      &quot;contribution&quot;: 0.08398
+    },
+    {
+      &quot;feature&quot;: &quot;word: files have&quot;,
+      &quot;contribution&quot;: 0.08398
+    }
+  ]
+}</pre><small>Body SHA-256 9ecb5ab226297fd61570fe39f38b1b55bda408134fc85ecba4a3898533d1a778</small><br><small>Event-chain SHA-256 f5f8fb02677809ffc642624f8d26a26e12756c4e61d82b9234b450b22a6f85b5</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>No configured risk triggered; review still required.</li></ul><small>CHAIN HEAD f5f8fb02677809ffc642624f8d26a26e12756c4e61d82b9234b450b22a6f85b5</small></details></details><details id='case-9' class='thread' data-received='false' data-group='payment' data-stage='accepted' data-risk='true' data-actionable='true' data-search='tessa green &lt;tessa@marigold.example&gt; provider-94031aa4159efa3f5de1 accepted tessa green &lt;tessa@marigold.example&gt; marigold · mg-102 · staff portraits we approve your quote for 210 eur for order mg-102, the staff portraits. northlight studio &lt;studio@northlight.example&gt; re: marigold · mg-102 · staff portraits the final staff portraits have been delivered for review. tessa green &lt;tessa@marigold.example&gt; re: marigold · mg-102 · staff portraits we accepted the final work for mg-102.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Tessa Green &lt;tessa@marigold.example&gt;</h2><p>Marigold · MG-102 · staff portraits</p><small>Last message · 2026-10-14T09:00:00Z · 3 messages</small></div><span class='stage blue'>Accepted · no receipt</span></summary><div class='moneygrid'><div><small>AGREED</small><b>210.00 EUR</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Accepted, but no payment is confirmed. Request payment status and a viable route before unpaid extensions.</b></div><details class='conversation' open><summary>Open correspondence (3)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T09:00:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Tessa Green &lt;tessa@marigold.example&gt;</b><span>Marigold · MG-102 · staff portraits</span></p><p class='messagebody'>We approve your quote for 210 EUR for order MG-102, the staff portraits.</p><p class='amount'>210.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve your quote for 210 EUR for order MG-102, the staff portraits</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.378,
+  &quot;margin_not_calibrated&quot;: 0.2535,
+  &quot;runner_up&quot;: &quot;offer&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.19228
+    },
+    {
+      &quot;feature&quot;: &quot;word: your quote&quot;,
+      &quot;contribution&quot;: 0.14108
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.14108
+    },
+    {
+      &quot;feature&quot;: &quot;word: your&quot;,
+      &quot;contribution&quot;: 0.09521
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote&quot;,
+      &quot;contribution&quot;: 0.05587
+    }
+  ]
+}</pre><small>Body SHA-256 ef8b09591df2f653d97a8f7ae1d284d79b6bf8723e4ce84a3fa2e9a724a3164f</small><br><small>Event-chain SHA-256 d224e35b7abb6bdf4f3e6aabe983d8b76fbf2eae0c560e08bfe8e6a0e62e2f72</small></details></article><article class='event'><header><span>2026-10-13T09:00:00Z</span><strong>Delivery</strong></header><p class='mailmeta'><b>Northlight Studio &lt;studio@northlight.example&gt;</b><span>Re: Marigold · MG-102 · staff portraits</span></p><p class='messagebody'>The final staff portraits have been delivered for review.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>The final staff portraits have been delivered for review</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.5631,
+  &quot;margin_not_calibrated&quot;: 0.476,
+  &quot;runner_up&quot;: &quot;agreement&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.16113
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.16113
+    },
+    {
+      &quot;feature&quot;: &quot;word: have been&quot;,
+      &quot;contribution&quot;: 0.09877
+    },
+    {
+      &quot;feature&quot;: &quot;word: for review&quot;,
+      &quot;contribution&quot;: 0.09877
+    },
+    {
+      &quot;feature&quot;: &quot;word: delivered for&quot;,
+      &quot;contribution&quot;: 0.09877
+    }
+  ]
+}</pre><small>Body SHA-256 433aee61d730a26b6ba1bcb1c11569818be559965a7be9fb5da8ba42a189e44a</small><br><small>Event-chain SHA-256 5720bf58c9ccb619c62f291aeb1daa45e0645471bfa493a76bc04538807cbcbd</small></details></article><article class='event'><header><span>2026-10-14T09:00:00Z</span><strong>Acceptance</strong></header><p class='mailmeta'><b>Tessa Green &lt;tessa@marigold.example&gt;</b><span>Re: Marigold · MG-102 · staff portraits</span></p><p class='messagebody'>We accepted the final work for MG-102.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We accepted the final work for MG-102</blockquote><p><b>Decision basis:</b> deterministic_guard · model/guard disagreement retained</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.2505,
+  &quot;margin_not_calibrated&quot;: 0.0651,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.24229
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.24229
+    },
+    {
+      &quot;feature&quot;: &quot;word: the&quot;,
+      &quot;contribution&quot;: 0.04903
+    },
+    {
+      &quot;feature&quot;: &quot;char:  fi&quot;,
+      &quot;contribution&quot;: 0.04119
+    },
+    {
+      &quot;feature&quot;: &quot;char: nal &quot;,
+      &quot;contribution&quot;: 0.03494
+    }
+  ]
+}</pre><small>Body SHA-256 40b9dba18c765d3d48ffdf7179ba7b35422c4e0294d61dd12b1e8040d7e1c690</small><br><small>Event-chain SHA-256 9e0191ff088e01a6d197012bf4a3edb593fccf4bfbd4ba41ec5621c2fd46bc23</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>accepted work not paid</li></ul><small>CHAIN HEAD 9e0191ff088e01a6d197012bf4a3edb593fccf4bfbd4ba41ec5621c2fd46bc23</small></details></details><details id='case-10' class='thread' data-received='false' data-group='payment' data-stage='payment_issue' data-risk='true' data-actionable='true' data-search='sara mills &lt;sara@bluebirdbakery.example&gt; provider-aa2d580100b4ca8f0148 payment_issue sara mills &lt;sara@bluebirdbakery.example&gt; holiday pastry photographs we approve the 180 gbp quote for five holiday pastry photographs. please proceed. northlight studio &lt;studio@northlight.example&gt; re: holiday pastry photographs the final five photographs have been delivered in the gallery. sara mills &lt;sara@bluebirdbakery.example&gt; re: holiday pastry photographs the work is accepted, but the 180 gbp payout failed and was returned unpaid. i am checking another route.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Sara Mills &lt;sara@bluebirdbakery.example&gt;</h2><p>Holiday pastry photographs</p><small>Last message · 2026-10-15T12:00:00Z · 3 messages</small></div><span class='stage red'>Payment problem</span></summary><div class='moneygrid'><div><small>AGREED</small><b>180.00 GBP</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Review the partial, mismatched, failed or reversed payment before closing this case.</b></div><details class='conversation' open><summary>Open correspondence (3)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T14:00:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Sara Mills &lt;sara@bluebirdbakery.example&gt;</b><span>Holiday pastry photographs</span></p><p class='messagebody'>We approve the 180 GBP quote for five holiday pastry photographs. Please proceed.</p><p class='amount'>180.00 GBP</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve the 180 GBP quote for five holiday pastry photographs.</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.2726,
+  &quot;margin_not_calibrated&quot;: 0.091,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.16343
+    },
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.13155
+    },
+    {
+      &quot;feature&quot;: &quot;word: please&quot;,
+      &quot;contribution&quot;: 0.10614
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote&quot;,
+      &quot;contribution&quot;: 0.06472
+    },
+    {
+      &quot;feature&quot;: &quot;word: we&quot;,
+      &quot;contribution&quot;: 0.06332
+    }
+  ]
+}</pre><small>Body SHA-256 d50a2edba10b6352928c90694bd9ffb585ae688e0ae4753e5eb843028213f9b4</small><br><small>Event-chain SHA-256 bef88a4d909772ceb117d4eef186f097d4dfb65a0da3c126e2105be86aef4c47</small></details></article><article class='event'><header><span>2026-10-14T10:30:00Z</span><strong>Delivery</strong></header><p class='mailmeta'><b>Northlight Studio &lt;studio@northlight.example&gt;</b><span>Re: Holiday pastry photographs</span></p><p class='messagebody'>The final five photographs have been delivered in the gallery.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>The final five photographs have been delivered in the gallery</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;delivery&quot;,
+  &quot;score_not_calibrated&quot;: 0.5408,
+  &quot;margin_not_calibrated&quot;: 0.4605,
+  &quot;runner_up&quot;: &quot;agreement&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: the final&quot;,
+      &quot;contribution&quot;: 0.19421
+    },
+    {
+      &quot;feature&quot;: &quot;word: final&quot;,
+      &quot;contribution&quot;: 0.19421
+    },
+    {
+      &quot;feature&quot;: &quot;word: have been&quot;,
+      &quot;contribution&quot;: 0.11905
+    },
+    {
+      &quot;feature&quot;: &quot;word: delivered&quot;,
+      &quot;contribution&quot;: 0.11905
+    },
+    {
+      &quot;feature&quot;: &quot;word: been delivered&quot;,
+      &quot;contribution&quot;: 0.11905
+    }
+  ]
+}</pre><small>Body SHA-256 86af5477f7dad76bccea9578e54b81b8d4a328d4e38bd8f514f574ce488e1303</small><br><small>Event-chain SHA-256 74b5e556d4575eb5140ac4368c529d4d3e5e8f45502941e8f1a29330f59b6678</small></details></article><article class='event'><header><span>2026-10-15T12:00:00Z</span><strong>Payment Failure</strong></header><p class='mailmeta'><b>Sara Mills &lt;sara@bluebirdbakery.example&gt;</b><span>Re: Holiday pastry photographs</span></p><p class='messagebody'>The work is accepted, but the 180 GBP payout failed and was returned unpaid. I am checking another route.</p><p class='amount'>180.00 GBP</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>The work is accepted, but the 180 GBP payout failed and was returned unpaid.</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;payment_failure&quot;,
+  &quot;score_not_calibrated&quot;: 0.2888,
+  &quot;margin_not_calibrated&quot;: 0.1208,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: was&quot;,
+      &quot;contribution&quot;: 0.14785
+    },
+    {
+      &quot;feature&quot;: &quot;word: failed and&quot;,
+      &quot;contribution&quot;: 0.13169
+    },
+    {
+      &quot;feature&quot;: &quot;word: failed&quot;,
+      &quot;contribution&quot;: 0.13169
+    },
+    {
+      &quot;feature&quot;: &quot;word: payout&quot;,
+      &quot;contribution&quot;: 0.08143
+    },
+    {
+      &quot;feature&quot;: &quot;word: the&quot;,
+      &quot;contribution&quot;: 0.04378
+    }
+  ]
+}</pre><small>Body SHA-256 d3217350e6192ecb2cdc1b91be2e682e5ceefdfae683e4b3ede9b5a03462a86f</small><br><small>Event-chain SHA-256 f37e11d90020259341334f97e42777efbd4a938fc81b52e2afd92227039c79d0</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>payment failure or reversal detected</li></ul><small>CHAIN HEAD f37e11d90020259341334f97e42777efbd4a938fc81b52e2afd92227039c79d0</small></details></details><details id='case-11' class='thread' data-received='false' data-group='active' data-stage='agreed' data-risk='false' data-actionable='true' data-search='eli ward &lt;eli@orchardbooks.example&gt; provider-c4d24641061fe8411025 agreed eli ward &lt;eli@orchardbooks.example&gt; book launch portraits · ob-07 we will not proceed with this booking. the launch has been postponed. eli ward &lt;eli@orchardbooks.example&gt; re: book launch portraits · ob-07 our launch is back on. we approve your quote for 280 eur. please proceed with the portraits for 26 october 2026.'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Eli Ward &lt;eli@orchardbooks.example&gt;</h2><p>Book launch portraits · OB-07</p><small>Last message · 2026-10-13T09:00:00Z · 2 messages</small></div><span class='stage blue'>Work agreed</span></summary><div class='moneygrid'><div><small>AGREED</small><b>280.00 EUR</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Track delivery scope and preserve the agreed amount before starting extra work.</b></div><details class='conversation' open><summary>Open correspondence (2)</summary><div class='timeline'><article class='event'><header><span>2026-10-12T09:00:00Z</span><strong>Rejection</strong></header><p class='mailmeta'><b>Eli Ward &lt;eli@orchardbooks.example&gt;</b><span>Book launch portraits · OB-07</span></p><p class='messagebody'>We will not proceed with this booking. The launch has been postponed.</p><p class='amount'>—</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>No financial evidence phrase extracted.</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;rejection&quot;,
+  &quot;score_not_calibrated&quot;: 0.3727,
+  &quot;margin_not_calibrated&quot;: 0.2612,
+  &quot;runner_up&quot;: &quot;payment_notice&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: not&quot;,
+      &quot;contribution&quot;: 0.12195
+    },
+    {
+      &quot;feature&quot;: &quot;word: will not&quot;,
+      &quot;contribution&quot;: 0.10293
+    },
+    {
+      &quot;feature&quot;: &quot;word: proceed&quot;,
+      &quot;contribution&quot;: 0.10293
+    },
+    {
+      &quot;feature&quot;: &quot;word: not proceed&quot;,
+      &quot;contribution&quot;: 0.10293
+    },
+    {
+      &quot;feature&quot;: &quot;word: with&quot;,
+      &quot;contribution&quot;: 0.09213
+    }
+  ]
+}</pre><small>Body SHA-256 019a8494a1c668300c753f5196af994014adb6ff6ce6e651c73aafdf210e7dba</small><br><small>Event-chain SHA-256 3acec436c7bbc89f98b75fb277ae1e178c798ed4fdb62095eeae10ed470a37eb</small></details></article><article class='event'><header><span>2026-10-13T09:00:00Z</span><strong>Agreement</strong></header><p class='mailmeta'><b>Eli Ward &lt;eli@orchardbooks.example&gt;</b><span>Re: Book launch portraits · OB-07</span></p><p class='messagebody'>Our launch is back on. We approve your quote for 280 EUR. Please proceed with the portraits for 26 October 2026.</p><p class='amount'>280.00 EUR</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>We approve your quote for 280 EUR.</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;agreement&quot;,
+  &quot;score_not_calibrated&quot;: 0.3133,
+  &quot;margin_not_calibrated&quot;: 0.1499,
+  &quot;runner_up&quot;: &quot;rejection&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: for&quot;,
+      &quot;contribution&quot;: 0.14524
+    },
+    {
+      &quot;feature&quot;: &quot;word: your quote&quot;,
+      &quot;contribution&quot;: 0.10657
+    },
+    {
+      &quot;feature&quot;: &quot;word: quote for&quot;,
+      &quot;contribution&quot;: 0.10657
+    },
+    {
+      &quot;feature&quot;: &quot;word: your&quot;,
+      &quot;contribution&quot;: 0.07191
+    },
+    {
+      &quot;feature&quot;: &quot;word: please&quot;,
+      &quot;contribution&quot;: 0.06921
+    }
+  ]
+}</pre><small>Body SHA-256 9cf53a5c9ad10161846ba9a2a18b1ab11d4f56c92c146deb70594b9563ebf61b</small><br><small>Event-chain SHA-256 543b2d2993428dce26885d12c7e337167d8a81e69a22a14f498ac77ede9a0e06</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>No configured risk triggered; review still required.</li></ul><small>CHAIN HEAD 543b2d2993428dce26885d12c7e337167d8a81e69a22a14f498ac77ede9a0e06</small></details></details><details id='case-12' class='thread' data-received='false' data-group='active' data-stage='open' data-risk='false' data-actionable='true' data-search='noor haddad &lt;noor@lumenskincare.example&gt; provider-da779e811fd91c30e0a2 open noor haddad &lt;noor@lumenskincare.example&gt; quote for skincare campaign our budget ceiling is 700 usd. could you quote for ten product photographs and three vertical social crops?'><summary class='threadtop'><div><small>CLIENT CASE</small><h2>Noor Haddad &lt;noor@lumenskincare.example&gt;</h2><p>Quote for skincare campaign</p><small>Last message · 2026-10-16T07:45:00Z · 1 message</small></div><span class='stage gray'>Terms unclear</span></summary><div class='moneygrid'><div><small>AGREED</small><b>—</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>—</b></div></div><div class='action'><small>OWNER DECISION</small><b>Prepare or decline the requested quote; do not count the budget ceiling as agreed revenue.</b></div><details class='conversation' open><summary>Open correspondence (1)</summary><div class='timeline'><article class='event'><header><span>2026-10-16T07:45:00Z</span><strong>Offer</strong></header><p class='mailmeta'><b>Noor Haddad &lt;noor@lumenskincare.example&gt;</b><span>Quote for skincare campaign</span></p><p class='messagebody'>Our budget ceiling is 700 USD. Could you quote for ten product photographs and three vertical social crops?</p><p class='amount'>700.00 USD</p><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>Quote for skincare campaign.</blockquote><blockquote>Our budget ceiling is 700 USD.</blockquote><blockquote>Could you quote for ten product photographs and three vertical social crops?</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;offer&quot;,
+  &quot;score_not_calibrated&quot;: 0.3309,
+  &quot;margin_not_calibrated&quot;: 0.1476,
+  &quot;runner_up&quot;: &quot;agreement&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: our budget&quot;,
+      &quot;contribution&quot;: 0.09359
+    },
+    {
+      &quot;feature&quot;: &quot;word: our&quot;,
+      &quot;contribution&quot;: 0.09359
+    },
+    {
+      &quot;feature&quot;: &quot;word: budget&quot;,
+      &quot;contribution&quot;: 0.09359
+    },
+    {
+      &quot;feature&quot;: &quot;word: you quote&quot;,
+      &quot;contribution&quot;: 0.07871
+    },
+    {
+      &quot;feature&quot;: &quot;word: could you&quot;,
+      &quot;contribution&quot;: 0.07871
+    }
+  ]
+}</pre><small>Body SHA-256 315d06ae256f0337bf172f615c47b12b95a689f433534d49bf8d1888d32c4600</small><br><small>Event-chain SHA-256 fc875e7cbef3735f0af3408c7086bce4c7d07622ebf907be16135c08462d9682</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>No configured risk triggered; review still required.</li></ul><small>CHAIN HEAD fc875e7cbef3735f0af3408c7086bce4c7d07622ebf907be16135c08462d9682</small></details></details><details id='case-14' class='thread' data-received='true' data-group='payment' data-stage='receipt_unallocated' data-risk='true' data-actionable='true' data-search='settlement-source:bank-003 settlement-source:bank-003 receipt_unallocated bank statement import &lt;read-only@bank-statement.local&gt; settled 210.00 eur from tessa green settlement completed: 210.00 eur credited from tessa green. reference: transfer without order reference.'><summary class='threadtop'><div><small>PAYMENT TO ALLOCATE</small><h2>settlement-source:bank-003</h2><p>Settled 210.00 EUR from Tessa Green</p><small>Last message · 2026-10-16T12:00:00Z · 1 message</small></div><span class='stage amber'>Receipt needs allocation</span></summary><div class='moneygrid'><div><small>AGREED</small><b>—</b></div><div><small>PROMISED</small><b>—</b></div><div><small>CONFIRMED RECEIVED</small><b>210.00 EUR</b></div></div><div class='action'><small>OWNER DECISION</small><b>Receipt imported, but its order is ambiguous. Check the payment reference before allocating it; no client order is marked paid.</b></div><details class='conversation' open><summary>Open correspondence (1)</summary><div class='timeline'><article class='event'><header><span>2026-10-16T12:00:00Z</span><strong>Payment Notice</strong></header><p class='mailmeta'><b>Bank statement import &lt;read-only@bank-statement.local&gt;</b><span>Settled 210.00 EUR from Tessa Green</span></p><p class='messagebody'>Settlement completed: 210.00 EUR credited from Tessa Green. Reference: Transfer without order reference.</p><p class='amount'>210.00 EUR</p><span class='pill green'>confirmed from input: provider_notice_authenticated</span><details><summary>Why PactSignal classified this · Evidence &amp; model trace</summary><blockquote>Settled 210.00 EUR from Tessa Green.</blockquote><blockquote>Settlement completed: 210.00 EUR credited from Tessa Green.</blockquote><blockquote>Reference: Transfer without order reference</blockquote><p><b>Decision basis:</b> deterministic_guard</p><pre>{
+  &quot;label&quot;: &quot;payment_notice&quot;,
+  &quot;score_not_calibrated&quot;: 0.552,
+  &quot;margin_not_calibrated&quot;: 0.4769,
+  &quot;runner_up&quot;: &quot;payment_promise&quot;,
+  &quot;top_supporting_features&quot;: [
+    {
+      &quot;feature&quot;: &quot;word: from&quot;,
+      &quot;contribution&quot;: 0.2169
+    },
+    {
+      &quot;feature&quot;: &quot;word: reference&quot;,
+      &quot;contribution&quot;: 0.2011
+    },
+    {
+      &quot;feature&quot;: &quot;word: completed&quot;,
+      &quot;contribution&quot;: 0.14629
+    },
+    {
+      &quot;feature&quot;: &quot;word: credited&quot;,
+      &quot;contribution&quot;: 0.10809
+    },
+    {
+      &quot;feature&quot;: &quot;word: eur from&quot;,
+      &quot;contribution&quot;: 0.05715
+    }
+  ]
+}</pre><small>Body SHA-256 e0307cedb3c0f528fcfad2019511398e4625bb683bcec66f7116309a569c2c4f</small><br><small>Event-chain SHA-256 3c9c1788ee593974b2bc3ffb2a248c4e660da36d8904a8e0977b73047207863a</small></details></article></div></details><details class='technical'><summary>Timeline &amp; technical evidence: risks and integrity</summary><h3>Review signals</h3><ul><li>authenticated receipt not uniquely linked</li></ul><small>CHAIN HEAD 3c9c1788ee593974b2bc3ffb2a248c4e660da36d8904a8e0977b73047207863a</small></details></details></section><p><b>Integrity chain:</b> verified locally. It detects later edits inside this export; it does not authenticate a sender.</p><footer>Local-first · read-only mailbox analysis · no automatic replies or financial actions · public showcase contains fictional data only</footer></main><script>
+const cases=[...document.querySelectorAll('.thread')], buttons=[...document.querySelectorAll('[data-filter]')], search=document.querySelector('#search'), count=document.querySelector('#resultcount'), toolbar=document.querySelector('.toolbar'), back=document.querySelector('#back-view');let current='actionable';const views=[];
+function remember(){views.push({filter:current,query:search.value,open:cases.filter(c=>c.open).map(c=>c.id),y:window.scrollY});back.hidden=false}
+function matches(card,filter){if(filter==='all')return true;if(filter==='actionable')return card.dataset.actionable==='true';if(filter==='risk')return card.dataset.risk==='true';if(filter==='receipts')return card.dataset.received==='true';return card.dataset.group===filter}
+const motion=window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+function revealResults(){const header=document.querySelector('nav');toolbar.style.scrollMarginTop=((header?header.getBoundingClientRect().height:88)+12)+'px';const marker=document.querySelector('#results-start');window.scrollTo({top:Math.max(0,window.scrollY+marker.getBoundingClientRect().top-(header?header.getBoundingClientRect().height:88)-12),behavior:'instant'})}
+function apply(filter=current){const area=document.querySelector('#cases');area.style.overflowAnchor='none';area.style.minHeight=window.innerHeight+'px';current=filter;const q=(search.value||'').trim().toLowerCase();let shown=0;cases.forEach(card=>{const visible=matches(card,filter)&&(!q||card.dataset.search.includes(q));card.hidden=!visible;if(visible)shown++});buttons.forEach(b=>{const selected=b.dataset.filter===filter;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected))});const label=buttons.find(b=>b.dataset.filter===filter&&!b.classList.contains('metric'));count.textContent=shown?`${label?label.textContent.trim():filter}: ${shown} case${shown===1?'':'s'} shown below`:'No cases match. Clear the search or choose All cases.'}
+function openCase(card){remember();search.value='';apply('all');card.open=true;const summary=card.querySelector('summary');summary.focus({preventScroll:true});card.scrollIntoView({behavior:motion,block:'start'})}
+back.addEventListener('click',()=>{const saved=views.pop();if(!saved)return;search.value=saved.query;cases.forEach(c=>c.open=saved.open.includes(c.id));apply(saved.filter);back.hidden=views.length===0;window.scrollTo({top:saved.y,behavior:'instant'})});
+cases.forEach(card=>card.querySelector('summary').addEventListener('click',()=>{if(!card.open)remember()}));
+document.querySelectorAll('.openlink').forEach(link=>link.addEventListener('click',event=>{const card=document.getElementById(link.getAttribute('href').slice(1));if(card){event.preventDefault();openCase(card)}}));
+buttons.forEach(button=>button.addEventListener('click',()=>{if(current!==button.dataset.filter)remember();cases.forEach(c=>c.open=false);apply(button.dataset.filter);revealResults()}));search.addEventListener('input',()=>apply());document.querySelector('#tour').addEventListener('click',()=>{remember();search.value='';apply('risk');if(!cases.some(c=>!c.hidden))apply('actionable');const first=cases.find(c=>!c.hidden);if(first){first.open=true;first.scrollIntoView({behavior:motion,block:'start'})}});count.setAttribute('role','status');count.setAttribute('aria-live','polite');apply();
+</script></html>

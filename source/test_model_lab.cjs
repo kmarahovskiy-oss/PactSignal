@@ -1,0 +1,9 @@
+// Executes application handlers with a DOM stub; not browser visual QA.
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict');
+const page=fs.readFileSync('dist/lab.html','utf8'),ids=[...page.matchAll(/id="([^"]+)"/g)].map(m=>m[1]);
+const element=()=>({textContent:'',value:'',style:{},children:[],listeners:{},replaceChildren(){this.children=[]},append(x){this.children.push(x)},addEventListener(k,f){this.listeners[k]=f}});
+const nodes=Object.fromEntries(ids.map(id=>[id,element()]));nodes.message.value='I will pay EUR 300 tomorrow morning.';
+const presets=['promise','notice','failure','conditional','mixed','quote'].map(key=>({...element(),dataset:{example:key}}));
+const context={document:{getElementById:id=>nodes[id],createElement:element,querySelectorAll:()=>presets,documentElement:{}},PactModel:require('../dist/inference.js'),PactContext:require('../dist/context-analysis.js'),fetch:async path=>({ok:true,json:async()=>JSON.parse(fs.readFileSync('dist/'+path,'utf8'))})};
+vm.runInNewContext([...page.matchAll(/<script>([\s\S]*?)<\/script>/g)][0][1],context);
+setImmediate(()=>{assert.equal(nodes.run.disabled,false);assert.equal(nodes.rows.children.length,20);assert.equal(nodes.scores.children.length,8);for(const b of presets){b.onclick();assert.ok(nodes.result.textContent.length);assert.equal(nodes.scores.children.length,8)}nodes.message.value='Different text';nodes.message.listeners.input();assert.match(nodes.result.textContent,/Text changed/);assert.equal(nodes.scores.children.length,0);nodes.message.value='';nodes.run.onclick();assert.equal(nodes.uncertainty.textContent,'');assert.equal(nodes.features.children.length,0);nodes.lang.onclick();assert.equal(context.document.documentElement.lang,'ru');assert.match(nodes.result.textContent,/Введите/);console.log('PASS: model loading, 20 evidence rows, six presets, stale-result clearing, empty input and Russian switch (DOM stub, not browser E2E)')});

@@ -1,0 +1,171 @@
+{
+  "description": "AI-authored challenge set, fixed after training; not independent human or real-world validation. No model/guard tuning on these results.",
+  "model_sha256": "56edb13f13903f61a49ecb221456e5cbc47f676f50dea9eb9d7978c54af43a13",
+  "fixture_sha256": "0ec7319e32e2f2b40d315ce2d5c20a5d7446301b6531c7aaef63d9d9fd68917a",
+  "total": 20,
+  "raw_correct": 13,
+  "hybrid_correct": 14,
+  "browser_python_parity": 20,
+  "rows": [
+    {
+      "text": "For a ten-image catalogue, our budget is EUR 300. Can you quote the job?",
+      "expected": "offer",
+      "model": "offer",
+      "hybrid": "offer",
+      "basis": "deterministic_guard",
+      "score": 0.4765
+    },
+    {
+      "text": "We approve your quote for ten images at EUR 300. Please proceed.",
+      "expected": "agreement",
+      "model": "agreement",
+      "hybrid": "agreement",
+      "basis": "deterministic_guard",
+      "score": 0.3855
+    },
+    {
+      "text": "The final images are attached. Please check the gallery.",
+      "expected": "delivery",
+      "model": "delivery",
+      "hybrid": "delivery",
+      "basis": "deterministic_guard",
+      "score": 0.3356
+    },
+    {
+      "text": "I will pay EUR 300 tomorrow morning.",
+      "expected": "payment_promise",
+      "model": "payment_promise",
+      "hybrid": "payment_promise",
+      "basis": "deterministic_guard",
+      "score": 0.5382
+    },
+    {
+      "text": "Payment completed: EUR 300. Please check your statement.",
+      "expected": "payment_notice",
+      "model": "payment_notice",
+      "hybrid": "payment_notice",
+      "basis": "deterministic_guard",
+      "score": 0.3266
+    },
+    {
+      "text": "The EUR 300 transfer failed and the money was returned unpaid.",
+      "expected": "payment_failure",
+      "model": "payment_failure",
+      "hybrid": "payment_failure",
+      "basis": "deterministic_guard",
+      "score": 0.4026
+    },
+    {
+      "text": "We chose another photographer and will not proceed.",
+      "expected": "rejection",
+      "model": "rejection",
+      "hybrid": "rejection",
+      "basis": "deterministic_guard",
+      "score": 0.4817
+    },
+    {
+      "text": "Could you confirm which timezone the delivery deadline uses?",
+      "expected": "admin",
+      "model": "offer",
+      "hybrid": "admin",
+      "basis": "deterministic_guard",
+      "score": 0.1621
+    },
+    {
+      "text": "I have not sent anything yet. Payment is scheduled for Monday.",
+      "expected": "payment_promise",
+      "model": "payment_failure",
+      "hybrid": "payment_promise",
+      "basis": "deterministic_guard",
+      "score": 0.2827
+    },
+    {
+      "text": "I've sent the money from my banking app just now.",
+      "expected": "payment_notice",
+      "model": "payment_promise",
+      "hybrid": "needs_review",
+      "basis": "abstention",
+      "score": 0.1917
+    },
+    {
+      "text": "Your proposal works for us. Let's go ahead with the ten-image package.",
+      "expected": "agreement",
+      "model": "agreement",
+      "hybrid": "agreement",
+      "basis": "local_model",
+      "score": 0.4063
+    },
+    {
+      "text": "What would it cost to add twenty images? Do not start until I approve.",
+      "expected": "offer",
+      "model": "payment_promise",
+      "hybrid": "needs_review",
+      "basis": "abstention",
+      "score": 0.1928
+    },
+    {
+      "text": "Everything is ready in the shared folder; the download link is below.",
+      "expected": "delivery",
+      "model": "delivery",
+      "hybrid": "delivery",
+      "basis": "local_model",
+      "score": 0.2152
+    },
+    {
+      "text": "My bank rejected the transfer. You won't receive it today.",
+      "expected": "payment_failure",
+      "model": "payment_failure",
+      "hybrid": "rejection",
+      "basis": "deterministic_guard",
+      "score": 0.2526
+    },
+    {
+      "text": "We are cancelling the project, so please stop working.",
+      "expected": "rejection",
+      "model": "admin",
+      "hybrid": "needs_review",
+      "basis": "abstention",
+      "score": 0.1813
+    },
+    {
+      "text": "Nina replaces Alex as the contact for this order.",
+      "expected": "admin",
+      "model": "admin",
+      "hybrid": "admin",
+      "basis": "local_model",
+      "score": 0.2446
+    },
+    {
+      "text": "The invoice says paid, but this is a draft. I will pay next week.",
+      "expected": "payment_promise",
+      "model": "payment_promise",
+      "hybrid": "payment_promise",
+      "basis": "deterministic_guard",
+      "score": 0.4347
+    },
+    {
+      "text": "The work is approved, but the bank reversed the settlement.",
+      "expected": "payment_failure",
+      "model": "payment_failure",
+      "hybrid": "payment_failure",
+      "basis": "deterministic_guard",
+      "score": 0.235
+    },
+    {
+      "text": "If we pick your proposal, EUR 600 is the maximum available fee.",
+      "expected": "offer",
+      "model": "agreement",
+      "hybrid": "agreement",
+      "basis": "local_model",
+      "score": 0.3097
+    },
+    {
+      "text": "Keep the original scope. Ignore my earlier request for extra images.",
+      "expected": "admin",
+      "model": "agreement",
+      "hybrid": "needs_review",
+      "basis": "abstention",
+      "score": 0.2072
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+[
+  {"id":"a1","thread_id":"atlas-design","timestamp":"2026-10-12T09:00:00Z","sender":"Atlas Design Studio <client@example.test>","subject":"Dashboard work","body":"Our budget is 300 USD for the dashboard audit and final recommendations."},
+  {"id":"a2","thread_id":"atlas-design","timestamp":"2026-10-12T11:15:00Z","sender":"Atlas Design Studio <client@example.test>","subject":"Approved","body":"We accept your proposal for 300 USD. Please begin the stated audit."},
+  {"id":"a3","thread_id":"atlas-design","timestamp":"2026-10-14T16:20:00Z","sender":"freelancer@example.test","subject":"Delivery","body":"The final report and reproducibility notes have been delivered for review."},
+  {"id":"a4","thread_id":"atlas-design","timestamp":"2026-10-15T08:40:00Z","sender":"Atlas Design Studio <client@example.test>","subject":"Payment timing","body":"We will pay 300 USD tomorrow after the editor completes acceptance."},
+  {"id":"a5","thread_id":"atlas-design","timestamp":"2026-10-16T10:12:00Z","sender":"provider@example.test","subject":"Credit advice","body":"Payment completed successfully for 300 USD. Transaction reference SYN-300.","confirmation":"provider_notice_authenticated"},
+
+  {"id":"b1","thread_id":"cedar-copy","timestamp":"2026-10-13T09:00:00Z","sender":"Cedar Copy <editor@example.test>","subject":"Article","body":"I can offer 75 EUR for the complete article."},
+  {"id":"b2","thread_id":"cedar-copy","timestamp":"2026-10-13T12:00:00Z","sender":"Cedar Copy <editor@example.test>","subject":"Go ahead","body":"Approved: deliver the package for 75 EUR."},
+  {"id":"b3","thread_id":"cedar-copy","timestamp":"2026-10-14T18:00:00Z","sender":"freelancer@example.test","subject":"Final article","body":"I submitted the completed article and source archive."},
+  {"id":"b4","thread_id":"cedar-copy","timestamp":"2026-10-16T08:00:00Z","sender":"Cedar Copy <editor@example.test>","subject":"Transfer","body":"Payment of 75 EUR failed and no funds arrived."},
+
+  {"id":"c1","thread_id":"delta-research","timestamp":"2026-10-15T10:00:00Z","sender":"Delta Research <research@example.test>","subject":"Possible assignment","body":"This task pays 120 USD after acceptance. Send the full study first for consideration."},
+  {"id":"c2","thread_id":"delta-research","timestamp":"2026-10-16T09:00:00Z","sender":"freelancer@example.test","subject":"Delivery","body":"The final files have been delivered for review."}
+]

@@ -1,0 +1,858 @@
+{
+  "schema": "pactsignal-analysis-v1",
+  "generated_at": "2026-10-17T07:51:22Z",
+  "model": {
+    "type": "local scikit-learn TF-IDF word+character LogisticRegression",
+    "fit_examples": 120,
+    "scores_calibrated": false
+  },
+  "summary": {
+    "messages": 10,
+    "threads": 4,
+    "evidence_sources": 1,
+    "needs_review": 0,
+    "actionable_threads": 3,
+    "at_risk_threads": 0,
+    "awaiting_reply_threads": 0,
+    "awaiting_payment_threads": 0,
+    "active_work_threads": 3,
+    "closed_threads": 1,
+    "unresolved_value_by_currency": {},
+    "promised_by_currency": {},
+    "confirmed_received_by_currency": {
+      "EUR": 60.0
+    }
+  },
+  "threads": [
+    {
+      "thread_id": "provider-183a9171b5caf4be10a9",
+      "stage": "agreed",
+      "agreed_by_currency": {
+        "EUR": 180.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [],
+      "next_action": "Check the supplier date and update the customer; completion is not yet confirmed. Financial status: agreed.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "23b405f0c3de3f1024eb4a62f881df1afc72138a99af18403b7c3414d92d99d9"
+      },
+      "timeline": [
+        {
+          "id": "fictional-repair-demo-mailbox-parts-0@example.test",
+          "thread_id": "provider-183a9171b5caf4be10a9",
+          "timestamp": "2026-10-12T09:00:00Z",
+          "sender": "Omar Diaz <omar@maplecafe.example>",
+          "body": "We approve your quote for 180 EUR for the grinder repair. Please proceed.",
+          "subject": "Grinder motor \u00b7 RW-12",
+          "confirmation": null,
+          "text_sha256": "6f9f264a9921a6f42ba9ca82f88a23615a1cc22f4d8149ee89b1980d5f548003",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.3655,
+            "margin_not_calibrated": 0.2213,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: for",
+                "contribution": 0.16221
+              },
+              {
+                "feature": "word: your quote",
+                "contribution": 0.11902
+              },
+              {
+                "feature": "word: quote for",
+                "contribution": 0.11902
+              },
+              {
+                "feature": "word: your",
+                "contribution": 0.08032
+              },
+              {
+                "feature": "word: please",
+                "contribution": 0.07729
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve your quote"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 180.0,
+              "raw": "180 EUR",
+              "span": [
+                49,
+                56
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve your quote for 180 EUR for the grinder repair.",
+              "start": 23,
+              "end": 80
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "9e91aaa3570888a253bd766c8da6184f331bbcd48f98ee5c9d9fe6156343fe02"
+          }
+        },
+        {
+          "id": "fictional-repair-demo-mailbox-parts-1@example.test",
+          "thread_id": "provider-183a9171b5caf4be10a9",
+          "timestamp": "2026-10-13T09:00:00Z",
+          "sender": "Juniper Repair <desk@juniperrepair.example>",
+          "body": "We are waiting for the replacement part. The supplier expects it on 23 October 2026. The grinder is still in our workshop.",
+          "subject": "Re: Grinder motor \u00b7 RW-12",
+          "confirmation": null,
+          "text_sha256": "77006cae9118de0aa98d3a035dca5967044f94737cba3353c27ec2c415cb6113",
+          "ml": {
+            "label": "admin",
+            "score_not_calibrated": 0.1565,
+            "margin_not_calibrated": 0.0049,
+            "runner_up": "payment_failure",
+            "top_supporting_features": [
+              {
+                "feature": "word: are",
+                "contribution": 0.12102
+              },
+              {
+                "feature": "word: on",
+                "contribution": 0.10607
+              },
+              {
+                "feature": "char: upp",
+                "contribution": 0.01737
+              },
+              {
+                "feature": "char: supp",
+                "contribution": 0.01737
+              },
+              {
+                "feature": "char: sup",
+                "contribution": 0.01737
+              }
+            ]
+          },
+          "status": "admin",
+          "decision_basis": "workflow_rule",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": false,
+            "label": null,
+            "matched": null
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "9e91aaa3570888a253bd766c8da6184f331bbcd48f98ee5c9d9fe6156343fe02",
+            "event_chain_sha256": "23b405f0c3de3f1024eb4a62f881df1afc72138a99af18403b7c3414d92d99d9"
+          }
+        }
+      ],
+      "workflow_signals": [
+        {
+          "kind": "waiting_parts",
+          "label": "Waiting for a part",
+          "action": "Check the supplier date and update the customer; completion is not yet confirmed.",
+          "quote": "waiting for the replacement part",
+          "event_id": "fictional-repair-demo-mailbox-parts-1@example.test",
+          "timestamp": "2026-10-13T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "thread_id": "provider-43c7f35670b555f6fccd",
+      "stage": "agreed",
+      "agreed_by_currency": {
+        "EUR": 75.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [],
+      "next_action": "Arrange collection and check any remaining payment separately. Financial status: agreed.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "11a8f8001cf7ce74dc43be9dd84c0c9b46ecf70e8de57f361e70956684f2bcf5"
+      },
+      "timeline": [
+        {
+          "id": "fictional-repair-demo-mailbox-collection-0@example.test",
+          "thread_id": "provider-43c7f35670b555f6fccd",
+          "timestamp": "2026-10-12T09:00:00Z",
+          "sender": "Bea Morgan <bea@birchhome.example>",
+          "body": "We approve your quote for 75 EUR for the vacuum repair.",
+          "subject": "Vacuum repair \u00b7 RW-13",
+          "confirmation": null,
+          "text_sha256": "a9e8e16f4c25b27ed51942576adecdd5ee41478c3c4bedca413b0d3b8e6409a6",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.3979,
+            "margin_not_calibrated": 0.2502,
+            "runner_up": "offer",
+            "top_supporting_features": [
+              {
+                "feature": "word: for",
+                "contribution": 0.16387
+              },
+              {
+                "feature": "word: your quote",
+                "contribution": 0.12024
+              },
+              {
+                "feature": "word: quote for",
+                "contribution": 0.12024
+              },
+              {
+                "feature": "word: for 75",
+                "contribution": 0.11188
+              },
+              {
+                "feature": "word: your",
+                "contribution": 0.08114
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve your quote"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 75.0,
+              "raw": "75 EUR",
+              "span": [
+                49,
+                55
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve your quote for 75 EUR for the vacuum repair",
+              "start": 23,
+              "end": 77
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "176d2936ff4001f637fb1b9d37b665f41edf77b5e5e67553b14168dd9d7e8e03"
+          }
+        },
+        {
+          "id": "fictional-repair-demo-mailbox-collection-1@example.test",
+          "thread_id": "provider-43c7f35670b555f6fccd",
+          "timestamp": "2026-10-13T09:00:00Z",
+          "sender": "Juniper Repair <desk@juniperrepair.example>",
+          "body": "The vacuum is ready for collection. The repair passed our bench check. Please arrange a pickup time; payment evidence is still outstanding.",
+          "subject": "Re: Vacuum repair \u00b7 RW-13",
+          "confirmation": null,
+          "text_sha256": "e637a2a929708d83102afd35419d4a244d3e0e9715b83c929a0bc951f8648857",
+          "ml": {
+            "label": "payment_failure",
+            "score_not_calibrated": 0.2276,
+            "margin_not_calibrated": 0.1026,
+            "runner_up": "delivery",
+            "top_supporting_features": [
+              {
+                "feature": "word: still",
+                "contribution": 0.15137
+              },
+              {
+                "feature": "word: is still",
+                "contribution": 0.15137
+              },
+              {
+                "feature": "word: payment",
+                "contribution": 0.12336
+              },
+              {
+                "feature": "word: the",
+                "contribution": 0.04541
+              },
+              {
+                "feature": "char: sed",
+                "contribution": 0.03015
+              }
+            ]
+          },
+          "status": "admin",
+          "decision_basis": "workflow_rule",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": false,
+            "label": null,
+            "matched": null
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "Please arrange a pickup time; payment evidence is still outstanding",
+              "start": 98,
+              "end": 165
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "176d2936ff4001f637fb1b9d37b665f41edf77b5e5e67553b14168dd9d7e8e03",
+            "event_chain_sha256": "11a8f8001cf7ce74dc43be9dd84c0c9b46ecf70e8de57f361e70956684f2bcf5"
+          }
+        }
+      ],
+      "workflow_signals": [
+        {
+          "kind": "ready_collection",
+          "label": "Ready for collection",
+          "action": "Arrange collection and check any remaining payment separately.",
+          "quote": "ready for collection",
+          "event_id": "fictional-repair-demo-mailbox-collection-1@example.test",
+          "timestamp": "2026-10-13T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "thread_id": "provider-6e519ef4cf5cc9ff9345",
+      "stage": "open",
+      "agreed_by_currency": {},
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {},
+      "risks": [],
+      "next_action": "Send an estimate for approval; do not treat the repair as authorized. Financial status: open.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "198d807d14953d8c6d4062c9d40ac219a94bbc3ee7e1ef815f638a5d4e10eda0"
+      },
+      "timeline": [
+        {
+          "id": "fictional-repair-demo-mailbox-estimate-0@example.test",
+          "thread_id": "provider-6e519ef4cf5cc9ff9345",
+          "timestamp": "2026-10-12T09:00:00Z",
+          "sender": "Nora Wells <nora@elmhouse.example>",
+          "body": "The coffee machine loses pressure. Please send a repair estimate before replacing anything.",
+          "subject": "Coffee machine \u00b7 RW-11",
+          "confirmation": null,
+          "text_sha256": "5531b381499ad1f04314204c2a583f38f3e2f8314e57631c29671f4ba7a0105d",
+          "ml": {
+            "label": "admin",
+            "score_not_calibrated": 0.1688,
+            "margin_not_calibrated": 0.0096,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: please",
+                "contribution": 0.13072
+              },
+              {
+                "feature": "char: ate",
+                "contribution": 0.01457
+              },
+              {
+                "feature": "char: mat",
+                "contribution": 0.01454
+              },
+              {
+                "feature": "char: re ",
+                "contribution": 0.01306
+              },
+              {
+                "feature": "char: ate ",
+                "contribution": 0.01283
+              }
+            ]
+          },
+          "status": "admin",
+          "decision_basis": "workflow_rule",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": false,
+            "label": null,
+            "matched": null
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "59e53314953e305083ca7a75b3218b05c403a342ecbd25ad4c78b713dba6b9ba"
+          }
+        },
+        {
+          "id": "fictional-repair-demo-mailbox-estimate-1@example.test",
+          "thread_id": "provider-6e519ef4cf5cc9ff9345",
+          "timestamp": "2026-10-13T09:00:00Z",
+          "sender": "Juniper Repair <desk@juniperrepair.example>",
+          "body": "Diagnostics indicate a worn seal. We can offer a repair for 95 EUR. No repair has been authorized yet.",
+          "subject": "Re: Coffee machine \u00b7 RW-11",
+          "confirmation": null,
+          "text_sha256": "1e27598180d123ee60a2ba20e717306d587c005d4756579b26f74d4773667166",
+          "ml": {
+            "label": "offer",
+            "score_not_calibrated": 0.2473,
+            "margin_not_calibrated": 0.0855,
+            "runner_up": "payment_notice",
+            "top_supporting_features": [
+              {
+                "feature": "word: can",
+                "contribution": 0.17467
+              },
+              {
+                "feature": "word: offer",
+                "contribution": 0.12884
+              },
+              {
+                "feature": "word: can offer",
+                "contribution": 0.12884
+              },
+              {
+                "feature": "word: we can",
+                "contribution": 0.1003
+              },
+              {
+                "feature": "word: for",
+                "contribution": 0.05115
+              }
+            ]
+          },
+          "status": "offer",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "offer",
+            "matched": "can offer"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 95.0,
+              "raw": "95 EUR",
+              "span": [
+                88,
+                94
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We can offer a repair for 95 EUR.",
+              "start": 62,
+              "end": 95
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "59e53314953e305083ca7a75b3218b05c403a342ecbd25ad4c78b713dba6b9ba",
+            "event_chain_sha256": "198d807d14953d8c6d4062c9d40ac219a94bbc3ee7e1ef815f638a5d4e10eda0"
+          }
+        }
+      ],
+      "workflow_signals": [
+        {
+          "kind": "awaiting_estimate",
+          "label": "Estimate needed",
+          "action": "Send an estimate for approval; do not treat the repair as authorized.",
+          "quote": "Please send a repair estimate",
+          "event_id": "fictional-repair-demo-mailbox-estimate-0@example.test",
+          "timestamp": "2026-10-12T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "thread_id": "provider-6e6ad5c3dafaad4a112c",
+      "stage": "confirmed_received",
+      "agreed_by_currency": {
+        "EUR": 60.0
+      },
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {
+        "EUR": 60.0
+      },
+      "risks": [],
+      "next_action": "Receipt linked by payer evidence. Review the match, then close or archive.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "b14801230c7bd641560d80ffd987807bbfa6b2a2dffa43e53555741fd7da54e4"
+      },
+      "timeline": [
+        {
+          "id": "fictional-repair-demo-mailbox-complete-0@example.test",
+          "thread_id": "provider-6e6ad5c3dafaad4a112c",
+          "timestamp": "2026-10-12T09:00:00Z",
+          "sender": "Leo Hart <leo@ashhome.example>",
+          "body": "We approve your quote for 60 EUR for the lamp repair.",
+          "subject": "Lamp repair \u00b7 RW-14",
+          "confirmation": null,
+          "text_sha256": "05df319bd4e5d1c6055a8e2388cb89c3e5f08b01ba688bec4b983fc83e8f1fac",
+          "ml": {
+            "label": "agreement",
+            "score_not_calibrated": 0.3706,
+            "margin_not_calibrated": 0.2192,
+            "runner_up": "offer",
+            "top_supporting_features": [
+              {
+                "feature": "word: for",
+                "contribution": 0.18457
+              },
+              {
+                "feature": "word: your quote",
+                "contribution": 0.13543
+              },
+              {
+                "feature": "word: quote for",
+                "contribution": 0.13543
+              },
+              {
+                "feature": "word: your",
+                "contribution": 0.09139
+              },
+              {
+                "feature": "word: quote",
+                "contribution": 0.05363
+              }
+            ]
+          },
+          "status": "agreement",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "agreement",
+            "matched": "approve your quote"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 60.0,
+              "raw": "60 EUR",
+              "span": [
+                47,
+                53
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We approve your quote for 60 EUR for the lamp repair",
+              "start": 21,
+              "end": 73
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "e909907e028b9ef5b99ed439f1157c2d1ff8ed6be0f2cb410a56dced960947e9"
+          }
+        },
+        {
+          "id": "fictional-repair-demo-mailbox-complete-1@example.test",
+          "thread_id": "provider-6e6ad5c3dafaad4a112c",
+          "timestamp": "2026-10-13T09:00:00Z",
+          "sender": "Juniper Repair <desk@juniperrepair.example>",
+          "body": "The repaired lamp was handed over to you today.",
+          "subject": "Re: Lamp repair \u00b7 RW-14",
+          "confirmation": null,
+          "text_sha256": "e8a1719667324a2e88a5fdb9b6f392df098c511d8c718a67fc243928a7be1452",
+          "ml": {
+            "label": "payment_failure",
+            "score_not_calibrated": 0.203,
+            "margin_not_calibrated": 0.0457,
+            "runner_up": "payment_notice",
+            "top_supporting_features": [
+              {
+                "feature": "word: was",
+                "contribution": 0.28473
+              },
+              {
+                "feature": "word: you",
+                "contribution": 0.05744
+              },
+              {
+                "feature": "word: the",
+                "contribution": 0.0498
+              },
+              {
+                "feature": "char: was ",
+                "contribution": 0.03242
+              },
+              {
+                "feature": "char: was",
+                "contribution": 0.03242
+              }
+            ]
+          },
+          "status": "delivery",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": true,
+          "guard": {
+            "applied": true,
+            "label": "delivery",
+            "matched": "handed over"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "e909907e028b9ef5b99ed439f1157c2d1ff8ed6be0f2cb410a56dced960947e9",
+            "event_chain_sha256": "8b57e5307d9a4342a0018d41333e535121c8f9453fdb0b31f6f7321f9213d0fc"
+          }
+        },
+        {
+          "id": "fictional-repair-demo-mailbox-complete-2@example.test",
+          "thread_id": "provider-6e6ad5c3dafaad4a112c",
+          "timestamp": "2026-10-14T09:00:00Z",
+          "sender": "Leo Hart <leo@ashhome.example>",
+          "body": "We accepted the final work. The lamp is back at home and working.",
+          "subject": "Re: Lamp repair \u00b7 RW-14",
+          "confirmation": null,
+          "text_sha256": "c1d8b05849892837ee62b4081ff671b4074742e24cb5581beb7bd23a50087ce3",
+          "ml": {
+            "label": "delivery",
+            "score_not_calibrated": 0.2841,
+            "margin_not_calibrated": 0.1044,
+            "runner_up": "rejection",
+            "top_supporting_features": [
+              {
+                "feature": "word: the final",
+                "contribution": 0.20302
+              },
+              {
+                "feature": "word: final",
+                "contribution": 0.20302
+              },
+              {
+                "feature": "word: and",
+                "contribution": 0.10163
+              },
+              {
+                "feature": "word: is",
+                "contribution": 0.07395
+              },
+              {
+                "feature": "word: the",
+                "contribution": 0.06956
+              }
+            ]
+          },
+          "status": "acceptance",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": true,
+          "guard": {
+            "applied": true,
+            "label": "acceptance",
+            "matched": "accepted the final work"
+          },
+          "amounts": [],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "We accepted the final work.",
+              "start": 25,
+              "end": 52
+            }
+          ],
+          "confirmed_received_from_input": false,
+          "confirmation_source": null,
+          "integrity": {
+            "previous_event_sha256": "8b57e5307d9a4342a0018d41333e535121c8f9453fdb0b31f6f7321f9213d0fc",
+            "event_chain_sha256": "b14801230c7bd641560d80ffd987807bbfa6b2a2dffa43e53555741fd7da54e4"
+          }
+        }
+      ],
+      "linked_receipts": [
+        {
+          "event_id": "settlement:repair-bank-001",
+          "source_thread_id": "settlement-source:repair-bank-001",
+          "source_sender": "Bank statement import <read-only@bank-statement.local>",
+          "source_subject": "Settled 60.00 EUR from Leo Hart",
+          "source_body": "Settlement completed: 60.00 EUR credited from Leo Hart. Reference: RW-14 lamp repair.",
+          "source_text_sha256": "6b1a9e8d2f9b4d640e3bb40a1ca008df6142d79529c6f5368a562a89319c4f6f",
+          "confirmation_source": "provider_notice_authenticated",
+          "match_score": 13,
+          "matching_name_tokens": [
+            "hart",
+            "leo",
+            "repair"
+          ],
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 60.0,
+              "raw": "60.00 EUR",
+              "span": [
+                8,
+                17
+              ]
+            }
+          ],
+          "timestamp": "2026-10-16T12:00:00Z"
+        }
+      ],
+      "workflow_signals": []
+    },
+    {
+      "thread_id": "settlement-source:repair-bank-001",
+      "stage": "reconciled_receipt",
+      "agreed_by_currency": {},
+      "promised_by_currency": {},
+      "promised_due_at": null,
+      "promise_overdue": false,
+      "confirmed_received_by_currency": {
+        "EUR": 60.0
+      },
+      "risks": [],
+      "next_action": "Receipt linked to provider-6e6ad5c3dafaad4a112c; review the payer match.",
+      "integrity": {
+        "algorithm": "SHA-256",
+        "chain_head_sha256": "cfc2932e79b9fbb7ccc3c934aa84c5e5ee7bfb17efc3942b1638da9f122279df"
+      },
+      "timeline": [
+        {
+          "id": "settlement:repair-bank-001",
+          "thread_id": "settlement-source:repair-bank-001",
+          "timestamp": "2026-10-16T12:00:00Z",
+          "sender": "Bank statement import <read-only@bank-statement.local>",
+          "body": "Settlement completed: 60.00 EUR credited from Leo Hart. Reference: RW-14 lamp repair.",
+          "subject": "Settled 60.00 EUR from Leo Hart",
+          "confirmation": "provider_notice_authenticated",
+          "text_sha256": "6b1a9e8d2f9b4d640e3bb40a1ca008df6142d79529c6f5368a562a89319c4f6f",
+          "ml": {
+            "label": "payment_notice",
+            "score_not_calibrated": 0.5642,
+            "margin_not_calibrated": 0.4854,
+            "runner_up": "delivery",
+            "top_supporting_features": [
+              {
+                "feature": "word: from",
+                "contribution": 0.24901
+              },
+              {
+                "feature": "word: completed",
+                "contribution": 0.16794
+              },
+              {
+                "feature": "word: reference",
+                "contribution": 0.13636
+              },
+              {
+                "feature": "word: credited",
+                "contribution": 0.12409
+              },
+              {
+                "feature": "word: eur from",
+                "contribution": 0.06561
+              }
+            ]
+          },
+          "status": "payment_notice",
+          "decision_basis": "deterministic_guard",
+          "model_guard_disagreement": false,
+          "guard": {
+            "applied": true,
+            "label": "payment_notice",
+            "matched": "credited"
+          },
+          "amounts": [
+            {
+              "currency": "EUR",
+              "value": 60.0,
+              "raw": "60.00 EUR",
+              "span": [
+                8,
+                17
+              ]
+            }
+          ],
+          "conditions": [],
+          "evidence": [
+            {
+              "quote": "Settled 60.00 EUR from Leo Hart.",
+              "start": 0,
+              "end": 32
+            },
+            {
+              "quote": "Settlement completed: 60.00 EUR credited from Leo Hart.",
+              "start": 33,
+              "end": 88
+            }
+          ],
+          "confirmed_received_from_input": true,
+          "confirmation_source": "provider_notice_authenticated",
+          "integrity": {
+            "previous_event_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "event_chain_sha256": "cfc2932e79b9fbb7ccc3c934aa84c5e5ee7bfb17efc3942b1638da9f122279df"
+          }
+        }
+      ],
+      "workflow_signals": []
+    }
+  ],
+  "limits": [
+    "Synthetic training data; no real-world accuracy claim.",
+    "Classification does not authenticate messages, agreements or payments.",
+    "A payment enters confirmed totals only when the input explicitly carries an allowed confirmation assertion.",
+    "Review exact quoted evidence and the original source before acting."
+  ],
+  "integrity_check": {
+    "verified": true,
+    "failures": [],
+    "threads_checked": 5
+  },
+  "mailbox_sync": {
+    "source": "/workspace/sites/pactsignal-showcase/source/repair-demo-mailbox",
+    "scanned": 9,
+    "imported": 9,
+    "unchanged": 0,
+    "errors": []
+  },
+  "settlement_import": {
+    "source": "repair-demo-settlements.csv",
+    "sha256": "ede2bdede2cfa4280ddc9bb955073753fbb0c4a0ddea5a9054732a0a0f813404",
+    "rows_imported": 1,
+    "rows_ignored_not_settled": 0,
+    "schema": "pactsignal-normalized-settlement-csv-v1",
+    "read_only": true
+  },
+  "fictional_scenario": "repair"
+}
